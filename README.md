@@ -1,7 +1,9 @@
 # 강사·기술튜터 온보딩
 
 팀스파르타 AX교육팀 신규 강사·보조강사 온보딩 자료입니다.
+
 👉 **[수강생용 온보딩 페이지 바로가기](https://leebuyong.github.io/Onboarding-for-deployment/)**
+
 👉 **[온보딩 진행 체크리스트(Noiton) 바로가기](https://app.notion.com/p/teamsparta/3ca2dc3ef51480e8ae77f7e42f564655?v=1c82dc3ef514836486c688b6c7023261&source=copy_link)**
 
 | 파일 | 용도 |
