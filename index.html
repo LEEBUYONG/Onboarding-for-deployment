@@ -200,6 +200,13 @@ details summary::before{content:"+";color:var(--accent);font-family:"IBM Plex Mo
 details[open] summary::before{content:"–"}
 details .body{padding:10px 0 2px 24px;color:var(--ink-2)}
 details .body p:last-child{margin-bottom:0}
+details summary .lv{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;
+  font-weight:600;margin-left:8px;white-space:nowrap
+}
+#slot-courses details{box-shadow:none;background:var(--surface-2)}
+#slot-courses details .body ul.tick li{color:var(--ink-2)}
 
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
 .links a{
@@ -293,7 +300,6 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <li><strong>학력</strong> — 최종 학력 기준으로 입력</li>
         <li><strong>소속 · 재직 기간</strong> — 현재 또는 직전 소속과 기간</li>
         <li><strong>프로젝트 경력 업로드</strong> — 강의·프로젝트 이력. 고객사 제안 시 참고 자료로 활용됩니다</li>
-        <li><strong>내 자격</strong>에서 현재 레벨과 자격 확인 — 강사로 합류했는데 튜터로만 되어 있지 않은지 꼭 확인해 주세요</li>
       </ul>
       <div class="quote">이력서·경력 정보가 비어 있으면 역량을 확인할 수 없어 교육 제안 대상에서 제외될 수 있습니다. 온보딩 자리에서 최소한 이력서 파일은 올려두시는 것을 권합니다.</div>
     </div>
@@ -541,7 +547,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     <div class="fnote">
       <div class="said">
         <p class="k">교안 전달 시점 — 이런 피드백이 있었습니다</p>
-        <p>“교안 전달이 늦어져, 튜터가 충분히 숙지할 시간을 확보하지 못한 채 교육이 진행되었다”</p>
+        <p>“강사 교체로 교안 전달이 늦어져, 튜터가 충분히 숙지할 시간을 확보하지 못한 채 교육이 진행되었다”</p>
       </div>
       <div class="do">
         <p class="k">그래서 이렇게 해주세요</p>
@@ -628,7 +634,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     <!-- ▼▼▼ 아웃보딩 기준 확정 후 이 자리에 삽입 ▼▼▼ -->
     <div class="placeholder" id="slot-outboarding" style="margin-top:14px">
       <span class="k">삽입 예정 — 아웃보딩</span>
-      <p>아웃보딩(활동 검토) 판단 기준이 확정되면 이 블록을 삭제하고 그 자리에 내용을 넣을 예정입니다..<br>
+      <p>아웃보딩(활동 검토) 판단 기준이 확정되면 이 블록을 삭제하고 그 자리에 내용을 넣으세요.<br>
       넣을 것: 면담이 발생하는 상황 / 면담 절차 / 개선 확인 시 정상 배정 복귀 / 반복 시 계약 검토</p>
       <p style="margin-top:8px">HTML에서 <code>id="slot-outboarding"</code> 을 찾으면 됩니다.</p>
     </div>
@@ -690,17 +696,53 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <li><strong>패들렛</strong> — 실습 결과물 업로드. 익명 업로드가 가능하다는 점을 함께 안내하면 참여율이 올라갑니다</li>
         <li><strong>생성형 AI</strong> — 사내망 환경에서는 사전 승인이 필요합니다. 사용할 툴 리스트를 미리 공유해 주세요</li>
       </ul>
-      <div class="quote">기술튜터는 교안에 맞춰 <strong>각자 툴과 스킬을 준비</strong>해 주셔야 합니다. 부족한 스킬이 있다면 교안을 받으신 뒤 강의 전까지 익혀 오셔야 현장에서 실습 지원이 가능합니다.</div>
+      <div class="quote">교안은 제공되지만 <strong>툴 숙련은 각자 준비</strong>해 주셔야 합니다. 부족한 스킬이 있다면 교안을 받으신 뒤 강의 전까지 익혀 오셔야 현장에서 실습 지원이 가능합니다.</div>
     </div>
 
-    <!-- ▼▼▼ 대표 교육 명단·레벨·Skill/Tool 확정 후 이 자리에 삽입 ▼▼▼ -->
-    <div class="placeholder" id="slot-courses" style="margin-top:14px">
-      <span class="k">삽입 예정 — 대표 교육 명단</span>
-      <p>대표 교육 명단, 레벨, 교육별 주 사용 Skill/Tool이 정리되면 이 블록을 삭제하고 표를 넣을 예정입니다..<br>
-      넣을 것: 교육명 / 레벨 / 대상 / 주 사용 툴 / 필요 스킬</p>
-      <p style="margin-top:8px">HTML에서 <code>id="slot-courses"</code> 를 찾으면 됩니다.</p>
+    <div class="card" id="slot-courses" style="margin-top:14px">
+      <h3>교육 유형 4가지</h3>
+      <p class="why">배정받게 될 교육은 크게 아래 네 가지로 나뉩니다. 유형마다 대상과 난이도, 준비해야 할 것이 다르니 배정 전에 한 번 확인해 주세요.</p>
+
+      <details>
+        <summary>1. 기본 활용 교육 <span class="lv">Literacy L1</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>AI를 처음 접하는 임직원이 <strong>ChatGPT·Gemini·Claude</strong> 등 범용 생성형 AI 도구를 문서 작성·자료 조사·보고 등 일상 업무에 바로 적용할 수 있도록 하는 입문 과정입니다.</li>
+            <li>직무를 가리지 않는 공통 대상 교육으로, <strong>1~2일 단기 집합</strong> 형태로 운영하며 “AI를 쓸 줄 아는 조직”의 저변을 만드는 것을 목표로 합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>2. 심화 활용 교육 <span class="lv">Literacy L2</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>실무자가 자기 직무의 실제 업무 흐름에 AI를 붙이는 과정으로, <strong>데이터 분석 · 업무 자동화(RPA) · 이미지/영상 제작 · 바이브코딩</strong> 등 주제별로 나뉩니다.</li>
+            <li><strong>Python · GPT API · n8n · Claude Code · Copilot Studio</strong>처럼 도구 난이도가 한 단계 높아지며, 직무·산업 맥락에 맞춘 실습 과제로 업무 적용도를 끌어올립니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>3. 프로젝트형 교육 <span class="lv">PBL</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>정해진 기간 동안 팀이 자사의 실제 과제를 붙잡고 결과물까지 만들어내는 과정으로, <strong>PBL Lite · PBL Pro · 장기 아카데미</strong>가 있습니다.</li>
+            <li>멘토링과 코칭 비중이 높고 최종 발표로 마무리되기 때문에, 교육 성과가 사내에서 활용 가능한 결과물을 만들어냅니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>4. 해커톤 <span class="lv">행사형</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>전사 단위 인원이 몰입해 AI 결과물을 만들고 <strong>심사·시상</strong>까지 이어지는 행사형 프로그램으로, 조직 확산에 무게가 있습니다.</li>
+            <li>작품 제출·공유 플랫폼, 발표 자료 보안 점검 등 일반 집합교육과 다른 운영 준비가 필요해 별도 구분으로 관리합니다.</li>
+          </ul>
+        </div>
+      </details>
     </div>
-    <!-- ▲▲▲ 여기까지 ▲▲▲ -->
   </section>
 
   <!-- ============ FAQ ============ -->
