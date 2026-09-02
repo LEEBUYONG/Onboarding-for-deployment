@@ -187,12 +187,24 @@ ul.plain{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;c
 .placeholder p{margin:0;font-size:14.5px}
 .placeholder code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--surface);padding:2px 6px;border-radius:4px;border:1px solid var(--line-soft)}
 
-/* ---------- tables / faq / links ---------- */
+/* ---------- tables ---------- */
 .scroll{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
-th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-weight:500}
+table{
+  width:100%;border-collapse:collapse;font-size:15px;
+  table-layout:fixed;min-width:520px
+}
+th,td{
+  text-align:left;padding:11px 13px;border-bottom:1px solid var(--line-soft);
+  vertical-align:top;word-break:keep-all;overflow-wrap:break-word
+}
+th{
+  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  font-family:"IBM Plex Mono",monospace;font-weight:500;white-space:nowrap
+}
+td ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+td ol li{padding-left:2px}
 
+/* ---------- faq / links ---------- */
 details{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:15px 20px;margin-bottom:8px}
 details summary{cursor:pointer;font-weight:600;font-family:"Gothic A1",sans-serif;font-size:16.5px;list-style:none;display:flex;gap:12px}
 details summary::-webkit-details-marker{display:none}
@@ -317,7 +329,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <li><strong>내 계약</strong>과 <strong>명세서</strong> 메뉴 위치 확인 — 계약 기간·교육명·시급, 월별 정산 내역을 확인하는 곳입니다</li>
         <li>등록한 정보가 바뀌면 반드시 최신 정보로 수정해 주세요</li>
       </ul>
-      <div class="quote">교무실에서 누른 동의 체크는 <strong>계약서가 아닙니다.</strong> 계약서는 교육 건마다 이메일 전자서명(모두싸인)으로 별도 발송됩니다. 배정된 교육이 있는데 서명 메일을 받지 못하셨다면 담당 매니저에게 요청해 주세요.</div>
+      <div class="quote">교무실에서 누른 동의 체크는 <strong>계약서가 아닙니다.</strong> 계약서와 발주서가 어떻게 진행되는지는 <a href="#level">Step 4 레벨과 계약</a>에서 안내드립니다.</div>
     </div>
   </section>
 
@@ -352,7 +364,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
           <h3>처음이라면 · 첫 현장이라면</h3>
           <ul class="tick">
             <li>Slack 초대 수락, 교육 운영 시스템(교무실) 회원 가입, 활동 신청</li>
-            <li>계약 정보 작성 — 배정 후 이메일로 오는 전자서명 계약서 확인</li>
+            <li>교무실에 계약·정산 정보 작성 — 계약 절차는 <a href="#level">Step 4</a> 참고</li>
             <li>기업별 <strong>운영 스레드</strong>와 <strong>프로젝트 페이지</strong> 확인</li>
           </ul>
         </div>
@@ -538,28 +550,29 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <h3>기술튜터 — 파일럿 기간 계약 연장</h3>
       <div class="scroll">
         <table>
+          <colgroup><col style="width:16%"><col style="width:42%"><col style="width:42%"></colgroup>
           <tr><th>구분</th><th>기준</th><th>결과</th></tr>
-            <tr>
-              <td><strong>Lv.1</strong><br><span class="mono" style="font-size:12px">파일럿</span></td>
-              <td>
-                <ol style="margin:0;padding-left:18px">
-                  <li>3개월 내 <strong>15회 이상</strong> 참여</li>
-                  <li>3개월 내 15회 미만 참여</li>
-                </ol>
-              </td>
-              <td>
-                <ol style="margin:0;padding-left:18px">
-                  <li>Lv.2 전환 + 6개월 계약</li>
-                  <li>계약 미연장</li>
-                </ol>
-              </td>
-            </tr>
+          <tr>
+            <td><strong>Lv.1</strong><br><span class="mono" style="font-size:12px">파일럿</span></td>
+            <td>
+              <ol>
+                <li>3개월 내 <strong>15회 이상</strong> 참여</li>
+                <li>3개월 내 15회 미만 참여</li>
+              </ol>
+            </td>
+            <td>
+              <ol>
+                <li>Lv.2 전환 + 6개월 계약</li>
+                <li>계약 미연장</li>
+              </ol>
+            </td>
+          </tr>
         </table>
       </div>
       <ul class="tick" style="margin-top:16px">
         <li>3개월간 참여 횟수 카운트 대상 교육은 <strong>AI 리터러시 교육</strong>입니다</li>
-        <li>3개월 이후 <strong>6개월 정식 계약</strong>부터는 레벨의 승급·강등이 적용됩니다.</li>
-        <li>카운트 기준은 정규 계약 후 파일럿 기준과 달라질 수 있으며, 세부 내용은 향후 별도로 안내드립니다</li>
+        <li>3개월 이후 <strong>6개월 정식 계약</strong>부터는 레벨의 승급·강등이 적용됩니다</li>
+        <li>카운트 기준은 정식 계약 후 파일럿 기준과 달라질 수 있으며, 세부 내용은 향후 별도로 안내드립니다</li>
         <li>레벨별 시급은 <strong>내부 운영 가이드 문서</strong>에서 안내드립니다. 본인의 현재 레벨은 교무실 <strong>내 자격</strong>에서 확인하실 수 있습니다</li>
       </ul>
     </div>
@@ -571,18 +584,32 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <li>첫 페어 배정 이후 <strong>2회차부터 강사로 지원</strong>하실 수 있습니다. 다만 고객사도 저희도 안정적인 진행을 중요하게 보기 때문에, <strong>보통 기술튜터로 3회 정도 참여하신 뒤 강사로 투입</strong>되는 경우가 많습니다</li>
         <li>바로 강사로 투입을 희망하시면 물론 가능합니다. 다만, 이 경우 첫 강의에서 만족도·협업 점수가 기준에 미달하면 하위 레벨로 금액이 산정될 수 있는 점 양지 바랍니다</li>
         <li>시급은 <strong>대면 시연 결과로 예측 레벨을 부여</strong>해 정해지고, 첫 파일럿 강의에서 이슈가 없으면 그대로 확정됩니다</li>
-        <li>첫 파일럿 강의는 <strong>페어로 배정된 Lv.3 기술튜터</strong>가 강의 평가를 진행합니다.</li>
+        <li>첫 파일럿 강의는 <strong>페어로 배정된 Lv.3 기술튜터</strong>가 강의 평가를 진행합니다</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>계약은 이렇게 진행됩니다</h3>
+      <h3>계약 문서는 두 가지입니다</h3>
       <ul class="tick">
         <li><strong>계약서</strong> — 계약 기간과 연장 조건만 담깁니다. <strong>레벨은 기재하지 않습니다</strong></li>
-        <li><strong>발주서</strong> — <strong>건별 계약</strong>입니다. 교육별 시간·일자와 금액이 함께 기재되고 레벨이 반영되며, <strong>건마다 교무실에서 본인이 직접 승인</strong>하셔야 합니다</li>
+        <li><strong>발주서</strong> — <strong>파일럿 기간을 포함해 모든 교육이 건별 계약</strong>입니다. 교육별 시간·일자와 금액이 함께 기재되고 레벨이 반영되며, <strong>건마다 교무실에서 본인이 직접 승인</strong>하셔야 합니다</li>
       </ul>
-      <div class="quote">계약서는 <strong>강의 일정 확정 후 영업일 기준 5일 이내</strong> 이메일 전자서명(모두싸인)으로 발송됩니다. 기한이 지나도 받지 못하셨다면 담당 매니저에게 요청해 주세요.</div>
       <p style="margin-top:14px">사전·사후 준비(세팅, 교육 운영 준비 등)에 대한 <strong>별도 비용은 지급되지 않습니다.</strong> 용역 계약 특성상 턴키 방식으로 계약서에 명시됩니다.</p>
+    </div>
+
+    <div class="card">
+      <h3>10월부터 계약 방식이 바뀝니다</h3>
+      <p class="why">지금까지는 교육 건마다 이메일 전자서명(모두싸인)으로 계약서를 발송했지만, 10월부터 <strong>발주서를 교무실에서 승인</strong>하는 방식으로 전환됩니다. 전환 시점과 겹쳐 이번에 합류하신 분들은 계약서를 조금 늦게 받으시게 되어, 순서를 미리 안내드립니다.</p>
+      <div class="scroll">
+        <table>
+          <colgroup><col style="width:20%"><col style="width:80%"></colgroup>
+          <tr><th>시점</th><th>진행 내용</th></tr>
+          <tr><td><strong>9월</strong></td><td>교육 배정과 진행이 먼저 시작됩니다. 이 기간에는 계약서가 아직 발송되지 않습니다</td></tr>
+          <tr><td><strong>10월 초</strong></td><td><strong>9월 1일자로 소급하여 계약서가 일괄 발송</strong>됩니다. 9월에 진행하신 교육도 이 계약서로 함께 처리되며, 정산에는 영향이 없습니다</td></tr>
+          <tr><td><strong>10월 이후</strong></td><td>발주서를 <strong>교무실에서 건별로 승인</strong>하는 방식으로 운영됩니다. 계약서는 강의 일정 확정 후 <strong>영업일 기준 5일 이내</strong> 발송됩니다</td></tr>
+        </table>
+      </div>
+      <div class="quote">시스템 전환 시기와 겹쳐, 계약서를 먼저 받지 못한 상태로 첫 교육을 진행하시게 됩니다. 번거로우시겠지만 <strong>10월 초에 9월 1일자로 소급 발송</strong>되는 점 양해 부탁드립니다. 궁금한 점이나 확인이 필요하신 부분은 담당 매니저에게 언제든 문의해 주세요.</div>
     </div>
   </section>
 
@@ -685,7 +712,8 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
       <div class="scroll">
         <table>
-          <tr><th>등급</th><th>어떤 경우인가</th><th>누적 기준</th><th>이후 절차</th></tr>
+          <colgroup><col style="width:12%"><col style="width:44%"><col style="width:14%"><col style="width:30%"></colgroup>
+          <tr><th>등급</th><th>어떤 경우인가</th><th>누적</th><th>이후 절차</th></tr>
           <tr>
             <td><strong>주요</strong></td>
             <td>교육 준비·진행에 실질적 영향을 주었거나 반복된 사안 (고객사 직접 피드백 포함)</td>
@@ -712,6 +740,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <h3 style="margin-top:24px">어떤 항목을 보나요</h3>
       <div class="scroll">
         <table>
+          <colgroup><col style="width:18%"><col style="width:41%"><col style="width:41%"></colgroup>
           <tr><th>유형</th><th>주요</th><th>중대</th></tr>
           <tr><td><strong>강의·튜터링 품질</strong></td><td>전문성·설명 부족으로 교육 진행에 지장, 커리큘럼 임의 축소·변경, 실습 지원 부족</td><td>교육 내용의 중대한 오류로 재교육·보완 필요, 교육 목적과 무관한 내용 지속 전달</td></tr>
           <tr><td><strong>교안·자료</strong></td><td>마감 초과로 사전 검수 불가, 검수 지적 사항 반복 미보완, 자료 오류</td><td>타인 저작물 무단 사용, 허위 자료 제출, 커리큘럼 미준수 교안</td></tr>
@@ -725,6 +754,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <h3 style="margin-top:24px">절차</h3>
       <div class="scroll">
         <table>
+          <colgroup><col style="width:10%"><col style="width:90%"></colgroup>
           <tr><th>순서</th><th>내용</th></tr>
           <tr><td class="mono">1</td><td>담당 매니저가 확인된 사실을 기록으로 등록</td></tr>
           <tr><td class="mono">2</td><td>정기 검토에서 유형과 등급 확정 후 카운트 반영</td></tr>
@@ -748,6 +778,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <h3>교육 공고에 지원하는 방법</h3>
       <div class="scroll">
         <table>
+          <colgroup><col style="width:36%"><col style="width:64%"></colgroup>
           <tr><th>공고 형태</th><th>지원 방법</th></tr>
           <tr><td>‘지원하기’ 버튼이 있는 공고</td><td>버튼을 누르면 교무실에서 자동으로 지원 처리됩니다</td></tr>
           <tr><td>매니저가 직접 올린 공고 (버튼 없음)</td><td>스레드에 <strong>“지원합니다” 댓글을 반드시</strong> 작성해 주세요. 댓글이 있어야 배정이 가능합니다</td></tr>
@@ -762,7 +793,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <ul class="tick">
         <li><strong>사업자 강의료 증빙 제출</strong> — 사업자등록증·통장사본은 최초 1회, 이후 거래명세서·세금계산서.<br>매주 화요일까지 제출·발급된 건은 수요일 저녁 지급 예정</li>
         <li><strong>경력증명서 발급 신청</strong> — 매주 월요일 발급</li>
-        <li><strong>계약서 발송 요청</strong> — 강의 확정 후 영업일 5일 이내 발송. 미수신·서명 기한 경과·재발송 시 요청</li>
+        <li><strong>계약서 발송 요청</strong> — 미수신·서명 기한 경과·재발송이 필요할 때 요청해 주세요. 발송 시점은 <a href="#level">Step 4</a>를 확인해 주세요</li>
       </ul>
       <p style="margin-top:12px"><strong>명세서 확인은 꼭 해주세요.</strong> 매월 말 발행되며, 누락이나 오기재가 있으면 <strong>매월 2일 자정까지</strong> 교무실 문의 게시판으로 접수해 주세요. 교육명·강의 일자·수정이 필요한 항목·실제 진행 내역·증빙을 함께 적어주시면 빠르게 확인됩니다.</p>
     </div>
@@ -782,7 +813,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     </div>
   </section>
 
-  <!-- ============ 교육·툴 (삽입 예정) ============ -->
+  <!-- ============ 교육·툴 ============ -->
   <section id="tools">
     <p class="sec-k">참고</p>
     <h2>대표 교육과 주로 쓰는 툴</h2>
@@ -858,8 +889,8 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
       <details><summary>교무실에서 동의 체크를 했는데 계약이 된 건가요?</summary><div class="body">
         <p>아닙니다. 교무실의 동의 체크는 교무실 이용과 정보 활용에 대한 확인일 뿐, 계약으로서의 효력은 없습니다.</p>
-        <p>실제 계약은 교육 건마다 개별로 체결되며, 이메일 전자서명(모두싸인) 형태로 따로 발송됩니다.</p>
-        <p>교무실 동의만 한 상태로 교육이 진행된 사례가 실제로 있었습니다. 배정된 교육이 있는데 서명 메일을 받지 못하셨다면 그대로 두지 마시고 담당 매니저에게 발송을 요청해 주세요.</p>
+        <p>실제 계약은 <strong>계약서</strong>와 교육 <strong>건별 발주서</strong>로 진행됩니다. 계약서는 별도로 발송되고, 발주서는 교무실에서 건마다 직접 승인하시게 됩니다.</p>
+        <p>발송 시점과 10월부터의 방식 변경은 <a href="#level">Step 4 레벨과 계약</a>에 정리해 두었습니다. 배정된 교육이 있는데 확인이 필요하시면 담당 매니저에게 문의해 주세요.</p>
       </div></details>
 
       <details><summary>파일럿 기간에도 원하는 교육에 지원할 수 있나요?</summary><div class="body">
@@ -971,7 +1002,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
 /* ---- 스크롤 스파이 ---- */
 (function(){
-  var links = document.querySelectorAll('nav.jump a');
+  var links = document.querySelectorAll('nav.jump a[href^="#"]');
   var map = {};
   links.forEach(function(a){
     var el = document.querySelector(a.getAttribute('href'));
