@@ -315,6 +315,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
           <li><strong>사업자 유형을 선택합니다</strong> — 프리랜서 / 개인사업자 / 법인</li>
           <li><strong>서류를 업로드합니다</strong> — 개인사업자·법인은 사업자등록증과 통장 사본</li>
           <li><strong>내 계약과 명세서 메뉴 위치를 확인합니다</strong> — 계약 기간·교육명·시급, 월별 정산 내역을 확인하는 곳입니다</li>
+          <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a> 폼을 제출합니다</strong> — 사업자 유형과 관계없이 <strong>최초 계약 시 1회</strong> 제출합니다. 계약서 발급과 강의료(인건비) 지급에 필요한 개인정보를 입력하는 폼이며, <strong>담당자명 항목에는 「이다은」</strong>으로 기재해 주세요</li>
         </ol>
         <div class="quote">교무실에서 누른 동의 체크는 <strong>계약서가 아닙니다.</strong> 계약서와 발주서가 어떻게 진행되는지는 <a href="#contract">Step 4 · 계약은 이렇게 진행됩니다</a>에서 확인해 주세요.</div>
       </div>
@@ -829,13 +830,58 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     </div>
 
     <div class="card" id="apply-settle">
-      <h3>정산 · 계약서 · 경력증명서</h3>
-      <p>아래 세 가지는 개인 메시지가 아니라 <strong>Slack 워크플로</strong>로 접수해 주세요. DM으로 오면 누락되거나 접수 순서가 남지 않습니다.</p>
+      <h3>정산 — 사업자 유형에 따라 절차가 다릅니다</h3>
+      <p class="why">교무실에 등록하신 사업자 유형에 따라 제출 서류와 접수 경로가 달라집니다. 본인 유형을 펼쳐서 확인해 주세요.</p>
+
+      <details>
+        <summary>프리랜서 <span class="lv">3.3% 원천징수</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li><strong>따로 제출하실 서류가 없습니다.</strong> 교무실에 프리랜서로 등록만 되어 있으면 진행하신 강의 내역이 자동으로 명세서에 반영됩니다</li>
+            <li>명세서는 교무실 <strong>내 계약 → 명세서 다운로드</strong>에서 확인하실 수 있습니다</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>개인사업자 · 법인 <span class="lv">세금계산서</span></summary>
+        <div class="body">
+          <p>절차는 두 단계입니다.</p>
+          <ol class="steps">
+            <li><strong>사업자 정보 등록</strong> <span class="mono">최초 1회</span> — 교무실 사업자 정보 등록 화면에서 사업자등록증과 통장 사본을 업로드합니다</li>
+            <li><strong>강의료 증빙 제출</strong> <span class="mono">정산할 때마다</span> — Slack <strong>주강사풀 · 기술튜터풀</strong> 채널 하단의 「사업자 강의료 증빙 제출」 워크플로 버튼으로 제출합니다</li>
+          </ol>
+
+          <div class="scroll" style="margin-top:16px">
+            <table>
+              <colgroup><col style="width:36%"><col style="width:32%"><col style="width:32%"></colgroup>
+              <tr><th>서류</th><th>형식</th><th>제출 주기</th></tr>
+              <tr><td>사업자등록증</td><td>PDF</td><td>최초 1회</td></tr>
+              <tr><td>통장 사본</td><td>PDF 또는 이미지</td><td>최초 1회</td></tr>
+              <tr><td><a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서</a></td><td>날인 후 PDF</td><td>매번</td></tr>
+              <tr><td>세금계산서</td><td>—</td><td>매번</td></tr>
+            </table>
+          </div>
+
+          <ul class="tick" style="margin-top:16px">
+            <li><strong>제출 단위는 계약서 기준</strong>입니다. 동일 고객사·교육명이면 1회, 계약서가 다르면 각각 제출해 주세요</li>
+            <li>3개월 이상 장기 교육은 <strong>매달</strong>, 3개월 미만은 <strong>종료 후 한 번에</strong> 제출합니다</li>
+            <li><strong>매주 화요일 낮 12시까지</strong> 제출된 건은 <strong>수요일 저녁</strong>에 지급됩니다</li>
+            <li>거래명세서에 <strong>날인이 누락되거나 서류가 미비하면</strong> 입금이 지연되고, 이 경우 별도로 처리해 드리기 어렵습니다. 제출 전에 한 번 더 확인해 주세요</li>
+          </ul>
+
+          <div class="quote">사업자 정산의 <strong>정식 접수 경로는 Slack 워크플로 한 곳뿐</strong>입니다. 개인 DM으로는 접수되지 않습니다. 제출하신 뒤에는 제출 내역을 캡처해 보관해 두시길 권하고, 사업자등록증이나 계좌 정보가 바뀌면 교무실 정보도 함께 갱신해 주세요. 제출 방법은 <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드</a>에 화면과 함께 정리되어 있습니다.</div>
+        </div>
+      </details>
+
+      <h3 style="margin-top:28px">사업자 유형과 관계없이 공통</h3>
+      <p class="why">아래 세 가지는 개인 메시지가 아니라 폼과 <strong>Slack 워크플로</strong>로 접수해 주세요. DM으로 오면 누락되거나 접수 순서가 남지 않습니다.</p>
       <ul class="tick">
-        <li><strong>사업자 강의료 증빙 제출</strong> — 사업자등록증·통장사본은 최초 1회, 이후 거래명세서·세금계산서.<br>매주 화요일까지 제출·발급된 건은 수요일 저녁 지급 예정입니다</li>
-        <li><strong>경력증명서 발급 신청</strong> — 매주 월요일 발급됩니다</li>
-        <li><strong>계약서 발송 요청</strong> — 미수신·서명 기한 경과·재발송이 필요할 때 요청해 주세요. 발송 시점은 <a href="#contract">Step 4</a>를 확인해 주세요</li>
+        <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a></strong> — <strong>최초 계약 시 1회</strong> 제출. 폼 안의 <strong>담당자명 항목에는 「이다은」</strong>으로 기재해 주세요. 입력 항목은 <a href="#s-settle">Step 1 · 02 계약과 정산에 필요한 정보</a>에도 정리되어 있습니다</li>
+        <li><strong>경력증명서 발급 신청</strong> — Slack 워크플로로 신청하시면 <strong>매주 월요일</strong>에 발급됩니다</li>
+        <li><strong>계약서 발송 요청</strong> — 강의가 확정된 후 <strong>영업일 5일 이내</strong>에 신청해 주세요. 미수신·서명 기한 경과·재발송도 같은 경로입니다. 발송 시점은 <a href="#contract">Step 4</a>를 확인해 주세요</li>
       </ul>
+
       <div class="quote"><strong>명세서는 매월 말 발행됩니다.</strong> 누락이나 오기재가 있으면 <strong>매월 2일 자정까지</strong> 교무실 문의 게시판으로 접수해 주세요. 교육명·강의 일자·수정이 필요한 항목·실제 진행 내역·증빙을 함께 적어주시면 빠르게 확인됩니다.</div>
     </div>
 
@@ -966,9 +1012,9 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       </div></details>
 
       <details><summary>정산·계약서·경력증명서는 어디로 요청하나요?</summary><div class="body">
-        <p>개인 DM이 아니라 <strong>Slack 워크플로</strong>로 접수해 주세요. 사업자 강의료 증빙 제출, 경력증명서 발급 신청, 계약서 발송 요청 세 가지입니다.</p>
+        <p>개인 DM이 아니라 <strong>Slack 워크플로</strong>로 접수해 주세요. 사업자 강의료 증빙 제출, 경력증명서 발급 신청, 계약서 발송 요청 세 가지입니다. 프리랜서는 별도 제출 서류 없이 교무실 등록만으로 명세서에 자동 반영됩니다.</p>
         <p>DM으로 오면 담당자가 바뀌거나 대화가 묻힐 때 누락될 수 있고, 접수 순서도 남지 않습니다.</p>
-        <p>각 항목의 처리 일정은 <a href="#apply-settle">Step 7 · 정산 · 계약서 · 경력증명서</a>에 정리되어 있습니다.</p>
+        <p>각 항목의 처리 일정은 <a href="#apply-settle">Step 7 · 정산</a>에 정리되어 있습니다.</p>
       </div></details>
 
       <details><summary>명세서 금액이 실제와 다릅니다.</summary><div class="body">
@@ -1007,7 +1053,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <a href="https://b2bsparta.com/tutorguide" target="_blank" rel="noopener">강사 및 기술튜터 운영 가이드<span>b2bsparta.com/tutorguide</span></a>
       <a href="https://b2bsparta.com/axhub" target="_blank" rel="noopener">교무실 이용 가이드<span>b2bsparta.com/axhub</span></a>
       <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드<span>b2bsparta.com/axslackworkflow</span></a>
-      <a href="https://teamsparta.notion.site/3d12dc3ef51480d692a3e0f2d274bd16?pvs=74" target="_blank" rel="noopener">강사·기술튜터 정산 절차 (프리랜서 / 사업자)</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집<span>최초 계약 시 1회 · 담당자명 「이다은」</span></a>
       <a href="https://teamsparta.notion.site/3af2dc3ef514808f88a6d83db8b2f991" target="_blank" rel="noopener">활동 제한 및 계약 해지 기준<span>teamsparta.notion.site</span></a>
       <a href="https://teamsparta.notion.site/3ae2dc3ef514802c96c5fcfc5afd11da" target="_blank" rel="noopener">문의 방법<span>teamsparta.notion.site</span></a>
       <a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서 양식<span>b2bsparta.com/invoice</span></a>
