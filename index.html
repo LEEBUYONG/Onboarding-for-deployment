@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>강사·기술튜터 온보딩 | 팀스파르타 AX교육팀 ver26.09</title>
+<title>강사·기술튜터 온보딩 | 팀스파르타 AX교육팀v26.09.11</title>
 <meta name="description" content="팀스파르타 AX교육팀에 합류한 강사·기술튜터를 위한 온보딩 안내. 역할, 교육 전·중·후 할 일, 현장 유의사항, 지원·정산 방법.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,6 +93,8 @@ a:hover{border-bottom-color:var(--accent)}
   background:var(--alert-soft);border-left:3px solid var(--alert);
   padding:16px 18px;border-radius:0 8px 8px 0;margin:28px 0 0
 }
+.callout.info{background:var(--accent-soft);border-left-color:var(--accent)}
+.callout.info .k{color:var(--accent)}
 .callout .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--alert);font-weight:600;flex:0 0 auto;padding-top:3px}
 .callout p{margin:0;color:var(--ink);font-size:15px}
 .callout p + p{margin-top:6px}
@@ -237,7 +239,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
 <header class="hero">
   <div class="wrap">
-    <p class="brandline">팀스파르타 AX교육팀 · 온보딩 ver26.09</p>
+    <p class="brandline">팀스파르타 AX교육팀 · 온보딩 v26.09.11 </p>
     <h1>무엇을 준비하고,<br>현장에서 무엇을 하나요</h1>
     <p class="lede">순서대로 따라오시면 됩니다. Slack과 교무실 세팅부터 현장에서 지키셔야 할 것까지, 이 페이지에 순서대로 정리되어 있습니다. 팀스파르타 기업교육은 평균 교육 만족도 <strong>4.6점(5점 만점)</strong>을 유지하고 있고, 그 기준은 매 현장에서 강사와 기술튜터가 함께 만듭니다.</p>
 
@@ -245,8 +247,16 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <span class="k">필수</span>
       <div>
         <p><strong>온보딩에 참석하지 않으면 교육 배정이 불가합니다.</strong></p>
-        <p>이번 회차에 참석하지 못하셨다면 다음 온보딩에 반드시 참석해 주셔야 배정이 시작됩니다.</p>
-        <p>다음 회차 일정은 Slack 공지 채널로 안내드립니다.</p>
+        <p>신규 강사·기술튜터 온보딩은 <strong>매월 2주차·4주차 금요일 오후 3시(15:00~16:00), 온라인 ZOOM</strong>으로 진행됩니다.</p>
+        <p>교육 배정은 온보딩 참석과 Slack·교무실 세팅, 정산 정보 입력, 가능 일정 등록이 끝난 뒤 순차적으로 검토됩니다. 다만 <strong>참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong> 회차별 ZOOM 링크·참석 확인·질문은 Slack 온보딩 안내 스레드로 안내드립니다.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <span class="k">회차 선택</span>
+      <div>
+        <p><strong>빠른 교육 배정을 원하시면 — 2주차 금요일</strong> 온보딩 참석을 권합니다. 세팅 완료 이후 배정이 순차 검토됩니다. 다만 이 경우 <strong>계약 기준일이 참석하신 달의 1일자로 적용될 수 있어</strong> 실제 배정 시작일과 다를 수 있습니다. 이 점을 이해하신 뒤 참석 회차를 선택해 주세요.</p>
+        <p><strong>계약 기준일과 활동 시작 시점을 맞추고 싶으시면 — 4주차 금요일</strong> 온보딩 참석을 권합니다. 원칙적으로 다음 달 1일자 계약 대상자로 분류되며, 배정도 차월 1일 이후 순차 검토됩니다.</p>
       </div>
     </div>
   </div>
@@ -261,6 +271,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     <a href="#field">현장 유의사항</a>
     <a href="#standard">협업 기준</a>
     <a href="#apply">지원·정산·문의</a>
+    <a href="#tools">대표 교육·툴</a>
     <a href="#faq">FAQ</a>
   </div>
 </nav>
@@ -299,7 +310,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
           <li><strong>Google 계정으로 가입합니다</strong> — 다른 방식으로는 가입할 수 없습니다. 가입 화면에서 <strong>「행정 안내」 경로</strong>로 들어가 가입해 주세요. 채용 지원(강사 등록) 경로로 가입하시면 다른 시스템으로 분기되어 승인 처리가 되지 않습니다</li>
           <li><strong>프로필을 최신화합니다</strong> — 이름, 연락처, 차량 보유 여부</li>
           <li><strong>Slack 멤버 ID를 입력합니다</strong><br><span class="mono">Slack 프로필 → 프로필 보기 → 멤버 ID 복사 → 교무실에 붙여넣기</span></li>
-          <li><strong>내 일정에 교육 가능·불가 일정을 등록합니다</strong> — 초기 배정은 이 일정을 기준으로 진행됩니다. 웬만하면 <strong>당월과 차월, 총 2개월치</strong>를 등록해 주세요. 한 달만 등록되어 있으면 다음 달 교육 제안 대상에서 빠지게 됩니다</li>
+          <li><strong>내 일정에 교육 가능·불가 일정을 등록합니다</strong> — 초기 배정은 이 일정을 기준으로 진행됩니다. <strong>실제로 참여 가능한 일정만 ‘가능’으로</strong> 체크하시고, 당월뿐 아니라 <strong>이후 2~3개월치</strong>를 미리 등록해 주세요(예: 10~12월 계약 구간 대상자는 10·11·12월). 한 달만 등록되어 있으면 다음 달 교육 제안 대상에서 빠지게 됩니다. 가능으로 등록해 배정이 확정된 교육을 이후 불가로 바꿔 취소가 반복되면, 향후 지원·배정에서 후순위로 검토될 수 있습니다</li>
           <li><strong>모바일 앱(PWA)을 설치합니다</strong> — 브라우저 메뉴에서 “홈 화면에 추가”. 일정 입력 알림을 받을 수 있습니다</li>
         </ol>
 
@@ -510,7 +521,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <ul class="tick">
           <li>강사로 배정된 교육 → <strong>강사</strong> 탭의 준비·진행 기준을 따릅니다</li>
           <li>기술튜터로 배정된 교육 → <strong>기술튜터</strong> 탭의 기준을 따릅니다</li>
-          <li>강사 자격이 있으셔도 <strong>합류 후 첫 교육은 기술튜터로 참여</strong>하시게 됩니다. 자세한 내용은 <a href="#pilot">Step 3 파일럿 배정 기간</a>을 확인해 주세요</li>
+          <li>강사 자격이 있으셔도 <strong>합류 후 첫 교육은 기술튜터로 참여</strong>하시게 됩니다. 자세한 내용은 <a href="#pilot">Step 3 파일럿 배정</a>을 확인해 주세요</li>
         </ul>
         <div class="quote">교육 진행 방식은 텍스트로 아무리 설명해도 현장에서 한 번 보는 것만 못합니다.</div>
       </div>
@@ -530,32 +541,40 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
   <!-- ============ Step 3 파일럿 ============ -->
   <section id="pilot">
     <p class="sec-k">Step 3</p>
-    <h2>파일럿 배정 기간</h2>
-    <p class="intro">신규로 합류하신 분은 강사·기술튜터 구분 없이 <strong>Lv.1 기술튜터</strong>로 <strong>3개월</strong>의 파일럿 배정 기간을 거칩니다. 교육 횟수와 무관하게 3개월 경과가 필수 조건입니다.</p>
+    <h2>파일럿 배정: 첫 교육 매칭</h2>
+    <p class="intro">파일럿 배정은 신규 합류자의 <strong>첫 교육 매칭 1회</strong>를 의미합니다. 별도의 계약 형태나 레벨 산정 기간이 아니며, 파일럿 계약·파일럿 기간·통과/미통과 같은 개념은 운영하지 않습니다. 첫 교육은 기존 인력과 페어로 배정되어 현장 운영 방식과 역할을 먼저 경험하는 단계입니다.</p>
 
     <div class="card">
       <h3>어떻게 운영되나요</h3>
       <ul class="tick">
         <li><strong>첫 교육 1회</strong>는 신규(Lv.1)와 기존(Lv.3) 인력이 페어로 들어갑니다. 이 1회는 담당자가 직접 배정합니다</li>
-        <li>기술튜터 페어 매칭은 1회로 진행되지만, 이후 바로 강사로 지원하시기보다 <strong>최소 3회 기술튜터로 참여하신 뒤 강사에 지원</strong>하시기를 권해드립니다. 자세한 내용은 <a href="#level-inst">Step 4 · 강사 파일럿 기간 계약 연장</a>에서 확인해 주세요</li>
-        <li><strong>교무실 캘린더 일정 입력은 온보딩 시간에</strong> 함께 진행합니다. 등록은 <strong>당월과 차월, 총 2개월치</strong>를 권합니다</li>
+        <li>파일럿 배정 완료만으로 계약 조건이나 레벨이 자동으로 바뀌지는 않습니다. 첫 교육은 현장을 먼저 경험하시는 자리입니다</li>
+        <li>강사로 합류하신 분도 첫 교육은 기술튜터로 참여하시며, 강사 투입 기준은 <a href="#level-inst">Step 4 · 강사 투입 기준</a>에서 확인해 주세요</li>
+        <li><strong>교무실 캘린더 일정 입력은 온보딩 시간에</strong> 함께 진행합니다</li>
       </ul>
-      <div class="quote">등록한 일정을 기준으로 배정이 이루어집니다. 일정 관리와 최신화는 <a href="#s-portal">Step 1 · 02 교무실</a>을 참고해 주세요.</div>
+      <div class="quote">교육 배정은 온보딩 참석, Slack·교무실 세팅, 정산 정보 입력, 가능 일정 등록이 완료된 이후 순차적으로 검토됩니다. 다만 <strong>온보딩 참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong></div>
 
       <h3 style="margin-top:28px">첫 배정을 기다리는 동안 — 지원해도 됩니다</h3>
       <p class="why">가장 많이 들어오는 질문입니다. 일정을 등록하셨다면 담당자 연락을 기다리시는 것이 기본이지만, 가만히 기다리셔야 하는 것은 아닙니다.</p>
       <ul class="tick">
-        <li>첫 교육 배정 받기 전, <strong>원하시는 교육이 있으면 미리 지원해 두셔도 됩니다.</strong> 상황에 따라 <strong>지원하신 교육이 첫 배정 교육이 되는 경우</strong>도 있습니다</li>
-        <li>첫 배정 안내를 받으신 뒤에도, 다른 교육에 <strong>추가로 지원하실 수 있습니다.</strong> 첫 배정은 이미 완료된 것으로 보기 때문에, 지원하신 교육이 더 이른 일자에 진행되더라도 검토 후 배정이 가능합니다</li>
-        <li>첫 배정 이후의 지원은 <strong>기술튜터풀/강사풀 채널에서 자유롭게</strong> 하시면 됩니다. 지원 방법은 <a href="#apply-post">Step 7 · 교육 공고에 지원하는 방법</a>을 참고해 주세요</li>
-        <li>배정받으신 교육은 <strong>교무실</strong>에서 확인 가능하고, 이후 <strong>PJM 분들께서 교안과 함께 상세히 안내</strong>드릴 예정입니다. </li>
+        <li>등록해 주신 일정을 보고 <strong>담당자가 첫 1회를 배정</strong>해 연락드립니다. 그 연락을 기다리시면 됩니다</li>
+        <li>그 전에 <strong>원하시는 교육이 있으면 미리 지원해 두셔도 됩니다.</strong> 상황에 따라 <strong>지원하신 교육이 첫 배정 교육이 되는 경우</strong>도 있습니다</li>
+        <li>첫 배정 안내를 받으신 뒤에도, 다른 달 교육에 <strong>추가로 지원하실 수 있습니다.</strong> 첫 배정은 이미 완료된 것으로 보기 때문에, 지원하신 교육이 더 이른 일자에 진행되더라도 검토 후 배정이 가능합니다</li>
+        <li>첫 배정 이후의 지원은 <strong>기술튜터풀 채널에서 자유롭게</strong> 하시면 됩니다. 지원 방법은 <a href="#apply-post">Step 7 · 교육 공고에 지원하는 방법</a>을 참고해 주세요</li>
       </ul>
+      <div class="quote">첫 배정 교육이 <strong>반드시 AI 리터러시 교육은 아닙니다.</strong> 직무 경험과 포트폴리오를 보고 프로젝트형(PBL) 교육이 더 맞다고 판단되면 그쪽으로 배정드리는 경우도 있습니다. 이때는 운영 방식과 난이도가 조금 달라서 배정 시 미리 안내드립니다.</div>
+    </div>
+
+    <div class="card">
+      <h3>일부 시기에는 배정 가능한 교육이 적을 수 있습니다</h3>
+      <p>교육 배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행됩니다. 특히 일부 월에는 <strong>임원 교육·PBL·심화 과정 등 특수 교육 비중이 높아</strong> 신규 합류자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있습니다. 이 경우 첫 배정까지 시간이 걸릴 수 있으며, 배정 가능한 교육이 생기는 대로 순차적으로 안내드립니다.</p>
+      <p>배정 가능성을 높이려면 교무실에 <strong>실제 참여 가능한 일정을 충분히</strong> 등록해 주세요. 일정 등록 방법은 <a href="#s-portal">Step 1 · 02 교무실</a>을 참고해 주세요.</p>
     </div>
 
     <details style="margin-top:14px">
       <summary>왜 이렇게 시작하나요</summary>
       <div class="body">
-        <p>평가를 위한 기간이 아니라, 현장을 먼저 보시라는 기간입니다. 첫 현장에서 아래를 익히고 나면 강사로 나갈 때 무엇을 준비해야 하는지가 예측 가능해집니다.</p>
+        <p>평가를 위한 기간이 아니라, 현장을 먼저 보시라는 취지입니다. 첫 현장에서 아래를 익히고 나면 강사로 나갈 때 무엇을 준비해야 하는지가 예측 가능해집니다.</p>
         <ul class="tick">
           <li>교육 현장 분위기와 전체 운영 흐름</li>
           <li>기존 강사의 강의 진행 및 시간 운영 방식</li>
@@ -567,7 +586,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     </details>
 
     <details>
-      <summary>기간 중 확인하는 것</summary>
+      <summary>활동 초기에 무엇을 보나요</summary>
       <div class="body">
         <ul class="tick">
           <li>교육 전 준비 및 교안·운영안 숙지</li>
@@ -577,7 +596,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
           <li>교무실·Slack 등 운영 기준 준수</li>
           <li>고객사·교육생·페어 인력 피드백</li>
         </ul>
-        <p style="margin-top:12px"><strong>시연 영상을 아직 제출하지 않으셨다면</strong> 파일럿 기간 안에 제출해 주세요. 고객사에 전달되는 필수 자료로, 대면 시연 인터뷰와는 별개입니다.</p>
+        <p style="margin-top:12px"><strong>시연 영상을 아직 제출하지 않으셨다면</strong> 첫 배정 전후 활동 초기에 제출해 주세요. 고객사에 전달되는 필수 자료로, 대면 시연 인터뷰와는 별개입니다.</p>
       </div>
     </details>
   </section>
@@ -586,71 +605,91 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
   <section id="level">
     <p class="sec-k">Step 4</p>
     <h2>레벨과 계약</h2>
-    <p class="intro">파일럿 기간은 <strong>첫 계약일을 기준으로 3개월</strong>입니다. 이 시점에 참여 횟수를 기준으로 계약 연장 여부가 결정됩니다.</p>
+    <p class="intro">계약은 개인별 합류일 기준으로 3개월씩 계산하지 않고, <strong>분기 구간</strong>에 맞춰 진행됩니다. 신규 기술튜터는 최초 계약 기간 내 참여 횟수를 기준으로 다음 계약 구간의 적용 기준을 검토합니다. 세부 정책은 확정되는 대로 별도 안내드립니다.</p>
 
-    <div class="card" id="level-tutor">
-      <h3>기술튜터 — 파일럿 기간 계약 연장</h3>
-      <div class="scroll">
+    <div class="card">
+      <h3>계약 구간 안내</h3>
+      <ul class="tick">
+        <li>계약은 아래 <strong>분기 단위 구간</strong>에 맞춰 진행됩니다 — <strong>1~3월 / 4~6월 / 7~9월 / 10~12월</strong></li>
+        <li>분기 중간에 합류하신 경우, 최초 계약 기간은 다음 정규 구간에 맞추기 위해 <strong>1개월 또는 2개월</strong>로 짧아질 수 있습니다</li>
+        <li>계약서 발송 일정과 세부 계약 기간은 대상자별로 <strong>별도 안내</strong>됩니다</li>
+      </ul>
+      <div class="scroll" style="margin-top:16px">
         <table>
-          <colgroup><col style="width:16%"><col style="width:42%"><col style="width:42%"></colgroup>
-          <tr><th>구분</th><th>기준</th><th>결과</th></tr>
-          <tr>
-            <td><strong>Lv.1</strong><br><span class="mono" style="font-size:12px">파일럿</span></td>
-            <td>
-              <ol>
-                <li>3개월 내 <strong>15회 이상</strong> 참여</li>
-                <li>3개월 내 15회 미만 참여</li>
-              </ol>
-            </td>
-            <td>
-              <ol>
-                <li>Lv.2 전환 + 6개월 계약</li>
-                <li>계약 미연장</li>
-              </ol>
-            </td>
-          </tr>
+          <colgroup><col style="width:34%"><col style="width:33%"><col style="width:33%"></colgroup>
+          <tr><th>합류 시점</th><th>최초 계약 기간</th><th>이후 정규 계약 구간</th></tr>
+          <tr><td>1월</td><td>1~3월</td><td>4~6월</td></tr>
+          <tr><td>2월</td><td>2~3월</td><td>4~6월</td></tr>
+          <tr><td>3월</td><td>3월</td><td>4~6월</td></tr>
+          <tr><td>4월</td><td>4~6월</td><td>7~9월</td></tr>
+          <tr><td>5월</td><td>5~6월</td><td>7~9월</td></tr>
+          <tr><td>6월</td><td>6월</td><td>7~9월</td></tr>
+          <tr><td>7월</td><td>7~9월</td><td>10~12월</td></tr>
+          <tr><td>8월</td><td>8~9월</td><td>10~12월</td></tr>
+          <tr><td><strong>9월</strong></td><td><strong>9월</strong></td><td><strong>10~12월</strong></td></tr>
+          <tr><td>10월</td><td>10~12월</td><td>다음 해 1~3월</td></tr>
+          <tr><td>11월</td><td>11~12월</td><td>다음 해 1~3월</td></tr>
+          <tr><td>12월</td><td>12월</td><td>다음 해 1~3월</td></tr>
         </table>
       </div>
-      <ul class="tick" style="margin-top:16px">
-        <li>3개월간 참여 횟수 카운트 대상 교육은 <strong>AI 리터러시 교육</strong>입니다. 구체적으로는 <a href="#slot-courses">기본 활용 교육(Literacy L1)</a>과 <strong>심화 활용 교육(Literacy L2)</strong>까지를 말합니다. 바이브코딩·데이터 분석·업무 자동화처럼 전문성이 필요한 교육도 <strong>L2에 해당하면 카운트</strong>됩니다</li>
-        <li>반대로 <strong>프로젝트형(PBL)과 해커톤은 카운트에 포함되지 않습니다.</strong> 배정 자체는 가능하지만 파일럿 횟수와는 별개입니다</li>
-        <li>3개월 이후 <strong>6개월 정식 계약</strong>부터는 레벨의 승급·강등이 적용됩니다</li>
-        <li>카운트 기준은 정식 계약 후 파일럿 기준과 달라질 수 있으며, 세부 내용은 향후 별도로 안내드립니다</li>
-        <li>레벨별 시급은 <strong>내부 운영 가이드 문서</strong>로 담당 매니저가 개별 전달드립니다. 본인의 현재 레벨은 <a href="#s-profile">교무실 내 자격</a>에서 확인하실 수 있습니다</li>
-        <li><strong>정규 계약 단계의 시급은 지금 안내드리지 않습니다.</strong> 파일럿 기간이 끝나고 정규 계약을 진행하기 전에 별도로 안내드릴 예정입니다</li>
+      <div class="quote">계약은 개인별 합류일 기준으로 3개월씩 이어지는 방식이 아니라, 정해진 분기 구간에 맞춰 정리됩니다.</div>
+    </div>
+
+    <div class="card" id="level-tutor">
+      <h3>신규 기술튜터 — 최초 카운팅 기준</h3>
+      <ul class="tick">
+        <li>신규 기술튜터는 최초 계약 기간 동안 <strong>Lv.1</strong>로 시작합니다</li>
+        <li>최초 계약 기간 내 <strong>산정 대상 교육 15회</strong> 참여 여부로 다음 계약 구간의 적용 기준을 검토합니다</li>
+        <li>최초 계약이 <strong>1개월·2개월·3개월</strong> 중 무엇이든 <strong>15회 기준은 동일</strong>하게 적용됩니다</li>
+        <li>최초 계약 기간 내 15회를 채우지 못하면 그 카운트는 다음 구간으로 <strong>이월되지 않고 리셋</strong>됩니다. 다음 구간에서는 새 계약 기간을 기준으로 다시 카운팅이 시작됩니다</li>
       </ul>
+      <div class="quote"><strong>산정 대상 교육</strong>은 기본 활용 교육(<a href="#slot-courses">Literacy L1</a>)과 심화 활용 교육(Literacy L2)입니다. 바이브코딩·데이터 분석·업무 자동화도 L2에 해당하면 카운트됩니다. <strong>PBL·해커톤은 포함되지 않습니다</strong>(배정은 가능하나 카운트와 별개). PBL·장기 과정·온라인 멘토링 등의 세부 카운팅 기준은 교육별로 별도 안내됩니다.</div>
+      <ul class="tick" style="margin-top:16px">
+        <li>레벨 유지·승급·강등 등 세부 기준은 <strong>별도 안내</strong>됩니다</li>
+        <li>레벨별 시급은 담당 매니저가 <strong>내부 운영 가이드 문서로 개별 전달</strong>합니다. 본인의 현재 레벨은 <a href="#s-profile">교무실 내 자격</a>에서 확인하실 수 있습니다</li>
+      </ul>
+
+      <details style="margin-top:8px">
+        <summary>카운팅 리셋 예시</summary>
+        <div class="body">
+          <p><strong>예시 1 · 2월 합류자</strong><br>최초 계약이 2~3월로 진행될 수 있습니다. 이 기간 동안 산정 대상 교육 15회 참여 여부를 확인합니다. 2~3월에 15회를 못 채우면 그 카운트는 4~6월로 이월되지 않고, 4월부터 4~6월 구간 기준으로 새로 카운팅이 시작됩니다. 즉 2~3월 참여 횟수에 4월 이후 횟수를 더해 15회를 채우는 방식이 아닙니다.</p>
+          <p style="margin-top:12px"><strong>예시 2 · 9월 합류자</strong><br>최초 계약이 9월 한 달 기준으로 진행될 수 있습니다. 9월 동안 15회를 못 채우면 그 카운트는 10~12월로 이월되지 않고, 10월부터 10~12월 구간 기준으로 새로 카운팅이 시작됩니다.</p>
+        </div>
+      </details>
     </div>
 
     <div class="card" id="level-inst">
-      <h3>강사 — 파일럿 기간 계약 연장</h3>
+      <h3>강사 투입 기준</h3>
       <ul class="tick">
-        <li>3개월 내 <strong>10회 이상</strong> 참여 시 6개월 계약으로 연장됩니다. 참여 형태가 강사·튜터 등으로 다양하기 때문에 <strong>만족도 점수와 협업 점수</strong>도 함께 참고합니다</li>
-        <li>고객사도 회사도 안정적인 진행을 중요하게 보기 때문에, <strong>보통 기술튜터로 3회 정도 참여하신 뒤 강사로 투입</strong>되는 경우가 많습니다</li>
-        <li>시급은 <strong>대면 시연 결과로 예측 레벨을 부여</strong>해 정해지고, 첫 파일럿 강의에서 이슈가 없으면 그대로 확정됩니다</li>
+        <li>강사는 기술튜터 참여 <strong>횟수 조건을 반드시 충족하지 않아도</strong> 됩니다</li>
+        <li>다만 강사 투입 전 <strong>최소 3회 이상 기술튜터로 교육에 참여</strong>하셔야 합니다. 교육 운영 방식·현장 흐름·학습자 대응 방식·운영 기준을 먼저 경험한 뒤 투입이 검토됩니다</li>
+        <li>최소 3회를 채우셔도 강사 투입이 자동으로 보장되지는 않습니다. 교육별 <strong>필요 역량·강의 경험·현장 커뮤니케이션·교육 적합도</strong>를 종합적으로 고려해 최종 투입 여부가 결정됩니다</li>
       </ul>
     </div>
 
     <div class="card" id="contract">
-      <h3>계약은 이렇게 진행됩니다</h3>
+      <h3>계약서와 발주서</h3>
       <ul class="tick">
-        <li><strong>계약서</strong> — 계약 기간과 연장 조건만 담깁니다. 레벨은 기재하지 않습니다</li>
-        <li><strong>발주서</strong> — 파일럿 기간을 포함해 <strong>모든 교육이 건별 계약</strong>입니다. 교육명·시간·일자·금액·레벨이 기재되며, <strong>건마다 교무실에서 본인이 직접 승인</strong>하셔야 합니다</li>
+        <li><strong>계약서</strong> — 일정 기간 동안의 활동 조건과 기준을 정하는 문서입니다. 레벨은 기재하지 않습니다</li>
+        <li><strong>발주서</strong> — 실제 참여하는 <strong>교육 건별</strong>로 발송되며, 교육 일정·역할·차수·지급 기준을 확인하는 문서입니다. <strong>건마다 교무실에서 본인이 직접 승인</strong>하셔야 합니다</li>
+        <li>교육 중 차수가 추가되거나 별도 일정이 새로 생기면, 기존 교육과 연결된 건이라도 <strong>추가 발주서</strong>가 발송될 수 있습니다</li>
         <li>사전·사후 준비(세팅, 교육 운영 준비 등)에 대한 <strong>별도 비용은 지급되지 않습니다.</strong> 용역 계약 특성상 턴키 방식으로 계약서에 명시됩니다</li>
       </ul>
 
-      <h3 style="margin-top:26px">9월에 합류하신 분은 계약서를 10월 초에 받으십니다</h3>
-      <p class="why">10월부터 계약 방식이 바뀌면서, 8월 24일부터 9월 4일 사이에 합류해 9월 온보딩에 참여하신 분들은 계약서를 조금 늦게 받으시게 됩니다. 순서를 미리 안내드립니다.</p>
+      <h3 style="margin-top:26px">9월 합류자 예외 안내</h3>
+      <p class="why">9월은 계약 프로세스 전환에 따른 예외 운영 기간입니다. 9월에 합류하신 분은 <strong>9월 한 달 기준으로 최초 계약</strong>이 진행되고, 이후 <strong>10~12월 정규 계약 구간</strong>으로 이어집니다.</p>
       <div class="scroll">
         <table>
           <colgroup><col style="width:20%"><col style="width:80%"></colgroup>
           <tr><th>시점</th><th>진행 내용</th></tr>
-          <tr><td><strong>9월</strong></td><td>온보딩을 마치면 <strong>계약서 수령 전이라도 교육에 참여</strong>하실 수 있습니다</td></tr>
-          <tr><td><strong>9월</strong></td><td>진행하시는 교육 건은 <strong>건별 발주서</strong>로 별도 발송·처리됩니다</td></tr>
-          <tr><td><strong>10월 초</strong></td><td>3개월 계약서가 <strong>9월 1일자로 소급되어 일괄 발송</strong>됩니다</td></tr>
-          <tr><td><strong>10월 이후</strong></td><td>교육 건마다 <strong>교무실에서 발주서를 승인</strong>하는 방식으로 운영됩니다</td></tr>
+          <tr><td><strong>9월</strong></td><td>첫 배정과 적응을 위한 예외 운영 기간입니다. 임원 교육·PBL·심화 과정 비중이 높아 신규자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있으며, 본격적인 교육 참여는 10월부터 시작될 수 있습니다</td></tr>
+          <tr><td><strong>9월</strong></td><td>참여 교육은 9월 기준으로 카운트됩니다. 단 <strong>9월 안에 15회를 채우지 못하면 10~12월로 이월되지 않고 리셋</strong>됩니다</td></tr>
+          <tr><td><strong>9월</strong></td><td>계약서 수령 전이라도 교육 참여가 가능하며, 9월 교육은 <strong>건별 발주서</strong>로 처리됩니다</td></tr>
+          <tr><td><strong>10월 초</strong></td><td>계약서 <strong>2건</strong>이 함께 발송됩니다 — <strong>9/1자 1개월 계약서</strong> + <strong>10/1자 3개월 계약서</strong></td></tr>
+          <tr><td><strong>10~12월</strong></td><td>10~12월 정규 계약 구간으로 운영됩니다. 교무실에 <strong>10·11·12월 가능 일정</strong>을 미리 등록해 주세요</td></tr>
         </table>
       </div>
-      <div class="quote">계약서를 먼저 받지 못한 상태로 첫 교육을 진행하시게 되어 번거로우시겠지만, 10월 초에 9월 1일자로 소급 발송되며 <strong>정산에는 영향이 없습니다.</strong> 확인이 필요하신 부분은 담당 매니저에게 언제든 문의해 주세요.</div>
+      <div class="quote">이번 안내는 기존 안내를 보완하기 위한 내용이며, <strong>이미 배정되었거나 참여하신 교육 건의 정산에는 영향이 없습니다.</strong> 계약서 발송 일정과 세부 계약 기간은 대상자별로 별도 안내드립니다. 확인이 필요하신 부분은 담당 매니저에게 문의해 주세요.</div>
     </div>
   </section>
 
@@ -749,7 +788,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
     <div class="card" id="slot-outboarding">
       <h3>활동 검토(아웃보딩) 기준</h3>
-      <p class="why">아웃보딩은 계약을 끝내기 위한 절차가 아니라, 확인된 이슈를 짚고 개선을 합의하는 면담 절차입니다. 개선이 확인되면 정상 배정으로 돌아갑니다. 파일럿이라는 이유로 완화하거나 강화하지 않고 모두에게 동일한 기준이 적용됩니다.</p>
+      <p class="why">아웃보딩은 계약을 끝내기 위한 절차가 아니라, 확인된 이슈를 짚고 개선을 합의하는 면담 절차입니다. 개선이 확인되면 정상 배정으로 돌아갑니다. 특정 시기나 신규 여부를 이유로 완화하거나 강화하지 않고 모두에게 동일한 기준이 적용됩니다.</p>
 
       <div class="scroll">
         <table>
@@ -986,7 +1025,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <details><summary>강사로 합격했는데 왜 기술튜터로 시작하나요?</summary><div class="body">
         <p>팀스파르타 기업교육은 강사와 기술튜터가 한 팀으로 움직이고, 현장마다 고객사 성격·교육생 수준·실습 환경이 모두 다릅니다. 처음부터 단독 강사로 배정되면 그 변수를 혼자 감당하셔야 하고, 특히 장기 교육은 중도 교체가 어려워 고객사와 교육생 모두에게 부담이 큽니다.</p>
         <p>그래서 신규 합류자는 강사·기술튜터 구분 없이 <strong>Lv.1 기술튜터</strong>로 시작하고, 첫 교육 1회는 기존 인력과 페어로 들어가 운영 흐름·교안 활용·역할 분담을 먼저 보시게 됩니다.</p>
-        <p>고객사도 회사도 안정적인 진행을 중요하게 보기 때문에, 보통 기술튜터로 3회 정도 참여하신 뒤 강사로 투입되는 경우가 많습니다. 자세한 내용은 <a href="#pilot">Step 3</a>과 <a href="#level-inst">Step 4</a>를 확인해 주세요.</p>
+        <p>고객사도 회사도 안정적인 진행을 중요하게 보기 때문에, 보통 기술튜터로 3회 정도 참여하신 뒤 강사로 투입되는 경우가 많습니다. 자세한 내용은 <a href="#pilot">Step 3</a>과 <a href="#level-inst">Step 4 · 강사 투입 기준</a>을 확인해 주세요.</p>
       </div></details>
 
       <details><summary>교무실에서 동의 체크를 했는데 계약이 된 건가요?</summary><div class="body">
@@ -995,10 +1034,29 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <p>발송 시점과 9월 합류자 안내는 <a href="#contract">Step 4 · 계약은 이렇게 진행됩니다</a>에 정리해 두었습니다.</p>
       </div></details>
 
-      <details><summary>3개월 안에 참여 횟수를 못 채우면 어떻게 되나요?</summary><div class="body">
-        <p>파일럿 배정 기간은 <strong>첫 계약일 기준 3개월</strong>이고, 이 시점에 계약 연장 여부를 판단합니다. 기술튜터는 3개월 내 15회 이상, 강사는 10회 이상이 연장 조건입니다.</p>
-        <p>충족하지 못하면 계약이 연장되지 않습니다. 별도의 해지 절차가 아니라 <strong>재계약을 진행하지 않는 방식</strong>이며, 강사의 경우 만족도와 협업 점수도 함께 참고합니다.</p>
-        <p>카운트 대상은 AI 리터러시 교육입니다. 자세한 기준은 <a href="#level">Step 4 레벨과 계약</a>에서 확인하실 수 있고, 참여가 어려운 사정이 생기면 미리 공유해 주시면 함께 방법을 찾아보겠습니다.</p>
+      <details><summary>최초 계약 기간 안에 15회를 못 채우면 어떻게 되나요?</summary><div class="body">
+        <p>계약은 개인별 합류일 기준 3개월이 아니라 <strong>분기 구간(1~3월 / 4~6월 / 7~9월 / 10~12월)</strong>에 맞춰 진행됩니다. 신규 기술튜터는 <strong>최초 계약 기간 안에 산정 대상 교육 15회</strong> 참여 여부를 확인합니다.</p>
+        <p>최초 계약이 1개월·2개월·3개월 중 무엇이든 15회 기준은 동일합니다. 15회를 채우지 못하면 그 카운트는 다음 계약 구간으로 <strong>이월되지 않고 리셋</strong>되고, 다음 구간에서 새 계약 기간 기준으로 다시 카운팅이 시작됩니다.</p>
+        <p>산정 대상은 기본 활용(L1)·심화 활용(L2) 교육입니다. 자세한 내용은 <a href="#level">Step 4 레벨과 계약</a>에서 확인하실 수 있고, 참여가 어려운 사정이 생기면 미리 공유해 주시면 함께 방법을 찾아보겠습니다.</p>
+      </div></details>
+
+      <details><summary>온보딩을 들으면 바로 교육에 배정되나요?</summary><div class="body">
+        <p>아닙니다. 온보딩 참석과 필수 세팅(Slack·교무실·정산 정보·가능 일정)을 마치면 배정 대상자로 검토됩니다.</p>
+        <p>배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행되므로, 참석 직후 즉시 배정이 보장되지는 않습니다. 특히 일부 월에는 임원 교육·PBL·심화 과정 비중이 높아 신규 합류자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있습니다.</p>
+        <p>배정 가능성을 높이려면 교무실에 <a href="#s-portal">실제 참여 가능한 일정</a>을 충분히 등록해 주세요.</p>
+      </div></details>
+
+      <details><summary>2주차와 4주차 온보딩은 무엇이 다른가요?</summary><div class="body">
+        <p><strong>2주차 온보딩</strong>은 빠른 교육 배정을 원하시는 분께 권합니다. 세팅 완료 이후 배정이 순차 검토됩니다. 다만 이 경우 <strong>계약 기준일이 참석하신 달의 1일자로 적용될 수 있어</strong> 실제 배정 시작일과 다를 수 있으니, 이 점을 이해하신 뒤 참석 회차를 정해 주세요.</p>
+        <p><strong>4주차 온보딩</strong>은 계약 기준일과 실제 활동 시작 시점을 차월 기준으로 맞추고 싶은 분께 권합니다. 원칙적으로 다음 달 1일자 계약 대상자로 분류되고, 배정도 차월 1일 이후 순차 검토됩니다.</p>
+        <p>두 회차 모두 매월 금요일 오후 3시, 온라인 ZOOM으로 진행됩니다.</p>
+      </div></details>
+
+      <details><summary>분기 마지막 달(3·6·9·12월)에 합류하면 계약과 카운팅은 어떻게 되나요?</summary><div class="body">
+        <p>3·6·9·12월처럼 <strong>분기 마지막 달에 합류</strong>하시면, 최초 계약이 그 <strong>한 달 기준</strong>으로 짧게 진행되고 이후 다음 분기 정규 3개월 구간으로 이어집니다. 예를 들어 3월 합류는 3월 → 4~6월, 6월 합류는 6월 → 7~9월, 9월 합류는 9월 → 10~12월, 12월 합류는 12월 → 다음 해 1~3월입니다.</p>
+        <p>그 한 달 안에 산정 대상 교육 15회를 못 채우면 다음 구간으로 <strong>이월되지 않고 리셋</strong>되며, 다음 구간에서 새 계약 기간 기준으로 다시 카운팅이 시작됩니다. (분기 중간에 합류하시면 최초 계약이 2개월이 될 수도 있으며, 이 경우에도 15회 기준은 동일합니다.)</p>
+        <p><strong>9월은 계약 프로세스 전환에 따른 예외 기간</strong>이라, 10월 초에 <strong>9/1자 1개월 계약서와 10/1자 3개월 계약서 총 2건</strong>이 함께 발송됩니다. 이미 배정·참여하신 교육 건의 정산에는 영향이 없습니다.</p>
+        <p>합류 시점별 최초 계약 기간은 <a href="#level">Step 4 · 계약 구간 안내</a> 표에서, 9월 예외는 <a href="#contract">Step 4 · 9월 합류자 예외 안내</a>에서 확인하실 수 있습니다.</p>
       </div></details>
 
       <details><summary>시급을 조정해 달라고 요청할 수 있나요?</summary><div class="body">
