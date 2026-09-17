@@ -258,10 +258,15 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
         <p><strong>빠른 교육 배정을 원하시면 — 2주차 금요일</strong> 온보딩 참석을 권합니다. 세팅 완료 이후 배정이 순차 검토됩니다. 다만 이 경우 <strong>계약 기준일이 참석하신 달의 1일자로 적용될 수 있어</strong> 실제 배정 시작일과 다를 수 있습니다. 이 점을 이해하신 뒤 참석 회차를 선택해 주세요.</p>
         <p><strong>계약 기준일과 활동 시작 시점을 맞추고 싶으시면 — 4주차 금요일</strong> 온보딩 참석을 권합니다. 원칙적으로 다음 달 1일자 계약 대상자로 분류되며, 배정도 차월 1일 이후 순차 검토됩니다.</p>
 
-        <figure class="shot">
-          <img src="image/Onboarding_discription_image.png" alt="온보딩 참여 시점에 따른 계약·교육 배정 타임라인 예시 — 1차 온보딩(4/11 금 참여 시 계약 기준일 4/1, 계약서 5월 초 발송)과 2차 온보딩(4/25 금 참여 시 계약 기준일 5/1, 실제 교육 배정은 5/1 이후 순차 진행) 비교" loading="lazy" data-fallback="image/Onboarding_discription_image.jpg|image/Onboarding_discription_image.jpeg|image/Onboarding_discription_image.webp|image/Onboarding_discription_image.PNG">
-          <figcaption>온보딩 참여 회차별 계약·배정 타임라인 예시</figcaption>
-        </figure>
+        <details style="margin-top:16px">
+          <summary>회차별 계약·배정 타임라인 예시 이미지로 보기</summary>
+          <div class="body">
+            <figure class="shot">
+              <img src="image/Onboarding_discription_image.png" alt="온보딩 참여 시점에 따른 계약·교육 배정 타임라인 예시 — 1차 온보딩(4/11 금 참여 시 계약 기준일 4/1, 계약서 5월 초 발송)과 2차 온보딩(4/25 금 참여 시 계약 기준일 5/1, 실제 교육 배정은 5/1 이후 순차 진행) 비교" loading="lazy" data-fallback="image/Onboarding_discription_image.jpg|image/Onboarding_discription_image.jpeg|image/Onboarding_discription_image.webp|image/Onboarding_discription_image.PNG">
+              <figcaption>온보딩 참여 회차별 계약·배정 타임라인 예시</figcaption>
+            </figure>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -619,8 +624,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     <div class="card">
       <h3>어떻게 운영되나요</h3>
       <ul class="tick">
-        <li><strong>첫 교육 1회</strong>는 담당자가 직접 배정합니다. 지원하고 싶은 특정 교육이 있으시면 <a href="#s-slack">기술튜터풀 채널</a>에서 직접 지원하실 수 있고, 지원하신 교육이 그대로 첫 배정 교육이 되는 경우도 있습니다</li>
-        <li>파일럿 배정 완료만으로 계약 조건이나 레벨이 자동으로 바뀌지는 않습니다. 첫 교육은 현장을 먼저 경험하시는 자리입니다</li>
+        <li><strong>첫 교육 1회</strong>는 담당자가 직접 배정합니다. 지원하고 싶은 특정 교육이 있으시면 기술튜터풀 채널에서 직접 지원하실 수 있고, 지원하신 교육이 그대로 첫 배정 교육이 되는 경우도 있습니다</li>
         <li>강사로 합류하신 분도 첫 교육은 기술튜터로 참여하시며, 강사 투입 기준은 <a href="#level-inst">Step 4 · 강사 투입 기준</a>에서 확인해 주세요</li>
         <li><strong><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실</a> 캘린더 일정 입력은 온보딩 시간에</strong> 함께 진행합니다</li>
       </ul>
@@ -659,8 +663,8 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
       <summary>왜 첫 배정은 담당자가 직접 매칭하나요</summary>
       <div class="body">
         <p>신규로 합류하신 분은 아직 현장 경험이 없기 때문에, 첫 교육만큼은 회사가 안정적으로 운영해 온 <strong>기존 기술튜터·강사와 매칭</strong>되도록 담당자가 직접 관리하고 있습니다. 처음부터 자유 지원으로 열어두면 현장에 대한 이해가 없는 상태로 배정될 수 있어, 고객사와 신규 합류자 모두에게 부담이 커지기 때문입니다.</p>
-        <p>다만 이 방식은 담당자가 한 분 한 분의 일정과 이력을 직접 살펴 매칭해야 해서 <strong>운영 리소스가 많이 드는 방식</strong>이기도 합니다. 신규 합류가 늘어날수록(특히 10월 이후) 트래킹 리소스에 한계가 생겨, 담당자가 모든 분께 개별적으로 배정을 도와드리기 어려워지고 있습니다.</p>
-        <p>그래서 앞으로는 담당자가 개별로 배정해 드리는 방식보다, <strong>기술튜터풀 채널에서 직접 지원하시는 방식</strong>으로 점차 전환될 예정입니다. 지금 단계에서 미리 지원해 보시는 것도 이런 변화에 익숙해지는 데 도움이 됩니다.</p>
+        <p>다만 이 방식은 담당자가 한 분 한 분의 일정과 이력을 직접 살펴 매칭해야 해서 <strong>운영 리소스가 많이 드는 방식</strong>이기도 합니다. 신규 합류가 늘어날수록 트래킹 리소스에 한계가 생겨, 담당자가 모든 분께 개별적으로 배정을 도와드리기 어려워지고 있습니다.</p>
+        <p>그래서 2회차부터는 담당자가 개별로 배정해 드리는 방식보다, <strong>기술튜터풀 채널에서 직접 지원하시는 방식</strong>으로 진행되며, 지금 단계에서 미리 지원해 보시는 것도 이런 변화에 익숙해지는 데 도움이 됩니다.</p>
       </div>
     </details>
 
