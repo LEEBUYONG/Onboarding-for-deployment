@@ -3,47 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>강사·기술튜터 온보딩 | 팀스파르타 AX교육팀 v26.09.17</title>
-<meta name="description" content="팀스파르타 AX교육팀에 합류한 강사·기술튜터를 위한 온보딩 안내. 역할, 교육 전·중·후 할 일, 현장 유의사항, 지원·정산 방법.">
+<title>강사·보조강사(기술튜터) 온보딩 | 팀스파르타 AX교육팀 v26.09.22</title>
+<meta name="description" content="팀스파르타 AX교육팀에 합류한 강사·보조강사(기술튜터)를 위한 온보딩 안내. 역할, 교육 전·중·후 할 일, 현장 유의사항, 계약·정산 절차.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
 <style>
 :root{
-  --bg:#EFF1EE;
-  --surface:#FFFFFF;
-  --surface-2:#F5F7F4;
-  --ink:#14181A;
-  --ink-2:#39423E;
-  --muted:#69736D;
-  --line:#D4D9D4;
-  --line-soft:#E4E8E3;
-  --accent:#17594A;
-  --accent-soft:#DFEBE6;
-  --on-accent:#FFFFFF;
-  --signal:#8F4A11;
-  --signal-soft:#F7EBDF;
-  --alert:#8A3626;
-  --alert-soft:#F8E7E3;
+  --bg:#EFF1EE; --surface:#FFFFFF; --surface-2:#F5F7F4;
+  --ink:#14181A; --ink-2:#39423E; --muted:#69736D;
+  --line:#D4D9D4; --line-soft:#E4E8E3;
+  --accent:#17594A; --accent-soft:#DFEBE6; --on-accent:#FFFFFF;
+  --signal:#8F4A11; --signal-soft:#F7EBDF;
+  --alert:#8A3626; --alert-soft:#F8E7E3;
   --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px rgba(20,30,26,.06);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#101413;
-    --surface:#191F1D;
-    --surface-2:#202724;
-    --ink:#E7EBE8;
-    --ink-2:#C0C8C3;
-    --muted:#8A958F;
-    --line:#2C3431;
-    --line-soft:#242B28;
-    --accent:#6DBBA4;
-    --accent-soft:#15302A;
-    --on-accent:#0C1211;
-    --signal:#DFA463;
-    --signal-soft:#31261A;
-    --alert:#E08B7A;
-    --alert-soft:#33201C;
+    --bg:#101413; --surface:#191F1D; --surface-2:#202724;
+    --ink:#E7EBE8; --ink-2:#C0C8C3; --muted:#8A958F;
+    --line:#2C3431; --line-soft:#242B28;
+    --accent:#6DBBA4; --accent-soft:#15302A; --on-accent:#0C1211;
+    --signal:#DFA463; --signal-soft:#31261A;
+    --alert:#E08B7A; --alert-soft:#33201C;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
   }
 }
@@ -56,121 +38,65 @@
   --alert:#E08B7A; --alert-soft:#33201C;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--bg);color:var(--ink);
   font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
   font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;
-  /* 한글이 단어 중간에서 끊기지 않도록 */
   word-break:keep-all;overflow-wrap:break-word;
 }
 h1,h2,h3,h4{font-family:"Gothic A1","Apple SD Gothic Neo",system-ui,sans-serif;margin:0;text-wrap:balance}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
 p{margin:0 0 12px}
-/* 자동 줄바꿈 품질: 끝줄에 한 단어만 남거나 어색하게 끊기는 것을 줄임 */
 p,li,td,th,summary,.quote,.why,.intro,.lede,figcaption{text-wrap:pretty}
-/* 절 단위로 줄을 끊고 싶을 때: 해당 구간을 <span class="cl">...</span> 으로 감싸면
-   그 덩어리가 통째로 다음 줄로 넘어갑니다 (쉼표·마침표 단위 줄바꿈용) */
 .cl{display:inline-block}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
 a:hover{border-bottom-color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 .wrap{max-width:920px;margin:0 auto;padding:0 22px}
 
-/* ---------- hero ---------- */
 .hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
-.brandline{
-  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:18px
-}
+.brandline{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 .hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.22;text-wrap:initial}
-.hero .lede{font-size:18px;color:var(--ink-2);max-width:none;margin-top:18px}
-
-.callout{
-  display:flex;gap:14px;align-items:flex-start;
-  background:var(--alert-soft);border-left:3px solid var(--alert);
-  padding:16px 18px;border-radius:0 8px 8px 0;margin:28px 0 0
-}
+.hero .lede{font-size:18px;color:var(--ink-2);margin-top:18px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--alert-soft);border-left:3px solid var(--alert);padding:16px 18px;border-radius:0 8px 8px 0;margin:28px 0 0}
 .callout.info{background:var(--accent-soft);border-left-color:var(--accent)}
 .callout.info .k{color:var(--accent)}
 .callout .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--alert);font-weight:600;flex:0 0 auto;padding-top:3px}
 .callout p{margin:0;color:var(--ink);font-size:15px}
 .callout p + p{margin-top:6px}
 
-/* ---------- nav ---------- */
-nav.jump{
-  position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:8px
-}
+nav.jump{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:8px}
 nav.jump .inner{display:flex;gap:2px;overflow-x:auto;padding:8px 0;max-width:920px;margin:0 auto}
-nav.jump a{
-  border:none;flex:0 0 auto;padding:6px 13px;border-radius:999px;
-  font-size:13.5px;color:var(--muted);white-space:nowrap
-}
+nav.jump a{border:none;flex:0 0 auto;padding:6px 13px;border-radius:999px;font-size:13.5px;color:var(--muted);white-space:nowrap}
 nav.jump a:hover{background:var(--surface);color:var(--ink)}
 nav.jump a.on{background:var(--accent);color:var(--on-accent)}
 
-/* ---------- sections ---------- */
 section{padding:52px 0;border-bottom:1px solid var(--line-soft);scroll-margin-top:60px}
 section:last-of-type{border-bottom:none}
-.sec-k{
-  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:10px
-}
+.sec-k{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 section h2{font-size:clamp(24px,3.4vw,31px);font-weight:800;letter-spacing:-.02em}
-section > .intro{color:var(--ink-2);margin:14px 0 26px;max-width:none}
-
+section > .intro{color:var(--ink-2);margin:14px 0 26px}
 .card{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;padding:24px 26px;box-shadow:var(--shadow);scroll-margin-top:70px}
 .card + .card{margin-top:14px}
 .card h3{font-size:18px;font-weight:700;margin-bottom:10px}
-.card.step{position:relative}
-.stepno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
-  padding:4px 10px;border-radius:4px;font-weight:600;display:inline-block;margin-bottom:12px}
-.card.step h3{margin-bottom:8px}
 .why{font-size:14.5px;color:var(--muted);margin:0 0 16px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:720px){.grid2{grid-template-columns:1fr}}
-
 ul.tick{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
 ul.tick li{position:relative;padding-left:24px;color:var(--ink-2)}
-ul.tick li::before{
-  content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;
-  border-radius:2px;background:var(--accent);opacity:.55
-}
+ul.tick li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:2px;background:var(--accent);opacity:.55}
 ul.tick li strong{color:var(--ink);font-weight:600}
-
-/* 순서가 있는 단계 목록 */
 ol.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:11px}
 ol.steps li{position:relative;padding-left:32px;color:var(--ink-2);counter-increment:s}
-ol.steps li::before{
-  content:counter(s);position:absolute;left:0;top:3px;
-  width:22px;height:22px;border-radius:50%;
-  background:var(--accent-soft);color:var(--accent);
-  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;
-  display:flex;align-items:center;justify-content:center
-}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
 ol.steps li strong{color:var(--ink);font-weight:600}
 
-/* ---------- role tabs ---------- */
 .roles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.roles button{
-  padding:11px 20px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface);color:var(--ink-2);cursor:pointer;
-  font-family:"Gothic A1",sans-serif;font-size:15.5px;font-weight:700
-}
+.roles button{padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer;font-family:"Gothic A1",sans-serif;font-size:15.5px;font-weight:700}
 .roles button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .rolepanel[hidden]{display:none}
+.quote{background:var(--surface-2);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0 0;font-size:15px;color:var(--ink)}
 
-.quote{
-  background:var(--surface-2);border-left:3px solid var(--accent);
-  padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0 0;font-size:15px;color:var(--ink)
-}
-.quote:last-child{margin-bottom:0}
-
-/* ---------- field notes ---------- */
 .fnote{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .fnote + .fnote{margin-top:14px}
 .fnote .said{padding:18px 22px;border-bottom:1px solid var(--line-soft)}
@@ -181,17 +107,11 @@ ol.steps li strong{color:var(--ink);font-weight:600}
 .fnote .do .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
 .fnote .do ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
 
-/* ---------- tables ---------- */
 .scroll{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:15px;table-layout:fixed;min-width:520px}
 th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
-th{
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
-  font-family:"IBM Plex Mono",monospace;font-weight:500;white-space:nowrap
-}
-td ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-weight:500;white-space:nowrap}
 
-/* ---------- toggles ---------- */
 details{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:15px 20px;margin-bottom:8px}
 details summary{cursor:pointer;font-weight:600;font-family:"Gothic A1",sans-serif;font-size:16.5px;list-style:none;display:flex;gap:12px;align-items:baseline}
 details summary::-webkit-details-marker{display:none}
@@ -199,38 +119,25 @@ details summary::before{content:"+";color:var(--accent);font-family:"IBM Plex Mo
 details[open] summary::before{content:"–"}
 details .body{padding:12px 0 2px 24px;color:var(--ink-2)}
 details .body p:last-child{margin-bottom:0}
-details summary .lv,details summary .ph{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
-  color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;
-  font-weight:600;margin-left:auto;white-space:nowrap
-}
+details summary .lv,details summary .ph{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;font-weight:600;margin-left:auto;white-space:nowrap}
 .card details{box-shadow:none;background:var(--surface-2);border-color:var(--line-soft)}
 .card details:last-child{margin-bottom:0}
-.card details .body ul.tick li{color:var(--ink-2)}
 
-/* ---------- 화면 예시 이미지 ---------- */
 figure.shot{margin:16px 0 0;border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;background:var(--surface-2)}
 figure.shot img{display:block;width:100%;height:auto}
 figure.shot figcaption{padding:9px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line-soft)}
 figure.shot.wide{max-width:620px}
 figure.shot.tall{max-width:400px}
 
-/* ---------- Step 1 세팅 토글 ---------- */
 details.setup{padding:18px 22px}
 details.setup > summary{font-size:17px}
 details.setup .body{padding:14px 0 4px 24px}
-details.setup .body > .why{margin-top:0}
 details.setup h4{font-family:"Gothic A1",sans-serif;font-size:16px;font-weight:700;margin:26px 0 6px;color:var(--ink);scroll-margin-top:80px}
 details.setup h4:first-child{margin-top:0}
-
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
-.links a{
-  display:block;border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;
-  background:var(--surface);color:var(--ink);font-weight:600;font-size:15px;box-shadow:var(--shadow)
-}
+.links a{display:block;border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;background:var(--surface);color:var(--ink);font-weight:600;font-size:15px;box-shadow:var(--shadow)}
 .links a:hover{border-color:var(--accent);color:var(--accent)}
 .links a span{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:4px;word-break:break-all}
-
 footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -239,34 +146,32 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
 <header class="hero">
   <div class="wrap">
-    <p class="brandline">팀스파르타 AX교육팀 · 온보딩 v26.09.17</p>
+    <p class="brandline">팀스파르타 AX교육팀 · 온보딩 v26.09.22</p>
     <h1>무엇을 준비하고,<br>현장에서 무엇을 하나요</h1>
-    <p class="lede">순서대로 따라오시면 됩니다. Slack과 교무실 세팅부터 현장에서 지키셔야 할 것까지, 이 페이지에 순서대로 정리되어 있습니다. 팀스파르타 기업교육은 평균 교육 만족도 <strong>4.6점(5점 만점)</strong>을 유지하고 있고, 그 기준은 매 현장에서 강사와 기술튜터가 함께 만듭니다.</p>
+    <p class="lede">순서대로 따라오시면 됩니다. Slack과 강사 관리 플랫폼(교무실) 세팅부터 현장에서 지키셔야 할 것까지, 이 페이지에 정리되어 있습니다. 팀스파르타 기업교육은 높은 교육 만족도를 유지하고 있고, 그 기준은 매 현장에서 강사와 보조강사(기술튜터)가 함께 만듭니다.</p>
 
     <div class="callout">
       <span class="k">필수</span>
       <div>
-        <p><strong>온보딩에 참석하지 않으면 교육 배정이 불가합니다.</strong></p>
-        <p>신규 강사·기술튜터 온보딩은 <strong>매월 2주차·4주차 금요일 오후 3시(15:00~16:00), 온라인 ZOOM</strong>으로 진행됩니다.</p>
-        <p>교육 배정은 온보딩 참석과 Slack·교무실 세팅, 정산 정보 입력, 가능 일정 등록이 끝난 뒤 순차적으로 검토됩니다. 다만 <strong>참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong> 회차별 ZOOM 링크·참석 확인·질문은 Slack 온보딩 안내 스레드로 안내드립니다.</p>
+        <p><strong>온보딩에 참석하지 않으면 계약 체결과 교육 배정이 불가합니다.</strong></p>
+        <p>신규 강사·보조강사(기술튜터) 온보딩은 <strong>매월 2주차·4주차 금요일 오후 3시(15:00~16:00), 온라인 ZOOM</strong>으로 진행됩니다. 일정상 참여가 어려우시면 다음 회차에 참여해 주세요.</p>
+        <p>교육 배정은 온보딩 참석과 Slack·플랫폼 세팅, 정산 정보 입력, 가능 일정 등록이 끝난 뒤 순차적으로 검토됩니다. 다만 <strong>참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="k">반드시</span>
+      <div>
+        <p><strong>Slack의 역할별 공지 채널 알림은 항상 켜두셔야 합니다.</strong> 계약·발주·정산 마감·경비 신청 기한 등 활동에 직접 영향을 주는 중요한 안내가 모두 이 채널로 발송됩니다.</p>
+        <p><strong>공지 채널에 안내된 내용과 이 온보딩 문서를 확인하지 않아 발생한 문제(정산 지연·누락, 신청 기한 경과, 배정 제외 등)에 대해서는 회사가 책임지지 않습니다.</strong> 문의 전에 공지와 문서를 먼저 확인해 주세요.</p>
       </div>
     </div>
 
     <div class="callout info">
       <span class="k">회차 선택</span>
       <div>
-        <p><strong>빠른 교육 배정을 원하시면 — 2주차 금요일</strong> 온보딩 참석을 권합니다. 세팅 완료 이후 배정이 순차 검토됩니다. 다만 이 경우 <strong>계약 기준일이 참석하신 달의 1일자로 적용될 수 있어</strong> 실제 배정 시작일과 다를 수 있습니다. 이 점을 이해하신 뒤 참석 회차를 선택해 주세요.</p>
-        <p><strong>계약 기준일과 활동 시작 시점을 맞추고 싶으시면 — 4주차 금요일</strong> 온보딩 참석을 권합니다. 원칙적으로 다음 달 1일자 계약 대상자로 분류되며, 배정도 차월 1일 이후 순차 검토됩니다.</p>
-
-        <details style="margin-top:16px">
-          <summary>회차별 계약·배정 타임라인 예시 이미지로 보기</summary>
-          <div class="body">
-            <figure class="shot">
-              <img src="image/Onboarding_discription_image.png" alt="온보딩 참여 시점에 따른 계약·교육 배정 타임라인 예시 — 1차 온보딩(4/11 금 참여 시 계약 기준일 4/1, 계약서 5월 초 발송)과 2차 온보딩(4/25 금 참여 시 계약 기준일 5/1, 실제 교육 배정은 5/1 이후 순차 진행) 비교" loading="lazy" data-fallback="image/Onboarding_discription_image.jpg|image/Onboarding_discription_image.jpeg|image/Onboarding_discription_image.webp|image/Onboarding_discription_image.PNG">
-              <figcaption>온보딩 참여 회차별 계약·배정 타임라인 예시</figcaption>
-            </figure>
-          </div>
-        </details>
+        <p><strong>빠른 교육 배정을 원하시면 — 2주차 금요일(1차 온보딩).</strong> 세팅 완료 이후 배정이 순차 검토됩니다. 다만 계약 기준일이 <strong>당월 1일자로 소급 적용</strong>되고 계약서는 익월에 발송되어, 실제 배정 시작일과 다를 수 있습니다.</p>
+        <p><strong>계약 기준일과 활동 시작 시점을 맞추고 싶으시면 — 4주차 금요일(2차 온보딩).</strong> <strong>익월 1일자 계약</strong> 대상자로 분류되며, 배정도 원칙적으로 익월 1일 이후 순차 검토됩니다.</p>
       </div>
     </div>
   </div>
@@ -278,10 +183,10 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     <a href="#links">자주 쓰는 링크</a>
     <a href="#role">내 역할</a>
     <a href="#pilot">파일럿 배정</a>
-    <a href="#level">레벨·계약</a>
+    <a href="#contract">계약·발주서</a>
     <a href="#field">현장 유의사항</a>
     <a href="#standard">협업 기준</a>
-    <a href="#apply">지원·정산·문의</a>
+    <a href="#apply">지원·정산·경비</a>
     <a href="#tools">대표 교육·툴</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -289,952 +194,988 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
 
 <div class="wrap">
 
-  <!-- ============ Step 1 온보딩 세팅 ============ -->
-  <section id="setup">
-    <p class="sec-k">Step 1</p>
-    <h2>온보딩 세팅 단계</h2>
-    <p class="intro">01번부터 03번까지 순서대로 진행합니다. Slack과 교무실이 비어 있으면 교육 공고 자체가 보이지 않고 배정도 진행되지 않습니다. 각 항목을 펼쳐 확인하시고, 끝내지 못한 항목은 오늘 중으로 마무리해 주세요.</p>
+<!-- ============ Step 1 ============ -->
+<section id="setup">
+  <p class="sec-k">Step 1</p>
+  <h2>온보딩 세팅 단계</h2>
+  <p class="intro">01번부터 03번까지 순서대로 진행합니다. Slack과 강사 관리 플랫폼(교무실)이 비어 있으면 교육 공고 자체가 보이지 않고 계약·배정도 진행되지 않습니다. 각 항목을 펼쳐 확인하시고, 끝내지 못한 항목은 오늘 중으로 마무리해 주세요.</p>
 
-    <details class="setup" id="s-slack">
-      <summary>01 · Slack 워크스페이스 참여와 프로필 설정 <span class="ph">필수</span></summary>
-      <div class="body">
-        <p class="why">교육 공고와 운영 커뮤니케이션이 모두 Slack에서 이루어집니다. 채널에 들어가 있지 않으면 지원 기회 자체가 오지 않습니다.</p>
-        <ol class="steps">
-          <li><strong>워크스페이스 초대를 수락합니다</strong></li>
-          <li><strong>주강사풀 / 기술튜터풀 채널에 참여합니다</strong> — 교육 공고가 올라오는 채널입니다.</li>
-          <li><strong>온보딩 / 교육운영 채널에 참여합니다</strong> — 온보딩과 운영 안내가 발송되는 곳입니다</li>
-          <li><strong>프로필 사진을 설정합니다</strong></li>
-          <li><strong>이름을 본명으로 바꿉니다</strong> <span class="mono">예) 김희남</span></li>
-          <li><strong>표시이름을 역할까지 넣어 설정합니다</strong><br><span class="mono">본명(강사) / 본명(기술튜터) — 예) 김희남(강사), 이부용(기술튜터)</span></li>
-        </ol>
-        <div class="quote">배정된 교육의 <strong>운영 채널</strong>은 배정 시점에 따로 안내드립니다. 교안·일정·강사 정보가 게시되는 곳입니다.</div>
-      </div>
-    </details>
+  <details class="setup" id="s-slack">
+    <summary>01 · Slack 참여와 프로필 설정 <span class="ph">필수</span></summary>
+    <div class="body">
+      <p class="why">교육 공고와 운영 커뮤니케이션이 모두 Slack에서 이루어집니다. 채널에 들어가 있지 않으면 지원 기회 자체가 오지 않습니다.</p>
+      <ol class="steps">
+        <li><strong>워크스페이스 초대를 수락합니다</strong></li>
+        <li><strong>주강사풀 / 기술튜터풀 채널에 참여합니다</strong> — 교육 공고가 올라오는 채널입니다</li>
+        <li><strong>역할별 공지 채널에 참여하고 알림을 켭니다</strong> — 아래 별도 안내를 꼭 확인해 주세요</li>
+        <li><strong>프로필 사진을 설정합니다</strong></li>
+        <li><strong>이름을 본명으로 바꿉니다</strong> <span class="mono">예) 김희남</span></li>
+        <li><strong>표시이름을 역할까지 넣어 설정합니다</strong><br><span class="mono">본명(강사) / 본명(기술튜터) — 예) 김희남(강사), 이부용(기술튜터)</span></li>
+      </ol>
 
-    <details class="setup" id="s-portal">
-      <summary>02 · 교무실 가입 · 기본 정보 · 정산 정보 <span class="ph">필수</span></summary>
-      <div class="body">
-        <p class="why">교무실에 등록된 연락처와 가능 일정은 교육 제안·배정·긴급 연락에 사용되고, 계약서 발송과 강의료 지급도 이 정보를 기준으로 진행됩니다.</p>
-
-        <p style="margin:0 0 16px"><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener"><strong>→ 교무실 바로가기</strong></a></p>
-
-        <h4>가입과 기본 정보</h4>
-        <ol class="steps">
-          <li><strong>Google 계정으로 가입합니다</strong> — 다른 방식으로는 가입할 수 없습니다. 가입 화면에서 <strong>「행정 안내」 경로</strong>로 들어가 가입해 주세요. 채용 지원(강사 등록) 경로로 가입하시면 다른 시스템으로 분기되어 승인 처리가 되지 않습니다</li>
-          <li><strong>프로필을 최신화합니다</strong> — 이름, 연락처, 차량 보유 여부</li>
-          <li><strong>Slack 멤버 ID를 입력합니다</strong><br><span class="mono">Slack 프로필 → 프로필 보기 → 멤버 ID 복사 → 교무실에 붙여넣기</span></li>
-          <li><strong>내 일정에 교육 가능·불가 일정을 등록합니다</strong> — 초기 배정은 이 일정을 기준으로 진행됩니다. <strong>실제로 참여 가능한 일정만 ‘가능’으로</strong> 체크하시고, 당월뿐 아니라 <strong>이후 2~3개월치</strong>를 미리 등록해 주세요(예: 10~12월 계약 구간 대상자는 10·11·12월). 한 달만 등록되어 있으면 다음 달 교육 제안 대상에서 빠지게 됩니다. 가능으로 등록해 배정이 확정된 교육을 이후 불가로 바꿔 취소가 반복되면, 향후 지원·배정에서 후순위로 검토될 수 있습니다</li>
-          <li><strong>모바일 앱(PWA)을 설치합니다</strong> — 브라우저 메뉴에서 “홈 화면에 추가”. 일정 입력 알림을 받을 수 있습니다</li>
-        </ol>
-
-        <figure class="shot wide">
-          <img src="image/slack_guide_image.png" alt="Slack 우측 상단 프로필 이미지 → 프로필 → 더보기 → 멤버 ID 복사" loading="lazy" data-fallback="image/slack_guide_image.jpg|image/slack_guide_image.jpeg|image/slack_guide_image.webp|image/slack_guide_image.PNG">
-          <figcaption>Slack 멤버 ID 복사 — 우측 상단 프로필 이미지 → 프로필 → <span class="mono">⋮</span> → 멤버 ID 복사</figcaption>
-        </figure>
-
-        <div class="quote">등록한 일정이 실제와 다르면 배정에 문제가 생기고, 이는 <strong>본인 책임</strong>입니다. 변동이 생길 때마다 직접 최신화해 주세요.</div>
-
-        <h4 id="s-settle">계약과 정산에 필요한 정보</h4>
-        <ol class="steps">
-          <li><strong>사업자 유형을 선택합니다</strong> — 프리랜서 / 개인사업자 / 법인</li>
-          <li><strong>서류를 업로드합니다</strong> — 개인사업자·법인은 사업자등록증과 통장 사본</li>
-          <li><strong>내 계약과 명세서 메뉴 위치를 확인합니다</strong> — 계약 기간·교육명·시급, 월별 정산 내역을 확인하는 곳입니다</li>
-          <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a> 폼을 제출합니다</strong> — 사업자 유형과 관계없이 <strong>최초 계약 시 1회</strong> 제출합니다. 계약서 발급과 강의료(인건비) 지급에 필요한 개인정보를 입력하는 폼이며, <strong>담당자명 항목에는 「이다은」</strong>으로 기재해 주세요</li>
-        </ol>
-        <div class="quote">교무실에서 누른 동의 체크는 <strong>계약서가 아닙니다.</strong> 계약서와 발주서가 어떻게 진행되는지는 <a href="#contract">Step 4 · 계약은 이렇게 진행됩니다</a>에서 확인해 주세요.</div>
-      </div>
-    </details>
-
-    <details class="setup" id="s-profile">
-      <summary>03 · 이력서와 경력 정보 등록 <span class="ph">필수</span></summary>
-      <div class="body">
-        <p class="why">고객사는 강사 프로필을 보고 교육을 결정합니다. 여기에 입력된 내용이 곧 제안서에 들어가는 정보이고, 어떤 교육에 매칭될지를 결정합니다.</p>
-
-        <p style="margin:0 0 16px"><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener"><strong>→ 교무실 바로가기</strong></a></p>
-
-        <ol class="steps">
-          <li><strong>개인 이력서를 PDF로 업로드합니다</strong> — 별도 양식이 없어도 보유하신 이력서를 그대로 올려주세요</li>
-          <li><strong>학력을 입력합니다</strong> — 최종 학력 기준</li>
-          <li><strong>소속과 재직 기간을 입력합니다</strong> — 현재 또는 직전 소속</li>
-          <li><strong>프로젝트 경력을 업로드합니다</strong> — 강의·프로젝트 이력. 고객사 제안 시 참고 자료로 활용됩니다</li>
-          <li><strong>내 자격에서 현재 레벨과 자격을 확인합니다</strong> — 강사로 합류했는데 튜터로만 되어 있지 않은지 꼭 확인해 주세요</li>
-        </ol>
-
-        <figure class="shot tall">
-          <img src="image/mypage_guide_image.png" alt="교무실 내 정보 → 이력서·경력 탭에서 이력서·학력·재직 경력·프로젝트·교육 경력을 입력한 예시" loading="lazy" data-fallback="image/mypage_guide_image.jpg|image/mypage_guide_image.jpeg|image/mypage_guide_image.webp|image/mypage_guide_image.PNG">
-          <figcaption>교무실 <strong>내 정보 → 이력서·경력</strong> 입력 예시</figcaption>
-        </figure>
-
-        <div class="quote">이력서와 경력 정보가 비어 있으면 역량을 확인할 수 없어 교육 제안 대상에서 제외될 수 있습니다. 온보딩 자리에서 최소한 이력서 파일은 올려두시는 것을 권합니다.</div>
-      </div>
-    </details>
-  </section>
-
-  <!-- ============ 자주 쓰는 링크 (Step 1 바로 아래, 탭 구성) ============ -->
-  <section id="links">
-    <p class="sec-k">바로가기</p>
-    <h2>자주 쓰는 링크</h2>
-    <p class="intro">온보딩을 진행하며 자주 열어보게 되는 링크를 모아두었습니다. 탭으로 구분해 두었으니 필요한 링크를 바로 찾아 이동해 주세요.</p>
-
-    <div class="roles" role="tablist">
-      <button role="tab" aria-selected="true" aria-controls="lp-must" id="lt-must">필수</button>
-      <button role="tab" aria-selected="false" aria-controls="lp-settle" id="lt-settle">정산·계약</button>
-      <button role="tab" aria-selected="false" aria-controls="lp-guide" id="lt-guide">안내 문서</button>
-    </div>
-
-    <div class="rolepanel" id="lp-must" role="tabpanel" aria-labelledby="lt-must">
-      <div class="links">
-        <a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실<span>일정 등록 · 자격 · 계약 · 명세서 · 문의</span></a>
-      </div>
-    </div>
-
-    <div class="rolepanel" id="lp-settle" role="tabpanel" aria-labelledby="lt-settle" hidden>
-      <div class="links">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집<span>최초 계약 시 1회 · 담당자명 「이다은」</span></a>
-        <a href="https://teamsparta.notion.site/3d12dc3ef51480d692a3e0f2d274bd16" target="_blank" rel="noopener">강사·기술튜터 정산 절차<span>프리랜서 / 사업자 · teamsparta.notion.site</span></a>
-        <a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서 양식<span>b2bsparta.com/invoice</span></a>
-        <a href="https://teamsparta.notion.site/3af2dc3ef514808f88a6d83db8b2f991" target="_blank" rel="noopener">활동 제한 및 계약 해지 기준<span>teamsparta.notion.site</span></a>
-      </div>
-    </div>
-
-    <div class="rolepanel" id="lp-guide" role="tabpanel" aria-labelledby="lt-guide" hidden>
-      <div class="links">
-        <a href="https://b2bsparta.com/tutorguide" target="_blank" rel="noopener">강사 및 기술튜터 운영 가이드<span>b2bsparta.com/tutorguide</span></a>
-        <a href="https://b2bsparta.com/axhub" target="_blank" rel="noopener">교무실 이용 가이드<span>b2bsparta.com/axhub</span></a>
-        <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드<span>b2bsparta.com/axslackworkflow</span></a>
-        <a href="https://teamsparta.notion.site/3ae2dc3ef514802c96c5fcfc5afd11da" target="_blank" rel="noopener">문의 방법<span>teamsparta.notion.site</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="role">
-    <p class="sec-k">Step 2</p>
-    <h2>내 역할과 책임</h2>
-    <p class="intro">강사와 기술튜터는 상하 관계가 아니라 <strong>역할 분담</strong>입니다. 한 사람은 수업 전체의 흐름을 책임지고, 한 사람은 교육생 개개인의 실습을 책임집니다. 둘 중 하나라도 비면 만족도는 바로 떨어집니다.</p>
-
-    <div class="roles" role="tablist">
-      <button role="tab" aria-selected="true" aria-controls="p-tutor" id="t-tutor">기술튜터 (보조강사)</button>
-      <button role="tab" aria-selected="false" aria-controls="p-inst" id="t-inst">강사</button>
-      <button role="tab" aria-selected="false" aria-controls="p-both" id="t-both">겸임</button>
-    </div>
-
-    <!-- 기술튜터 -->
-    <div class="rolepanel" id="p-tutor" role="tabpanel" aria-labelledby="t-tutor">
-      <div class="card">
-        <h3>기술튜터가 하는 일</h3>
-        <p>기술튜터는 단순한 보조 역할이 아닙니다. 교육생이 끝까지 실습 흐름을 따라가고 <strong>“나도 AI를 활용할 수 있겠다”</strong>는 경험을 하도록 돕는, 만족도를 직접 좌우하는 역할입니다.</p>
-        <ul class="tick">
-          <li><strong>실습 지원</strong> — 막힌 교육생을 찾아 진행을 이어주기</li>
-          <li><strong>질문 응대</strong> — 반복되는 질문은 모아서 강사에게 전달</li>
-          <li><strong>현장 관찰</strong> — 전체 진도를 살펴 “지금 절반이 못 따라오고 있다”는 신호를 강사에게 전달</li>
-          <li><strong>환경·계정 이슈 처리</strong> — 유료 계정 초대, 업로드 오류, 마이크·스피커 문제</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>단계별로 무엇을 하나요</h3>
-        <p class="why">각 단계를 펼쳐서 확인해 주세요.</p>
-
-        <details>
-          <summary>처음이라면 · 첫 현장이라면 <span class="ph">교육 전</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>Slack 초대 수락, 교무실 회원 가입, 활동 신청 — <a href="#setup">Step 1</a> 참고</li>
-              <li>교무실에 계약·정산 정보 작성 — 계약 절차는 <a href="#contract">Step 4</a> 참고</li>
-              <li>기업별 <strong>운영 스레드</strong>와 <strong>프로젝트 페이지</strong> 확인</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>교육 준비-도착 <span class="ph">D-3 ~ D-1</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li><strong>교안 검수</strong> — 운영 채널에 올라온 교안을 미리 읽고 “오늘 무엇을 하는지” 파악합니다. 궁금한 점은 <strong>해당 게시글 스레드에 댓글</strong>로 강사에게 질문하시면 됩니다. 개인 연락은 필요하지 않습니다</li>
-            </ul>
-
-            <figure class="shot tall">
-              <img src="image/Example_image1.png" alt="교육 운영 안내 게시글 예시 — 회차별 일정(강사·튜터), 교육 장소, 교안 링크가 정리되어 있고 확인 후 댓글에 체크 이모지를 남기도록 안내" loading="lazy" data-fallback="image/Example_image1.jpg|image/Example_image1.jpeg|image/Example_image1.webp|image/Example_image1.PNG">
-              <figcaption>운영 채널 교안·일정 안내 게시글 예시</figcaption>
-            </figure>
-
-            <ul class="tick">
-              <li><strong>교안은 보통 교육 시작 5~7일 전</strong>에 운영 매니저가 제공합니다. 그보다 더 빠르게 제공드리기는 어려운 구조라, 더 일찍 참고하고 싶으시면 <strong>교육 운영 채널에서 비슷한 교육명으로 검색</strong>해 유사 교육의 교안을 먼저 보시는 방법을 권합니다</li>
-              <li><strong>패들렛 확인</strong> — 실습 결과물이 어디에 올라가는지, 섹션 구성이 어떻게 되어 있는지</li>
-              <li>실습에 쓰이는 AI 툴을 직접 한 번 돌려보기 — 현장에서 처음 보면 지원할 수 없습니다</li>
-              <li>비대면(Zoom) 교육이라면 마이크·스피커·화면 공유 사전 점검</li>
-              <li><strong>담당 PM에게 도착 메시지 작성</strong>(이미지 참고)</li>
-            </ul>
-
-            <figure class="shot wide">
-              <img src="image/Example_image2.png" alt="담당 PM에게 도착 메시지 작성 예시 — 기술튜터와 강사가 각자 배정된 강의실(605호·604호)에 도착했다고 스레드에 남기고, 담당 PM이 확인 감사 인사와 세팅 완료 시 알려달라고 답신" loading="lazy" data-fallback="image/Example_image2.jpg|image/Example_image2.jpeg|image/Example_image2.webp|image/Example_image2.PNG">
-              <figcaption>담당 PM에게 도착 메시지 작성 예시</figcaption>
-            </figure>
-          </div>
-        </details>
-
-        <details>
-          <summary>실습 시간이 튜터의 본 업무 시간입니다 <span class="ph">교육 중</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>유료 계정 세팅 및 초대 완료 확인</li>
-              <li><strong>자리에 앉아 있지 않기.</strong> 실습이 시작되면 교육장을 돌며 화면을 직접 보고 진행 상황을 확인합니다</li>
-              <li>손을 들지 않는 교육생이 가장 많이 막혀 있습니다 — 먼저 다가가 확인</li>
-              <li>같은 질문이 3번 이상 나오면 강사에게 전달해 전체 안내로 전환</li>
-              <li>현장 이슈는 Slack 운영 스레드로 공유</li>
-            </ul>
-            <div class="quote">이 항목은 실제 고객사 피드백에서 나온 내용입니다. <a href="#field">Step 5 현장 유의사항</a>에서 함께 확인해 주세요.</div>
-          </div>
-        </details>
-
-        <details>
-          <summary>마무리 <span class="ph">교육 후</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>교육 현장 사진 업로드 — 개인 식별 정보가 드러나지 않도록 촬영해 주세요</li>
-              <li>특이사항 보고 — 진행에 영향을 준 일은 작더라도 공유해 주세요</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <!-- 강사 -->
-    <div class="rolepanel" id="p-inst" role="tabpanel" aria-labelledby="t-inst" hidden>
-      <div class="card">
-        <h3>강사가 하는 일</h3>
-        <p>강사는 교육을 직접 설계하고 진행하는 <strong>교안 작성 주체</strong>이며, 수업 전체의 흐름과 시간을 운영합니다. 교육생이 오늘 무엇을 배웠고 내일 무엇을 할 수 있게 되었는지가 강사의 책임 범위입니다.</p>
-      </div>
-
-      <div class="card">
-        <h3>단계별로 무엇을 하나요</h3>
-        <p class="why">각 단계를 펼쳐서 확인해 주세요.</p>
-
-        <details>
-          <summary>교육 준비 <span class="ph">배정 직후</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>담당 PM 배정 및 Slack 스레드 생성 확인, 기업교육 프로젝트 노션 초대 확인</li>
-              <li>교육 개요 확인 — 일정·장소·대상·목표</li>
-              <li>교육 커리큘럼 확인, 패들렛 페이지 초대 및 권한 확인</li>
-              <li>담당 PM 미팅</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>교안 제작 <span class="ph">D-7 ~ D-5</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>제공되는 커리큘럼을 기반으로 작성합니다 — 백지에서 시작하지 않습니다</li>
-              <li>작성 도구는 <strong>Notion</strong>입니다. 줄글보다 섹션 구분·강조·리스트로 구조화해 주세요</li>
-              <li><strong>제출 기한은 교육 시작 5일~1주일 전</strong>이 기본값입니다. 교안이 늦어지면 기술튜터가 사전 숙지할 시간이 사라집니다</li>
-              <li>실습 파일 준비, 교안 피드백 반영</li>
-              <li>사내망 교육이라면 사용할 생성형 AI 툴 리스트를 사전 공유 — 승인 절차가 필요합니다</li>
-            </ul>
-
-            <figure class="shot tall">
-              <img src="image/Example_image1.png" alt="교육 운영 안내 게시글 예시 — 회차별 일정(강사·튜터), 교육 장소, 교안 링크가 정리되어 있고 확인 후 댓글에 체크 이모지를 남기도록 안내" loading="lazy" data-fallback="image/Example_image1.jpg|image/Example_image1.jpeg|image/Example_image1.webp|image/Example_image1.PNG">
-              <figcaption>운영 채널 교안·일정 안내 게시글 예시</figcaption>
-            </figure>
-          </div>
-        </details>
-
-        <details>
-          <summary>환경 점검 <span class="ph">당일 · 도착 시</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>내·외부망 분리 여부 확인 — 파일 다운로드가 되는지</li>
-              <li>GPT·패들렛 등 외부 사이트 접속 및 파일 업로드 가능 여부</li>
-              <li>Windows/Mac 차이로 인한 업로드 오류 여부</li>
-              <li>유료 워크스페이스 초대 완료 여부</li>
-              <li><strong>담당 PM에게 도착 메시지</strong> — 교육 인원, 도착 시간, 특이사항</li>
-            </ul>
-
-            <figure class="shot wide">
-              <img src="image/Example_image2.png" alt="담당 PM에게 도착 메시지 작성 예시 — 기술튜터와 강사가 각자 배정된 강의실(605호·604호)에 도착했다고 스레드에 남기고, 담당 PM이 확인 감사 인사와 세팅 완료 시 알려달라고 답신" loading="lazy" data-fallback="image/Example_image2.jpg|image/Example_image2.jpeg|image/Example_image2.webp|image/Example_image2.PNG">
-              <figcaption>담당 PM에게 도착 메시지 작성 예시</figcaption>
-            </figure>
-
-            <ul class="tick">
-              <li>기술튜터와 <strong>지원 구간 협의</strong> — 어느 실습에서 누가 어떻게 붙을지</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>진행 <span class="ph">교육 중</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li>교안 URL을 화면에 고정합니다. <strong>빠른 스크롤은 지양</strong>하고 한 화면에서 고정된 구간을 설명해 주세요</li>
-              <li><strong>설명 → 공통 실습 → 개별 실습</strong> 흐름으로, 단계 전환을 말로 명확히 구분합니다<br><span class="mono">“지금부터 3분 동안 설명에 집중해 주세요” / “이제 5분 동안 함께 실습하겠습니다”</span></li>
-              <li>실습은 <strong>언제까지, 어디에 올릴지</strong>를 반드시 함께 안내합니다</li>
-              <li>지시대명사(“여기”, “이거”) 대신 위치를 말로 설명합니다</li>
-              <li>실습 중에는 교육장을 순회합니다 — 가까운 자리만이 아니라 전체를 고르게</li>
-              <li>발성과 속도를 점검합니다 — 뒷자리까지 들리는지, 따라올 수 있는 속도인지</li>
-              <li>역할 기반 시나리오로 실습을 구성합니다 <span class="mono">“여러분은 지금 마케팅 담당자입니다”</span></li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>마무리 <span class="ph">교육 후</span></summary>
-          <div class="body">
-            <ul class="tick">
-              <li><strong>보안 안내(필수)</strong> — 공용 PC 계정 로그아웃, 업로드 파일·데이터 삭제</li>
-              <li>담당 PM에게 교육 종료 메시지. 분위기·참여도·담당자 불만 등 특이사항이 있으면 <strong>전화</strong>로 알려주세요</li>
-              <li>강의 회고록 작성 — 어떤 이슈가 있었고, 해결됐는지, 다음엔 어떻게 할지</li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <!-- 겸임 -->
-    <div class="rolepanel" id="p-both" role="tabpanel" aria-labelledby="t-both" hidden>
-      <div class="card">
-        <h3>겸임으로 활동하시는 분</h3>
-        <p>교무실에서 강사와 기술튜터 자격을 동시에 보유할 수 있습니다. 배정되는 역할에 따라 위 두 탭의 내용을 각각 확인해 주세요.</p>
-        <ul class="tick">
-          <li>강사로 배정된 교육 → <strong>강사</strong> 탭의 준비·진행 기준을 따릅니다</li>
-          <li>기술튜터로 배정된 교육 → <strong>기술튜터</strong> 탭의 기준을 따릅니다</li>
-          <li>강사 자격이 있으셔도 <strong>합류 후 첫 교육은 기술튜터로 참여</strong>하시게 됩니다. 자세한 내용은 <a href="#pilot">Step 3 파일럿 배정</a>을 확인해 주세요</li>
-        </ul>
-        <div class="quote">교육 진행 방식은 텍스트로 아무리 설명해도 현장에서 한 번 보는 것만 못합니다.</div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:16px">
-      <h3>더 자세한 내용은 플레이북에</h3>
-      <p>이 페이지는 온보딩에서 다룬 핵심만 모은 요약입니다. 실제 교육 운영의 기준은 플레이북입니다.</p>
-      <ul class="tick">
-        <li><a href="https://b2bsparta.com/tutorguide" target="_blank" rel="noopener">강사 및 기술튜터 운영 가이드</a> — 전체 문서 모음</li>
-        <li>기술튜터 플레이북 <strong>CH2. 역할 및 단계별 체크리스트 → 1-1. 기술튜터 활동이 처음이라면</strong> — 처음 참여하시는 분은 꼭 확인해 주세요</li>
-        <li>강사 플레이북 — 교육 툴, 강의 스타일 가이드, 준비~운영 상세 체크리스트</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ Step 3 파일럿 ============ -->
-  <section id="pilot">
-    <p class="sec-k">Step 3</p>
-    <h2>파일럿 배정: 첫 교육 매칭</h2>
-    <p class="intro">파일럿 배정은 신규 합류자의 <strong>첫 교육 매칭 1회</strong>를 의미합니다. 첫 교육은 담당자가 직접 배정하며, 현장 운영 방식과 역할을 먼저 경험하는 단계입니다.</p>
-
-    <div class="card">
-      <h3>어떻게 운영되나요</h3>
-      <ul class="tick">
-        <li><strong>첫 교육 1회</strong>는 담당자가 직접 배정합니다. 지원하고 싶은 특정 교육이 있으시면 기술튜터풀 채널에서 직접 지원하실 수 있고, 지원하신 교육이 그대로 첫 배정 교육이 되는 경우도 있습니다</li>
-        <li>강사로 합류하신 분도 첫 교육은 기술튜터로 참여하시며, 강사 투입 기준은 <a href="#level-inst">Step 4 · 강사 투입 기준</a>에서 확인해 주세요</li>
-        <li><strong><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실</a> 캘린더 일정 입력은 온보딩 시간에</strong> 함께 진행합니다</li>
-      </ul>
-      <div class="quote">교육 배정은 온보딩 참석, Slack·교무실 세팅, 정산 정보 입력, 가능 일정 등록이 완료된 이후 순차적으로 검토됩니다. 다만 <strong>온보딩 참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong></div>
-
-      <h3 style="margin-top:28px">첫 배정을 기다리는 동안 — 지원해도 됩니다</h3>
-      <p class="why">가장 많이 들어오는 질문입니다. 담당자가 등록된 일정을 보고 첫 1회를 배정하지만, 배정 건마다 개별로 연락을 드리지는 못합니다. 아래 내용을 꼭 확인해 주세요.</p>
-      <ul class="tick">
-        <li>담당자가 등록된 일정을 보고 첫 1회를 <strong>배정</strong>합니다. 다만 <strong>모든 배정 건마다 개별로 연락을 드릴 수는 없습니다.</strong> 배정 여부는 <a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실</a>에서 직접 확인해 주시고, 담당 매니저가 <strong>교육운영 채널</strong>에서도 관련 안내를 드릴 예정입니다</li>
-        <li>배정된 교육을 자세히 보고 싶으시면, 담당자 연락을 기다리기보다 <a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실 플랫폼</a>에서 직접 확인하시는 것을 권해드립니다</li>
-        <li><strong>당월 진행되는 교육은 보통 전월에 모집·확정되는 경우가 많습니다.</strong> 그래서 온보딩 참석이 곧바로 즉시 배정을 보장하지 않고, 첫 배정까지 <strong>최대 한 달 정도</strong> 걸릴 수 있습니다</li>
-        <li>그 전에 <strong>원하시는 교육이 있으면 <a href="#s-slack">기술튜터풀 채널</a>에서 미리 지원해 두셔도 됩니다.</strong> 상황에 따라 <strong>지원하신 교육이 첫 배정 교육이 되는 경우</strong>도 있습니다</li>
-        <li>첫 배정 안내를 받으신 뒤에도, 다른 달 교육에 <strong>추가로 지원하실 수 있습니다.</strong> 첫 배정은 이미 완료된 것으로 보기 때문에, 지원하신 교육이 더 이른 일자에 진행되더라도 검토 후 배정이 가능합니다</li>
-        <li>첫 배정 이후의 지원은 <strong>기술튜터풀 채널에서 자유롭게</strong> 하시면 됩니다. 지원 방법은 <a href="#apply-post">Step 7 · 교육 공고에 지원하는 방법</a>을 참고해 주세요</li>
-      </ul>
-
-      <div class="callout" style="margin-top:16px">
-        <span class="k">꼭 확인!!</span>
+      <div class="callout" style="margin-top:18px">
+        <span class="k">알림 필수</span>
         <div>
-          <p><strong>첫 배정 교육을 일정 변동으로 취소하시면, 다음에 지원하실 때 우선순위가 밀리는 패널티를 받을 수 있습니다.</strong></p>
-          <p>그러니 <a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실</a>에는 <strong>실제로 가능한 일정만</strong> 등록해 주시고, 사정이 바뀌면 그때그때 교무실에서 <strong>직접 일정을 변경</strong>해 주세요.</p>
-          <p>담당자 연락을 기다리기 전에도, <strong>교무실에 자주 방문해 배정 여부를 스스로 확인</strong>하시는 것을 강하게 권해드립니다.</p>
+          <p><strong>역할별 공지 채널의 알림은 반드시 켜두세요.</strong> 계약서 발송 안내, 발주서 승인 요청, 정산·경비 신청 마감, 운영 기준 변경 등 놓치면 금전적·운영상 불이익으로 이어지는 정보가 이 채널로만 발송됩니다.</p>
+          <p><strong>공지 채널 안내와 온보딩 문서를 읽지 않아 생긴 문제는 회사가 책임지지 않습니다.</strong></p>
         </div>
       </div>
 
-      <div class="quote">첫 배정 교육이 <strong>반드시 AI 리터러시 교육은 아닙니다.</strong> 직무 경험과 포트폴리오를 보고 프로젝트형(PBL) 교육이 더 맞다고 판단되면 그쪽으로 배정드리는 경우도 있습니다. 이때는 운영 방식과 난이도가 조금 달라서 배정 시 미리 안내드립니다.</div>
+      <div class="quote">배정된 교육의 <strong>운영 채널</strong>은 배정 시점에 따로 안내드립니다. 교안·일정·강사 정보가 게시되는 곳입니다.</div>
+    </div>
+  </details>
+
+  <details class="setup" id="s-portal">
+    <summary>02 · 강사 관리 플랫폼(교무실) 가입 · 기본 정보 · 정산 정보 <span class="ph">필수</span></summary>
+    <div class="body">
+      <p class="why">플랫폼에 등록된 연락처와 가능 일정은 교육 제안·배정·긴급 연락에 사용되고, 계약서 발송과 강의료 지급도 이 정보를 기준으로 진행됩니다.</p>
+
+      <p style="margin:0 0 16px"><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener"><strong>→ 강사 관리 플랫폼 바로가기</strong></a> · <a href="https://b2bsparta.com/tutor" target="_blank" rel="noopener">가입 상세 가이드</a></p>
+
+      <h4>가입과 기본 정보</h4>
+      <ol class="steps">
+        <li><strong>Google 계정으로 가입합니다</strong> — 다른 방식으로는 가입할 수 없습니다. 가입 화면에서 <strong>「행정 안내」 경로</strong>로 들어가 가입해 주세요. 채용 지원(강사 등록) 경로로 가입하시면 다른 시스템으로 분기되어 승인 처리가 되지 않습니다</li>
+        <li><strong>프로필을 최신화합니다</strong> — 이름, 이메일, 전화번호, 차량 보유 여부</li>
+        <li><strong>Slack 멤버 ID를 입력합니다</strong><br><span class="mono">Slack 프로필 → 프로필 보기 → 멤버 ID 복사 → 플랫폼에 붙여넣기</span></li>
+        <li><strong>내 일정에 교육 가능·불가 일정을 등록합니다</strong> — 초기 배정은 이 일정을 기준으로 진행됩니다. <strong>실제로 참여 가능한 일정만 ‘가능’으로</strong> 체크하시고, 당월뿐 아니라 <strong>이후 2~3개월치</strong>를 미리 등록해 주세요. 한 달만 등록되어 있으면 다음 달 교육 제안 대상에서 빠지게 됩니다. 가능으로 등록해 배정이 확정된 교육을 이후 불가로 바꿔 취소가 반복되면, 향후 지원·배정에서 후순위로 검토될 수 있습니다</li>
+        <li><strong>모바일 앱(PWA)을 설치합니다</strong> — 브라우저 메뉴에서 “홈 화면에 추가”. 일정 입력 알림을 받을 수 있습니다</li>
+      </ol>
+
+      <figure class="shot wide">
+        <img src="image/slack_guide_image.png" alt="Slack 우측 상단 프로필 이미지 → 프로필 → 더보기 → 멤버 ID 복사" loading="lazy" data-fallback="image/slack_guide_image.jpg|image/slack_guide_image.jpeg|image/slack_guide_image.webp|image/slack_guide_image.PNG">
+        <figcaption>Slack 멤버 ID 복사 — 우측 상단 프로필 이미지 → 프로필 → <span class="mono">⋮</span> → 멤버 ID 복사</figcaption>
+      </figure>
+
+      <div class="quote">등록한 일정이 실제와 다르면 배정에 문제가 생기고, 이는 <strong>본인 책임</strong>입니다. 변동이 생길 때마다 직접 최신화해 주세요.</div>
+
+      <h4 id="s-settle">계약과 정산에 필요한 정보</h4>
+      <ol class="steps">
+        <li><strong>사업자 유형을 선택합니다</strong> — 프리랜서 / 개인사업자 / 법인</li>
+        <li><strong>서류를 업로드합니다</strong> — 개인사업자·법인은 사업자등록증과 통장 사본</li>
+        <li><strong>내 계약과 명세서 메뉴 위치를 확인합니다</strong> — 계약 기간·교육명, 월별 정산 내역을 확인하는 곳입니다</li>
+        <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a> 폼을 제출합니다</strong> — 사업자 유형과 관계없이 <strong>최초 계약 시 1회</strong> 제출합니다. <strong>담당자명 항목에는 「이다은」</strong>으로 기재해 주세요</li>
+      </ol>
+      <div class="quote">플랫폼에서 누른 동의 체크는 <strong>계약서가 아닙니다.</strong> 계약서와 발주서가 어떻게 진행되는지는 <a href="#contract">Step 4 · 계약과 발주서</a>에서 확인해 주세요.</div>
+    </div>
+  </details>
+
+  <details class="setup" id="s-profile">
+    <summary>03 · 이력서와 경력 정보 등록 <span class="ph">필수</span></summary>
+    <div class="body">
+      <p class="why">고객사는 강사 프로필을 보고 교육을 결정합니다. 여기에 입력된 내용이 곧 제안서에 들어가는 정보이고, 어떤 교육에 매칭될지를 결정합니다.</p>
+      <ol class="steps">
+        <li><strong>개인 이력서를 PDF로 업로드합니다</strong> — 별도 양식이 없어도 보유하신 이력서를 그대로 올려주세요</li>
+        <li><strong>학력을 입력합니다</strong> — 최종 학력 기준</li>
+        <li><strong>소속과 재직 기간을 입력합니다</strong> — 현재 또는 직전 소속</li>
+        <li><strong>프로젝트 경력을 업로드합니다</strong> — 강의·프로젝트 이력. 고객사 제안 시 참고 자료로 활용됩니다</li>
+        <li><strong>내 자격에서 현재 자격을 확인합니다</strong> — 강사로 합류했는데 보조강사로만 되어 있지 않은지 꼭 확인해 주세요</li>
+      </ol>
+
+      <figure class="shot tall">
+        <img src="image/mypage_guide_image.png" alt="강사 관리 플랫폼 내 정보 → 이력서·경력 탭 입력 예시" loading="lazy" data-fallback="image/mypage_guide_image.jpg|image/mypage_guide_image.jpeg|image/mypage_guide_image.webp|image/mypage_guide_image.PNG">
+        <figcaption><strong>내 정보 → 이력서·경력</strong> 입력 예시</figcaption>
+      </figure>
+
+      <div class="quote">이력서와 경력 정보가 비어 있으면 역량을 확인할 수 없어 교육 제안 대상에서 제외될 수 있습니다. 온보딩 자리에서 최소한 이력서 파일은 올려두시는 것을 권합니다.</div>
+    </div>
+  </details>
+</section>
+
+<!-- ============ 링크 ============ -->
+<section id="links">
+  <p class="sec-k">바로가기</p>
+  <h2>자주 쓰는 링크</h2>
+  <p class="intro">온보딩을 진행하며 자주 열어보게 되는 링크를 모아두었습니다. 레벨·시급, 경비 금액 등 개별 조건에 해당하는 내용은 이 페이지에 공개하지 않으며, <strong>Slack 역할별 공지 채널에 안내된 문서 링크</strong>에서 확인해 주세요.</p>
+
+  <div class="roles" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="lp-must" id="lt-must">필수</button>
+    <button role="tab" aria-selected="false" aria-controls="lp-settle" id="lt-settle">정산·계약</button>
+    <button role="tab" aria-selected="false" aria-controls="lp-guide" id="lt-guide">안내 문서</button>
+  </div>
+
+  <div class="rolepanel" id="lp-must" role="tabpanel" aria-labelledby="lt-must">
+    <div class="links">
+      <a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">강사 관리 플랫폼(교무실)<span>일정 등록 · 자격 · 계약 · 발주서 · 명세서 · 문의</span></a>
+      <a href="https://b2bsparta.com/tutor" target="_blank" rel="noopener">플랫폼 가입 가이드<span>b2bsparta.com/tutor</span></a>
+    </div>
+  </div>
+
+  <div class="rolepanel" id="lp-settle" role="tabpanel" aria-labelledby="lt-settle" hidden>
+    <div class="links">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집<span>최초 계약 시 1회 · 담당자명 「이다은」</span></a>
+      <a href="https://teamsparta.notion.site/3d12dc3ef51480d692a3e0f2d274bd16" target="_blank" rel="noopener">강사·보조강사 정산 절차<span>프리랜서 / 사업자</span></a>
+      <a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서 양식<span>b2bsparta.com/invoice</span></a>
+      <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드<span>정산 · 계약서 · 경력증명서 · 경비 사전 신청</span></a>
+    </div>
+  </div>
+
+  <div class="rolepanel" id="lp-guide" role="tabpanel" aria-labelledby="lt-guide" hidden>
+    <div class="links">
+      <a href="https://b2bsparta.com/tutorguide" target="_blank" rel="noopener">강사 및 기술튜터 운영 가이드<span>b2bsparta.com/tutorguide</span></a>
+      <a href="https://b2bsparta.com/axhub" target="_blank" rel="noopener">플랫폼 이용 가이드<span>b2bsparta.com/axhub</span></a>
+      <a href="https://teamsparta.notion.site/3af2dc3ef514808f88a6d83db8b2f991" target="_blank" rel="noopener">활동 제한 및 계약 해지 기준<span>teamsparta.notion.site</span></a>
+      <a href="https://teamsparta.notion.site/3ae2dc3ef514802c96c5fcfc5afd11da" target="_blank" rel="noopener">문의 방법<span>teamsparta.notion.site</span></a>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>이 페이지에서 다루지 않는 정보</h3>
+    <p class="why">아래 항목은 개별 계약 조건에 해당하여 공개 페이지에 기재하지 않습니다.</p>
+    <ul class="tick">
+      <li><strong>레벨 체계와 레벨별 시급·강사료</strong> — 역할별 별도 안내 문서에서 확인해 주세요</li>
+      <li><strong>승급·유지 기준의 세부 수치</strong> — 역할별 별도 안내 문서에서 확인해 주세요</li>
+      <li><strong>교통비·숙박비 지원 금액과 지역별 기준</strong> — 경비 안내 문서에서 확인해 주세요</li>
+    </ul>
+    <div class="quote">해당 문서 링크는 <strong>Slack 역할별 공지 채널</strong>에 게시되어 있습니다. 본인의 현재 레벨은 강사 관리 플랫폼 <strong>내 자격</strong> 메뉴에서 확인하실 수 있습니다.</div>
+  </div>
+</section>
+
+<!-- ============ Step 2 역할 ============ -->
+<section id="role">
+  <p class="sec-k">Step 2</p>
+  <h2>내 역할과 책임</h2>
+  <p class="intro">강사와 보조강사(기술튜터)는 상하 관계가 아니라 <strong>역할 분담</strong>입니다. 한 사람은 수업 전체의 흐름을 책임지고, 한 사람은 교육생 개개인의 실습을 책임집니다. 둘 중 하나라도 비면 만족도는 바로 떨어집니다.</p>
+
+  <div class="roles" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="p-tutor" id="t-tutor">보조강사(기술튜터)</button>
+    <button role="tab" aria-selected="false" aria-controls="p-inst" id="t-inst">강사</button>
+    <button role="tab" aria-selected="false" aria-controls="p-both" id="t-both">겸임</button>
+  </div>
+
+  <div class="rolepanel" id="p-tutor" role="tabpanel" aria-labelledby="t-tutor">
+    <div class="card">
+      <h3>보조강사(기술튜터)가 하는 일</h3>
+      <p>보조강사는 단순한 보조 역할이 아닙니다. 교육생이 끝까지 실습 흐름을 따라가고 <strong>“나도 AI를 활용할 수 있겠다”</strong>는 경험을 하도록 돕는, 만족도를 직접 좌우하는 역할입니다.</p>
+      <ul class="tick">
+        <li><strong>실습 지원</strong> — 막힌 교육생을 찾아 진행을 이어주기</li>
+        <li><strong>질문 응대</strong> — 반복되는 질문은 모아서 강사에게 전달</li>
+        <li><strong>현장 관찰</strong> — 전체 진도를 살펴 “지금 절반이 못 따라오고 있다”는 신호를 강사에게 전달</li>
+        <li><strong>환경·계정 이슈 처리</strong> — 유료 계정 초대, 업로드 오류, 마이크·스피커 문제</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>일부 시기에는 배정 가능한 교육이 적을 수 있습니다</h3>
-      <p>교육 배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행됩니다. 특히 일부 월에는 <strong>임원 교육·PBL·심화 과정 등 특수 교육 비중이 높아</strong> 신규 합류자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있습니다. 이 경우 첫 배정까지 시간이 걸릴 수 있으며, 배정 가능한 교육이 생기는 대로 순차적으로 안내드립니다.</p>
-      <p>배정 가능성을 높이려면 교무실에 <strong>실제 참여 가능한 일정을 충분히</strong> 등록해 주세요. 일정 등록 방법은 <a href="#s-portal">Step 1 · 02 교무실</a>을 참고해 주세요.</p>
+      <h3>단계별로 무엇을 하나요</h3>
+      <p class="why">각 단계를 펼쳐서 확인해 주세요.</p>
+
+      <details>
+        <summary>처음이라면 · 첫 현장이라면 <span class="ph">교육 전</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>Slack 초대 수락, 플랫폼 가입, 활동 신청 — <a href="#setup">Step 1</a> 참고</li>
+            <li>플랫폼에 계약·정산 정보 작성 — 계약 절차는 <a href="#contract">Step 4</a> 참고</li>
+            <li>기업별 <strong>운영 스레드</strong>와 <strong>프로젝트 페이지</strong> 확인</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>교육 준비-도착 <span class="ph">D-3 ~ D-1</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li><strong>교안 검수</strong> — 운영 채널에 올라온 교안을 미리 읽고 “오늘 무엇을 하는지” 파악합니다. 궁금한 점은 <strong>해당 게시글 스레드에 댓글</strong>로 강사에게 질문하시면 됩니다</li>
+          </ul>
+
+          <figure class="shot tall">
+            <img src="image/Example_image1.png" alt="교육 운영 안내 게시글 예시" loading="lazy" data-fallback="image/Example_image1.jpg|image/Example_image1.jpeg|image/Example_image1.webp|image/Example_image1.PNG">
+            <figcaption>운영 채널 교안·일정 안내 게시글 예시</figcaption>
+          </figure>
+
+          <ul class="tick">
+            <li><strong>교안은 보통 교육 시작 5~7일 전</strong>에 운영 매니저가 제공합니다. 더 일찍 참고하고 싶으시면 <strong>교육 운영 채널에서 비슷한 교육명으로 검색</strong>해 유사 교육의 교안을 먼저 보시는 방법을 권합니다</li>
+            <li><strong>패들렛 확인</strong> — 실습 결과물이 어디에 올라가는지, 섹션 구성이 어떻게 되어 있는지</li>
+            <li>실습에 쓰이는 AI 툴을 직접 한 번 돌려보기 — 현장에서 처음 보면 지원할 수 없습니다</li>
+            <li>비대면(Zoom) 교육이라면 마이크·스피커·화면 공유 사전 점검</li>
+            <li><strong>지방 교육이라면 경비 사전 신청 여부를 미리 판단</strong> — 실비 산정을 원하시면 <strong>교육일 전까지</strong> Slack 워크플로로 사전 신청해야 합니다 (<a href="#apply-travel">Step 7 · 경비</a>)</li>
+            <li><strong>담당 PM에게 도착 메시지 작성</strong></li>
+          </ul>
+
+          <figure class="shot wide">
+            <img src="image/Example_image2.png" alt="담당 PM에게 도착 메시지 작성 예시" loading="lazy" data-fallback="image/Example_image2.jpg|image/Example_image2.jpeg|image/Example_image2.webp|image/Example_image2.PNG">
+            <figcaption>담당 PM에게 도착 메시지 작성 예시</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details>
+        <summary>실습 시간이 보조강사의 본 업무 시간입니다 <span class="ph">교육 중</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>유료 계정 세팅 및 초대 완료 확인</li>
+            <li><strong>자리에 앉아 있지 않기.</strong> 실습이 시작되면 교육장을 돌며 화면을 직접 보고 진행 상황을 확인합니다</li>
+            <li>손을 들지 않는 교육생이 가장 많이 막혀 있습니다 — 먼저 다가가 확인</li>
+            <li>같은 질문이 3번 이상 나오면 강사에게 전달해 전체 안내로 전환</li>
+            <li>현장 이슈는 Slack 운영 스레드로 공유</li>
+          </ul>
+          <div class="quote">이 항목은 실제 고객사 피드백에서 나온 내용입니다. <a href="#field">Step 5 현장 유의사항</a>에서 함께 확인해 주세요.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>마무리 <span class="ph">교육 후</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>교육 현장 사진 업로드 — 개인 식별 정보가 드러나지 않도록 촬영해 주세요</li>
+            <li>특이사항 보고 — 진행에 영향을 준 일은 작더라도 공유해 주세요</li>
+            <li><strong>경비 사후 증빙 제출</strong> — 실비 대상이라면 <strong>본인이 투입한 마지막 교육일 기준 7일 이내</strong>에 Slack 워크플로로 제출해야 합니다</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="rolepanel" id="p-inst" role="tabpanel" aria-labelledby="t-inst" hidden>
+    <div class="card">
+      <h3>강사가 하는 일</h3>
+      <p>강사는 교육을 직접 설계하고 진행하는 <strong>교안 작성 주체</strong>이며, 수업 전체의 흐름과 시간을 운영합니다. 교육생이 오늘 무엇을 배웠고 내일 무엇을 할 수 있게 되었는지가 강사의 책임 범위입니다.</p>
     </div>
 
-    <details style="margin-top:14px">
-      <summary>왜 첫 배정은 담당자가 직접 매칭하나요</summary>
+    <div class="card">
+      <h3>단계별로 무엇을 하나요</h3>
+      <p class="why">각 단계를 펼쳐서 확인해 주세요.</p>
+
+      <details>
+        <summary>교육 준비 <span class="ph">배정 직후</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>담당 PM 배정 및 Slack 스레드 생성 확인, 기업교육 프로젝트 노션 초대 확인</li>
+            <li>교육 개요 확인 — 일정·장소·대상·목표</li>
+            <li>교육 커리큘럼 확인, 패들렛 페이지 초대 및 권한 확인</li>
+            <li>담당 PM 미팅</li>
+            <li><strong>발주서 승인</strong> — 플랫폼에서 교육 건별 발주서를 직접 확인하고 승인합니다</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>교안 제작 <span class="ph">D-7 ~ D-5</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>제공되는 커리큘럼을 기반으로 작성합니다 — 백지에서 시작하지 않습니다</li>
+            <li>작성 도구는 <strong>Notion</strong>입니다. 줄글보다 섹션 구분·강조·리스트로 구조화해 주세요</li>
+            <li><strong>제출 기한은 교육 시작 5일~1주일 전</strong>이 기본값입니다. 교안이 늦어지면 보조강사가 사전 숙지할 시간이 사라집니다</li>
+            <li>실습 파일 준비, 교안 피드백 반영</li>
+            <li>사내망 교육이라면 사용할 생성형 AI 툴 리스트를 사전 공유 — 승인 절차가 필요합니다</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>환경 점검 <span class="ph">당일 · 도착 시</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>내·외부망 분리 여부 확인 — 파일 다운로드가 되는지</li>
+            <li>GPT·패들렛 등 외부 사이트 접속 및 파일 업로드 가능 여부</li>
+            <li>Windows/Mac 차이로 인한 업로드 오류 여부</li>
+            <li>유료 워크스페이스 초대 완료 여부</li>
+            <li><strong>담당 PM에게 도착 메시지</strong> — 교육 인원, 도착 시간, 특이사항</li>
+            <li>보조강사와 <strong>지원 구간 협의</strong> — 어느 실습에서 누가 어떻게 붙을지</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>진행 <span class="ph">교육 중</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li>교안 URL을 화면에 고정합니다. <strong>빠른 스크롤은 지양</strong>하고 한 화면에서 고정된 구간을 설명해 주세요</li>
+            <li><strong>설명 → 공통 실습 → 개별 실습</strong> 흐름으로, 단계 전환을 말로 명확히 구분합니다</li>
+            <li>실습은 <strong>언제까지, 어디에 올릴지</strong>를 반드시 함께 안내합니다</li>
+            <li>지시대명사(“여기”, “이거”) 대신 위치를 말로 설명합니다</li>
+            <li>실습 중에는 교육장을 순회합니다 — 가까운 자리만이 아니라 전체를 고르게</li>
+            <li>발성과 속도를 점검합니다 — 뒷자리까지 들리는지, 따라올 수 있는 속도인지</li>
+            <li><strong>교육 현장에서 보수·계약 조건을 언급하지 않습니다</strong> — 혼선이 발생하면 활동 검토 대상이 됩니다</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>마무리 <span class="ph">교육 후</span></summary>
+        <div class="body">
+          <ul class="tick">
+            <li><strong>보안 안내(필수)</strong> — 공용 PC 계정 로그아웃, 업로드 파일·데이터 삭제</li>
+            <li>담당 PM에게 교육 종료 메시지. 분위기·참여도·담당자 불만 등 특이사항이 있으면 <strong>전화</strong>로 알려주세요</li>
+            <li>강의 회고록 작성 — 어떤 이슈가 있었고, 해결됐는지, 다음엔 어떻게 할지</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="rolepanel" id="p-both" role="tabpanel" aria-labelledby="t-both" hidden>
+    <div class="card">
+      <h3>겸임으로 활동하시는 분</h3>
+      <p>플랫폼에서 강사와 보조강사 자격을 동시에 보유할 수 있습니다. 배정되는 역할에 따라 위 두 탭의 내용을 각각 확인해 주세요.</p>
+      <ul class="tick">
+        <li>강사로 배정된 교육 → <strong>강사</strong> 탭의 준비·진행 기준을 따릅니다</li>
+        <li>보조강사로 배정된 교육 → <strong>보조강사</strong> 탭의 기준을 따릅니다</li>
+        <li>강사 자격이 있으셔도 <strong>합류 후 첫 교육은 보조강사로 참여</strong>하시게 됩니다. 자세한 내용은 <a href="#pilot">Step 3 파일럿 배정</a>을 확인해 주세요</li>
+      </ul>
+      <div class="quote">교육 진행 방식은 텍스트로 아무리 설명해도 현장에서 한 번 보는 것만 못합니다.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>더 자세한 내용은 플레이북에</h3>
+    <p>이 페이지는 온보딩에서 다룬 핵심만 모은 요약입니다. 실제 교육 운영의 기준은 플레이북입니다.</p>
+    <ul class="tick">
+      <li><a href="https://b2bsparta.com/tutorguide" target="_blank" rel="noopener">강사 및 기술튜터 운영 가이드</a> — 전체 문서 모음</li>
+      <li>기술튜터 플레이북 <strong>CH2. 역할 및 단계별 체크리스트</strong> — 처음 참여하시는 분은 꼭 확인해 주세요</li>
+      <li>강사 플레이북 — 교육 툴, 강의 스타일 가이드, 준비~운영 상세 체크리스트</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Step 3 파일럿 ============ -->
+<section id="pilot">
+  <p class="sec-k">Step 3</p>
+  <h2>파일럿 배정: 첫 교육 매칭</h2>
+  <p class="intro">파일럿 배정은 신규 합류자의 <strong>첫 교육 매칭 1회</strong>를 의미합니다. 첫 교육은 담당자가 직접 배정하며, 현장 운영 방식과 역할을 먼저 경험하는 단계입니다.</p>
+
+  <div class="card">
+    <h3>어떻게 운영되나요</h3>
+    <ul class="tick">
+      <li><strong>첫 교육 1회</strong>는 담당자가 직접 배정합니다. 지원하고 싶은 특정 교육이 있으시면 기술튜터풀 채널에서 직접 지원하실 수 있고, 지원하신 교육이 그대로 첫 배정 교육이 되는 경우도 있습니다</li>
+      <li>강사로 합류하신 분도 첫 교육은 보조강사로 참여하시게 됩니다</li>
+      <li><strong>플랫폼 캘린더 일정 입력은 온보딩 시간에</strong> 함께 진행합니다</li>
+    </ul>
+    <div class="quote">교육 배정은 온보딩 참석, Slack·플랫폼 세팅, 정산 정보 입력, 가능 일정 등록이 완료된 이후 순차적으로 검토됩니다. 다만 <strong>온보딩 참석이 곧바로 즉시 배정을 보장하지는 않습니다.</strong></div>
+
+    <h3 style="margin-top:28px">첫 배정을 기다리는 동안 — 지원해도 됩니다</h3>
+    <p class="why">가장 많이 들어오는 질문입니다. 담당자가 등록된 일정을 보고 첫 1회를 배정하지만, 배정 건마다 개별로 연락을 드리지는 못합니다.</p>
+    <ul class="tick">
+      <li>배정 여부는 <strong>강사 관리 플랫폼에서 직접 확인</strong>해 주시고, 담당 매니저가 <strong>교육 운영 채널</strong>에서도 관련 안내를 드립니다</li>
+      <li><strong>당월 진행되는 교육은 보통 전월에 모집·확정됩니다.</strong> 그래서 첫 배정까지 <strong>최대 한 달 정도</strong> 걸릴 수 있습니다</li>
+      <li>그 전에 <strong>원하시는 교육이 있으면 기술튜터풀 채널에서 미리 지원해 두셔도 됩니다</strong></li>
+      <li>첫 배정 안내를 받으신 뒤에도, 다른 달 교육에 <strong>추가로 지원하실 수 있습니다</strong></li>
+      <li>첫 배정 이후의 지원은 <strong>기술튜터풀 채널에서 자유롭게</strong> 하시면 됩니다. 지원 방법은 <a href="#apply-post">Step 7</a>을 참고해 주세요</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <span class="k">꼭 확인</span>
+      <div>
+        <p><strong>첫 배정 교육을 일정 변동으로 취소하시면, 다음에 지원하실 때 우선순위가 밀리는 패널티를 받을 수 있습니다.</strong></p>
+        <p>플랫폼에는 <strong>실제로 가능한 일정만</strong> 등록해 주시고, 사정이 바뀌면 그때그때 <strong>직접 일정을 변경</strong>해 주세요.</p>
+      </div>
+    </div>
+
+    <div class="quote">첫 배정 교육이 <strong>반드시 AI 리터러시 교육은 아닙니다.</strong> 직무 경험과 포트폴리오를 보고 프로젝트형(PBL) 교육이 더 맞다고 판단되면 그쪽으로 배정드리는 경우도 있습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>일부 시기에는 배정 가능한 교육이 적을 수 있습니다</h3>
+    <p>교육 배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행됩니다. 특히 일부 월에는 <strong>임원 교육·PBL·심화 과정 등 특수 교육 비중이 높아</strong> 신규 합류자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있습니다.</p>
+    <p>배정 가능성을 높이려면 플랫폼에 <strong>실제 참여 가능한 일정을 충분히</strong> 등록해 주세요.</p>
+  </div>
+
+  <details style="margin-top:14px">
+    <summary>왜 첫 배정은 담당자가 직접 매칭하나요</summary>
+    <div class="body">
+      <p>신규로 합류하신 분은 아직 현장 경험이 없기 때문에, 첫 교육만큼은 회사가 안정적으로 운영해 온 <strong>기존 보조강사·강사와 매칭</strong>되도록 담당자가 직접 관리하고 있습니다.</p>
+      <p>다만 이 방식은 운영 리소스가 많이 들어, 2회차부터는 <strong>기술튜터풀 채널에서 직접 지원하시는 방식</strong>으로 진행됩니다.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>활동 초기에 무엇을 보나요</summary>
+    <div class="body">
+      <ul class="tick">
+        <li>교육 전 준비 및 교안·운영안 숙지</li>
+        <li>시간 준수, 현장 대응 및 커뮤니케이션</li>
+        <li>실습 지원 및 교육생 응대</li>
+        <li>강사·PM·동료와의 협업</li>
+        <li>플랫폼·Slack 등 운영 기준 준수</li>
+        <li>고객사·교육생·페어 인력 피드백</li>
+      </ul>
+      <p style="margin-top:12px"><strong>시연 영상을 아직 제출하지 않으셨다면</strong> 첫 배정 전후 활동 초기에 제출해 주세요. 고객사에 전달되는 필수 자료입니다.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ Step 4 계약 ============ -->
+<section id="contract">
+  <p class="sec-k">Step 4</p>
+  <h2>계약과 발주서</h2>
+  <p class="intro">계약서는 <strong>일정 기간의 기본 조건</strong>을 정하는 문서이고, 발주서는 <strong>교육 건별 세부 조건</strong>을 담아 발송·승인되는 문서입니다. 아래 기준은 <strong>2026년 10월 1일 계약분부터</strong> 적용됩니다.</p>
+
+  <div class="card">
+    <h3>공통 운영 기준</h3>
+    <p class="why">강사·보조강사(기술튜터)에게 동일하게 적용됩니다.</p>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:28%"><col style="width:72%"></colgroup>
+        <tr><th>항목</th><th>기준</th></tr>
+        <tr><td>온보딩</td><td>매월 2주차·4주차 금요일 15:00~16:00, 온라인 ZOOM<br>※ 미참석 시 계약 및 교육 배정 불가. 일정상 어려우시면 다음 회차에 참여</td></tr>
+        <tr><td>교육 투입·계약 체결</td><td>온보딩 참석 및 필수 세팅 완료 이후 가능</td></tr>
+        <tr><td>발주서</td><td>계약 이후 교육 진행 시, 강사 관리 플랫폼에서 교육 건별로 발송되며 <strong>본인이 직접 승인</strong></td></tr>
+        <tr><td>레벨·시급 반영 시점</td><td>다음 계약 갱신 시점부터 반영 (계약 기간 중 즉시 변경되지 않음)<br>세부 기준·금액은 Slack 공지 채널에 안내된 역할별 문서 참고</td></tr>
+        <tr><td>계약 갱신 재검토</td><td>직전 분기 교육 참여 일자가 기준에 미달하는 경우, 해당 갱신 시점에 계약서가 발송되지 않을 수 있음</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>역할별 차이</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:26%"><col style="width:37%"><col style="width:37%"></colgroup>
+        <tr><th>항목</th><th>강사</th><th>보조강사(기술튜터)</th></tr>
+        <tr><td>계약 단위</td><td><strong>6개월</strong></td><td><strong>3개월</strong></td></tr>
+        <tr><td>계약 기준일</td><td>매년 <strong>1월 1일 · 7월 1일</strong></td><td><strong>분기별 1일자</strong></td></tr>
+        <tr><td>신규 합류자 최초 계약</td><td>6개월 계약<br>(보조강사 → 강사 전환자는 3개월)</td><td>3개월 계약</td></tr>
+      </table>
+    </div>
+
+    <div class="callout info" style="margin-top:16px">
+      <span class="k">경과 규정</span>
+      <div>
+        <p><strong>2026년 4분기 경과 규정 (강사 한정)</strong></p>
+        <p>강사 계약 갱신 주기를 매년 1월·7월로 정렬하기 위해, <strong>2026년 10월 1일자 계약은 3개월(10/1~12/31) 단위</strong>로 체결합니다. 이후 <strong>2027년 1월 1일자부터 6개월 단위</strong>로 전환되며, 해당 갱신의 승급 여부는 <strong>2026년 7월 1일~12월 31일 실적</strong>을 기준으로 판단해 2027년 1월 1일부터 적용됩니다.</p>
+        <p>보조강사(기술튜터)는 기존과 동일하게 3개월 단위로 운영됩니다.</p>
+      </div>
+    </div>
+
+    <div class="quote">기본계약은 특정 교육 물량이나 최소 투입을 보장하지 않습니다. 교육 배정은 본인의 지원과 교육 일정에 따라 <strong>건별로</strong> 진행됩니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>온보딩 회차별 계약 일자</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:22%"><col style="width:39%"><col style="width:39%"></colgroup>
+        <tr><th>구분</th><th>1차 온보딩</th><th>2차 온보딩</th></tr>
+        <tr><td>일정</td><td>매월 2주차 금요일 15:00</td><td>매월 4주차 금요일 15:00</td></tr>
+        <tr><td>계약 기준일</td><td><strong>당월 1일자 소급 계약</strong><br>(계약서는 익월 발송)</td><td><strong>익월 1일자 계약</strong></td></tr>
+        <tr><td>교육 배정</td><td>온보딩 및 필수 세팅 완료 후 순차 진행</td><td>원칙적으로 익월 1일 이후 순차 진행</td></tr>
+        <tr><td>유의사항</td><td>빠른 배정이 가능하나, 계약 기준일과 실제 배정 시작일이 다를 수 있음</td><td>계약 기준일과 실제 활동 시작 시점을 맞추기 쉬움</td></tr>
+      </table>
+    </div>
+
+    <details style="margin-top:16px">
+      <summary>계약·배정 타임라인 예시 이미지로 보기</summary>
       <div class="body">
-        <p>신규로 합류하신 분은 아직 현장 경험이 없기 때문에, 첫 교육만큼은 회사가 안정적으로 운영해 온 <strong>기존 기술튜터·강사와 매칭</strong>되도록 담당자가 직접 관리하고 있습니다. 처음부터 자유 지원으로 열어두면 현장에 대한 이해가 없는 상태로 배정될 수 있어, 고객사와 신규 합류자 모두에게 부담이 커지기 때문입니다.</p>
-        <p>다만 이 방식은 담당자가 한 분 한 분의 일정과 이력을 직접 살펴 매칭해야 해서 <strong>운영 리소스가 많이 드는 방식</strong>이기도 합니다. 신규 합류가 늘어날수록 트래킹 리소스에 한계가 생겨, 담당자가 모든 분께 개별적으로 배정을 도와드리기 어려워지고 있습니다.</p>
-        <p>그래서 2회차부터는 담당자가 개별로 배정해 드리는 방식보다, <strong>기술튜터풀 채널에서 직접 지원하시는 방식</strong>으로 진행되며, 지금 단계에서 미리 지원해 보시는 것도 이런 변화에 익숙해지는 데 도움이 됩니다.</p>
+        <figure class="shot">
+          <img src="image/Onboarding_discription_image.png" alt="온보딩 참여 시점에 따른 계약·교육 배정 타임라인 예시" loading="lazy" data-fallback="image/Onboarding_discription_image.jpg|image/Onboarding_discription_image.jpeg|image/Onboarding_discription_image.webp|image/Onboarding_discription_image.PNG">
+          <figcaption>온보딩 참여 회차별 계약·배정 타임라인 예시</figcaption>
+        </figure>
       </div>
     </details>
+  </div>
 
-    <details style="margin-top:14px">
-      <summary>왜 이렇게 시작하나요</summary>
+  <div class="card">
+    <h3>계약서·발주서 발송 기준</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+        <tr><th>대상</th><th>계약 기준일</th></tr>
+        <tr><td>기존 계약 갱신 대상자</td><td>갱신 기준일</td></tr>
+        <tr><td>월 1차 온보딩 참석자</td><td>당월 1일자</td></tr>
+        <tr><td>월 2차 온보딩 참석자</td><td>익월 1일자</td></tr>
+        <tr><td>갱신 재검토 대상자</td><td>해당 갱신 미진행</td></tr>
+        <tr><td>온보딩 미참석자</td><td>계약 및 교육 진행 불가</td></tr>
+      </table>
+    </div>
+
+    <div class="scroll" style="margin-top:16px">
+      <table>
+        <colgroup><col style="width:34%"><col style="width:66%"></colgroup>
+        <tr><th>발주서 구분</th><th>처리 기준</th></tr>
+        <tr><td>교육 건별 발주</td><td>교육명·일자·시간·금액 등을 기재하여 발송, 플랫폼에서 본인이 승인</td></tr>
+        <tr><td>계약 기간 내 확정 교육</td><td>기존 계약 조건 기준으로 발주</td></tr>
+        <tr><td>계약서 발송 전 교육 투입</td><td>필요 시 건별 발주서로 우선 처리 가능</td></tr>
+        <tr><td>턴키 공고 교육</td><td>공고에 명시된 턴키 금액 기준으로 발주 (교통비·숙박비 포함)</td></tr>
+        <tr><td>차수 추가·일정 신설</td><td>기존 교육과 연결된 건이라도 <strong>추가 발주서</strong>가 발송될 수 있음</td></tr>
+      </table>
+    </div>
+
+    <ul class="tick" style="margin-top:16px">
+      <li><strong>2026년 10월 1일부터</strong> 기본계약 체결 후 교육 건별 발주서를 <strong>강사 관리 플랫폼에서 발송·승인</strong>하는 방식으로 전환됩니다</li>
+      <li>계약서는 일괄이 아닌 <strong>순차 발송</strong>됩니다. 발송 기간 중에는 개별 문의를 주시지 않아도 되며, <strong>최종 발송이 완료되면 공지 채널에 완료 공지</strong>가 올라옵니다</li>
+      <li><strong>이미 확정되어 발주된 교육</strong>은 계약 갱신 진행 여부와 무관하게 기존 조건대로 정상 진행되며, 강의료·경비 정산에도 변동이 없습니다</li>
+      <li>사전·사후 준비(세팅, 교육 운영 준비 등)에 대한 <strong>별도 비용은 지급되지 않습니다.</strong> 용역 계약 특성상 턴키 방식으로 계약서에 명시됩니다</li>
+    </ul>
+  </div>
+
+  <div class="card" id="contract-none">
+    <h3>계약서가 발송되지 않는 경우</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:28%"><col style="width:72%"></colgroup>
+        <tr><th>구분</th><th>내용</th></tr>
+        <tr><td>대상</td><td>직전 분기 교육 참여 일자가 기준에 미달하여 해당 갱신이 진행되지 않는 경우<br><span class="mono">※ 활동 종료 사유에 해당하는 경우는 별도 기준에 따라 처리</span></td></tr>
+        <tr><td>계속 활동 희망 의사 접수</td><td>계속 활동을 희망하시면 <strong>계약서 발송 완료 공지 이후 해당 월 말일까지</strong> AX교육팀에 의사를 전달해 주세요. 접수된 건은 내부 검토를 거쳐 계약 진행 여부가 결정됩니다</td></tr>
+        <tr><td>이후 처리</td><td>말일까지 별도 의사 전달이 없으면 갱신 의사가 없는 것으로 보아 <strong>계정·권한 해지 절차</strong>가 순차 진행됩니다</td></tr>
+        <tr><td>확정 교육 처리</td><td>이미 발주된 교육은 위 절차와 무관하게 <strong>기존 조건대로 정상 진행</strong>되며 정산에도 변동이 없습니다</td></tr>
+      </table>
+    </div>
+
+    <details style="margin-top:16px">
+      <summary>계정·권한 해지 시 유의사항</summary>
       <div class="body">
-        <p>평가를 위한 기간이 아니라, 현장을 먼저 보시라는 취지입니다. 첫 현장에서 아래를 익히고 나면 강사로 나갈 때 무엇을 준비해야 하는지가 예측 가능해집니다.</p>
         <ul class="tick">
-          <li>교육 현장 분위기와 전체 운영 흐름</li>
-          <li>기존 강사의 강의 진행 및 시간 운영 방식</li>
-          <li>교안·실습 운영안·교육 도구 사용법</li>
-          <li>강사와 기술튜터의 역할 분담 및 협업 방식</li>
-          <li>교육생 질문과 현장 이슈에 대응하는 방식</li>
+          <li>교안·고객사 자료 등 회사 자산은 계약 종료와 무관하게 <strong>외부 공유·노출이 제한</strong>됩니다. 계약서에 의거해 <strong>교안의 저작권은 회사에 귀속</strong>됩니다</li>
+          <li>정산이 완료되지 않은 건이 있으면, 해당 정산이 마무리될 때까지 필요한 소통 창구는 유지됩니다</li>
+          <li>이후 재합류하시는 경우, 온보딩 및 계약 체결 절차를 거쳐 계정과 권한이 다시 부여됩니다</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ Step 5 현장 ============ -->
+<section id="field">
+  <p class="sec-k">Step 5</p>
+  <h2>현장에서 실제로 나온 피드백</h2>
+  <p class="intro">아래는 실제 교육 이후 고객사와 운영진에게서 나온 피드백을 정리한 것입니다. 대부분 역량 문제가 아니라 <strong>미리 알았다면 피할 수 있었던 것</strong>들입니다.</p>
+
+  <div class="fnote">
+    <div class="said">
+      <p class="k">강의 전달 — 이런 피드백이 있었습니다</p>
+      <p>“말씀이 다소 빠르고 목소리가 작아 내용을 따라가기 어려웠다”</p>
+      <p>“실습 시간에 전체 교육생을 살피기보다 가까이 있는 분들 중심으로 대응하는 모습이 아쉬웠다”</p>
+    </div>
+    <div class="do">
+      <p class="k">그래서 이렇게 해주세요</p>
+      <ul>
+        <li>시작 전 뒷자리까지 들리는지 한 번 확인하고, 속도는 “따라오고 계신가요?”로 중간 점검</li>
+        <li>실습이 시작되면 반드시 교육장 전체를 순회 — 한 바퀴를 기준으로 삼기</li>
+        <li>실습 중 개입 시점을 미리 정해두기 (예: 시작 3분 후 1차 순회, 절반 시점 2차 순회)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fnote">
+    <div class="said">
+      <p class="k">교안 전달 시점 — 이런 피드백이 있었습니다</p>
+      <p>“교안 전달이 늦어져, 보조강사가 충분히 숙지할 시간을 확보하지 못한 채 교육이 진행되었다”</p>
+    </div>
+    <div class="do">
+      <p class="k">그래서 이렇게 해주세요</p>
+      <ul>
+        <li>교안 제출 기한은 <a href="#role">Step 2 강사 탭 · 교안 제작</a>에 정리되어 있습니다. 늦어질 것 같으면 미리 알려주세요</li>
+        <li>보조강사는 운영 채널에 교안이 올라오면 바로 확인하고, 궁금한 점은 스레드에 질문해 주세요</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fnote">
+    <div class="said">
+      <p class="k">보조강사 운영 — 이런 피드백이 있었습니다</p>
+      <p>“실습 시간 중 개인 노트북으로 자료를 확인하며 앉아 있는 시간이 일부 있었다. 실습 시간에는 교육생의 진행 상황을 더 적극적으로 살피고 지원하는 역할에 집중해 주었으면 한다”</p>
+    </div>
+    <div class="do">
+      <p class="k">그래서 이렇게 해주세요</p>
+      <ul>
+        <li>실습 시간은 대기 시간이 아니라 <strong>보조강사의 본 업무 시간</strong>입니다</li>
+        <li>개인 작업은 실습 전에 끝내두고, 실습이 시작되면 자리에서 일어나 순회해 주세요</li>
+        <li>손을 들지 않는 교육생을 먼저 확인 — 가장 많이 막혀 있는 경우가 많습니다</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fnote">
+    <div class="said">
+      <p class="k">비대면(Zoom) 교육 — 이런 피드백이 있었습니다</p>
+      <p>“여러 회사 교육생이 각자 노트북으로 참여하다 보니, 마이크·스피커 문제 등 강사가 통제하기 어려운 변수가 많았다. 사전 환경 체크가 하나의 준비 과정으로 있었다면 좋았을 것”</p>
+    </div>
+    <div class="do">
+      <p class="k">그래서 이렇게 해주세요</p>
+      <ul>
+        <li>비대면 교육은 <strong>시작 10분 전 환경 체크</strong>를 준비 과정에 포함 — 오디오, 화면 공유, 실습 링크 접속</li>
+        <li>보조강사는 채팅과 오디오 이슈를 전담해 강사가 진행에 집중할 수 있도록 분담해 주세요</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Step 6 협업 기준 ============ -->
+<section id="standard">
+  <p class="sec-k">Step 6</p>
+  <h2>협업 기준</h2>
+  <p class="intro">교육 품질만큼 중요한 것이 함께 일하는 방식입니다. 아래는 처벌을 위한 기준이 아니라, 매 현장을 안정적으로 만들기 위한 공통 약속입니다.</p>
+
+  <div class="card">
+    <h3>기본 활동 기준</h3>
+    <ul class="tick">
+      <li>확정된 일정과 <strong>시작 시간을 준수</strong>합니다. 교육 준비와 고객사 응대에 필요한 사전 도착 시간도 포함됩니다</li>
+      <li>참여가 어렵거나 일정 변경이 필요하면 <strong>인지한 즉시</strong> 담당 매니저에게 공유합니다</li>
+      <li>교육생·고객사·동료를 존중하는 방식으로 소통합니다</li>
+      <li>교육생 개인정보와 교육 운영 정보는 외부에 공유하지 않습니다. 현장 사진·영상을 외부에 게시하려면 <strong>사전 승인</strong>이 필요합니다</li>
+      <li>본인 및 타인의 <strong>보수·계약 조건을 교육 현장이나 외부에 언급·공개하지 않습니다</strong></li>
+      <li><strong>Slack 역할별 공지 채널의 알림을 켜두고, 게시되는 안내를 확인합니다.</strong> 확인하지 않아 발생한 문제는 회사가 책임지지 않습니다</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>준비 과정에서의 협업</h3>
+    <p>사전 미팅, 자료 준비, 운영안 확인은 형식적인 절차가 아니라 현장에서 사고를 막는 장치입니다.</p>
+    <ul class="tick">
+      <li>담당 매니저가 전달하는 필수 운영 안내는 확인하고 회신해 주세요</li>
+      <li>진행 방식에 이견이 있으실 때는 <strong>스레드에서 구체적으로</strong> — 무엇이 왜 어려운지, 대안은 무엇인지</li>
+      <li>메시지 톤도 협업의 일부입니다. 급할수록 사실과 요청을 분리해 적어주시면 훨씬 빠르게 처리됩니다</li>
+    </ul>
+  </div>
+
+  <div class="card" id="slot-outboarding">
+    <h3>활동 검토(아웃보딩) 기준</h3>
+    <p class="why">아웃보딩은 계약을 끝내기 위한 절차가 아니라, 확인된 사실을 짚고 개선을 합의하는 면담 절차입니다. 개선이 확인되면 정상 배정으로 돌아갑니다. 아래 표는 <a href="https://teamsparta.notion.site/3af2dc3ef514808f88a6d83db8b2f991" target="_blank" rel="noopener">「강사·기술튜터 활동 제한 및 계약 해지 기준」</a> 문서의 요약본입니다.</p>
+
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:16%"><col style="width:42%"><col style="width:42%"></colgroup>
+        <tr><th>유형</th><th>시정 요청</th><th>해지·발주 중단 검토</th></tr>
+        <tr><td><strong>교육 품질</strong></td><td>교육 목표 미달, 협의 없는 커리큘럼 변경, 실습 지원 미이행</td><td>중대한 오류로 재실시 필요, 무관한 내용 지속 전달, 개선 요청 후 동일 문제 반복</td></tr>
+        <tr><td><strong>교안·자료</strong></td><td>납기 초과로 검수 불가, 검수 결과 미반영, 자료 오류</td><td>저작권 침해 자료 사용, 커리큘럼 불일치 교안</td></tr>
+        <tr><td><strong>진행 방식</strong></td><td>요구된 진행 방식 미준수, 현장 관리 미흡, 자료·장비·사전 과제 미준비, 요구사항·일정 조율 반복 미응답</td><td>폭언·차별·성희롱, 부적절한 신체 접촉, 교육생·담당자·타 강사 대상 모욕적 언행</td></tr>
+        <tr><td><strong>일정 이행</strong></td><td>개시시각 미준수, 통지 의무 불이행, 5영업일 이내 일방적 변경·취소 (각 누적 3회 이상 시 우측 전환)</td><td>통지 없는 불이행, 확정 교육의 일방적 취소, 교육 시작 지연·컴플레인 발생</td></tr>
+        <tr><td><strong>고객사 컴플레인</strong></td><td>내용·진행·소통 관련 컴플레인 접수, 동일 유형 반복</td><td>고객사 신뢰의 중대한 훼손, 재계약·수주에 실질적 영향</td></tr>
+        <tr><td><strong>보수·계약 정보</strong></td><td>교육 현장에서 보수·계약 조건 언급으로 혼선 초래</td><td>타인 보수·계약 조건 무단 공개, 비공개 자료 무단 열람·전달, 정산 자료의 고객사·교육생 공유, 허위 정보로 갈등 유발</td></tr>
+        <tr><td><strong>보안·개인정보</strong></td><td>승인 없는 자료 취급 등 유출 없는 사안</td><td>개인정보 유출, 자료 무단 외부 공유·SNS 게시, 삭제 요청 불응, 허위 증빙 제출, 명예 훼손, 미협의 개인 영업·금전 거래</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:28px">면담은 어떤 과정으로 진행되나요</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:10%"><col style="width:90%"></colgroup>
+        <tr><th>순서</th><th>내용</th></tr>
+        <tr><td class="mono">1</td><td>관련 자료와 사실관계를 확인합니다</td></tr>
+        <tr><td class="mono">2</td><td>필요한 경우 당사자에게 해당 내용을 안내하고 <strong>의견 제출 기회</strong>를 제공합니다</td></tr>
+        <tr><td class="mono">3</td><td>사안의 중대성, 반복 여부, 누적 이력 및 교육 운영에 미친 영향을 검토합니다</td></tr>
+        <tr><td class="mono">4</td><td>검토 결과에 따라 시정 요청, 서면 개선 요청, 일정 기간 발주 제한 또는 계약 해지 여부를 결정합니다</td></tr>
+        <tr><td class="mono">5</td><td>조치 결과와 적용 시점을 당사자에게 안내합니다</td></tr>
+      </table>
+    </div>
+
+    <ul class="tick" style="margin-top:16px">
+      <li>동일한 하나의 사건을 여러 항목에 <strong>중복하여 산정하지 않습니다</strong></li>
+      <li>단순히 누적 횟수만을 이유로 <strong>자동으로 협업을 종료하지 않습니다</strong></li>
+      <li>질병·사고·가족 긴급상황·천재지변 등 불가피한 사유가 객관적으로 확인되면 정상 참작합니다</li>
+      <li>조치는 담당 매니저 한 명의 판단으로 확정하지 않고 <strong>AX교육팀 내부 검토</strong>를 거쳐 결정합니다</li>
+      <li>다만 사전 통지 없는 불이행, 개인정보 유출, 허위 자료 제출, 성희롱·폭언, 중대한 고객사 신뢰 훼손 등은 <strong>사전 개선 요청 없이</strong> 발주가 중단될 수 있습니다</li>
+    </ul>
+
+    <div class="quote">고객사 의견이 접수된 경우 담당 매니저가 먼저 사실관계를 확인하고, 면담은 AX교육팀에서 별도로 진행합니다. 현장에서 좋은 피드백이 쌓인 분도 함께 기록됩니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>장기 미활동자 관리</h3>
+    <p>최근 교육 참여일 또는 협업 의사를 확인한 날로부터 <strong>3개월</strong> 동안 활동이 없으면 장기 미활동자로 분류될 수 있습니다. 이 경우 신규 교육 제안 대상에서 제외되고, 플랫폼 활동 상태가 비활성으로 바뀌며 Slack 채널에서도 퇴장 처리될 수 있습니다.</p>
+    <ul class="tick">
+      <li>회사가 교육을 제안하지 않아 활동이 없었던 경우는 해당하지 않습니다</li>
+      <li>처리 전에 등록된 연락처나 운영 채널로 협업 의사를 먼저 확인드립니다</li>
+      <li>휴직·질병·출산육아·장기 출장·학업 등 불가피한 사유를 미리 공유해 주시면 해당 기간은 산정에서 제외됩니다</li>
+      <li>이후 다시 활동을 원하실 때는 <strong>AX교육팀(axedu@teamsparta.co)</strong>으로 재등록을 요청하실 수 있습니다</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Step 7 지원·정산·경비 ============ -->
+<section id="apply">
+  <p class="sec-k">Step 7</p>
+  <h2>지원 · 정산 · 경비 · 문의</h2>
+
+  <div class="card" id="apply-post">
+    <h3>교육 공고에 지원하는 방법</h3>
+    <div class="scroll">
+      <table>
+        <colgroup><col style="width:36%"><col style="width:64%"></colgroup>
+        <tr><th>공고 형태</th><th>지원 방법</th></tr>
+        <tr><td>‘지원하기’ 버튼이 있는 공고</td><td>버튼을 누르면 플랫폼에서 자동으로 지원 처리됩니다</td></tr>
+        <tr><td>매니저가 직접 올린 공고 (버튼 없음)</td><td>스레드에 <strong>“지원합니다” 댓글을 반드시</strong> 작성해 주세요. 댓글이 있어야 배정이 가능합니다</td></tr>
+      </table>
+    </div>
+    <p style="margin-top:12px">지원 공고가 아니더라도, 플랫폼 월별 캘린더에 <strong>가능 일정</strong>을 체크해 두시면 그 일정에 맞는 교육을 먼저 제안드리기도 합니다.</p>
+  </div>
+
+  <div class="card" id="apply-settle">
+    <h3>정산 — 사업자 유형에 따라 절차가 다릅니다</h3>
+    <p class="why">플랫폼에 등록하신 사업자 유형에 따라 제출 서류와 접수 경로가 달라집니다. 전체 절차는 <a href="https://teamsparta.notion.site/3d12dc3ef51480d692a3e0f2d274bd16" target="_blank" rel="noopener">정산 절차 문서</a>에 정리되어 있습니다.</p>
+
+    <details>
+      <summary>개인(프리랜서) 강사·보조강사 <span class="lv">매월 10일 정산</span></summary>
+      <div class="body">
+        <ul class="tick">
+          <li><strong>따로 제출하실 서류가 없습니다.</strong> 플랫폼에 등록만 되어 있으면 진행하신 강의 내역이 자동으로 명세서에 반영됩니다</li>
+          <li>강사 포털 내 명세서 기준으로 <strong>매월 10일</strong> 정산됩니다</li>
+          <li>명세 내용을 확인 후 이의가 있으면 <strong>익월 2일 자정까지</strong> 포털을 통해 문의해 주세요</li>
         </ul>
       </div>
     </details>
 
     <details>
-      <summary>활동 초기에 무엇을 보나요</summary>
+      <summary>사업자(개인사업자 · 법인) <span class="lv">워크플로 제출 필수</span></summary>
       <div class="body">
-        <ul class="tick">
-          <li>교육 전 준비 및 교안·운영안 숙지</li>
-          <li>시간 준수, 현장 대응 및 커뮤니케이션</li>
-          <li>실습 지원 및 교육생 응대</li>
-          <li>강사·PM·동료와의 협업</li>
-          <li>교무실·Slack 등 운영 기준 준수</li>
-          <li>고객사·교육생·페어 인력 피드백</li>
+        <p>절차는 두 단계입니다.</p>
+        <ol class="steps">
+          <li><strong>사업자 정보 등록</strong> <span class="mono">최초 1회</span> — 플랫폼에서 사업자등록증과 통장 사본을 업로드합니다</li>
+          <li><strong>강의료 증빙 제출</strong> <span class="mono">정산할 때마다</span> — Slack <strong>주강사풀 · 기술튜터풀</strong> 채널 하단의 「사업자 강의료 증빙 제출」 워크플로 버튼으로 제출합니다</li>
+        </ol>
+
+        <div class="scroll" style="margin-top:16px">
+          <table>
+            <colgroup><col style="width:36%"><col style="width:32%"><col style="width:32%"></colgroup>
+            <tr><th>서류</th><th>형식</th><th>제출 주기</th></tr>
+            <tr><td>사업자등록증</td><td>PDF</td><td>최초 1회</td></tr>
+            <tr><td>통장 사본</td><td>PDF 또는 이미지</td><td>최초 1회</td></tr>
+            <tr><td><a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서</a></td><td>날인 후 PDF</td><td>매번</td></tr>
+            <tr><td>세금계산서</td><td>—</td><td>매번</td></tr>
+          </table>
+        </div>
+
+        <ul class="tick" style="margin-top:16px">
+          <li>제출 전 <strong>워크플로에 입력한 비용과 세금계산서·거래명세서 금액이 일치하는지</strong> 확인해 주세요</li>
+          <li><strong>거래명세서 날인이 완료되었는지</strong> 확인해 주세요. 누락·불일치가 있으면 정산 일정이 지연됩니다</li>
+          <li><strong>제출 단위는 계약서 기준</strong>입니다. 동일 고객사·교육명이면 1회, 계약서가 다르면 각각 제출해 주세요</li>
+          <li>3개월 이상 장기 교육은 <strong>매달</strong>, 3개월 미만은 <strong>종료 후 한 번에</strong> 제출합니다</li>
         </ul>
-        <p style="margin-top:12px"><strong>시연 영상을 아직 제출하지 않으셨다면</strong> 첫 배정 전후 활동 초기에 제출해 주세요. 고객사에 전달되는 필수 자료로, 대면 시연 인터뷰와는 별개입니다.</p>
+
+        <div class="quote">사업자 정산의 <strong>정식 접수 경로는 Slack 워크플로 한 곳뿐</strong>입니다. 개인 DM으로는 접수되지 않습니다. 제출 방법은 <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드</a>에 화면과 함께 정리되어 있습니다.</div>
       </div>
     </details>
-  </section>
 
-  <!-- ============ Step 4 레벨·계약 ============ -->
-  <section id="level">
-    <p class="sec-k">Step 4</p>
-    <h2>레벨과 계약</h2>
-    <p class="intro">계약은 개인별 합류일 기준으로 3개월씩 계산하지 않고, <strong>분기 구간</strong>에 맞춰 진행됩니다. 신규 기술튜터는 최초 계약 기간 내 참여 횟수를 기준으로 다음 계약 구간의 적용 기준을 검토합니다. 세부 정책은 확정되는 대로 별도 안내드립니다.</p>
+    <h3 style="margin-top:28px">사업자 유형과 관계없이 공통</h3>
+    <p class="why">아래 항목은 개인 메시지가 아니라 폼과 <strong>Slack 워크플로</strong>로 접수해 주세요. DM으로 오면 누락되거나 접수 순서가 남지 않습니다.</p>
+    <ul class="tick">
+      <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a></strong> — <strong>최초 계약 시 1회</strong> 제출. <strong>담당자명 항목에는 「이다은」</strong></li>
+      <li><strong>사업자 강의료 증빙 제출</strong> — Slack 워크플로</li>
+      <li><strong>경력증명서 발급 신청</strong> — Slack 워크플로</li>
+      <li><strong>계약서 발송 요청</strong> — Slack 워크플로. 미수신·서명 기한 경과·재발송도 같은 경로입니다</li>
+      <li><strong>업무 경비 사전 신청</strong> — Slack 워크플로 (대중교통 접근이 어려운 지역 한정)</li>
+    </ul>
+  </div>
 
-    <div class="card">
-      <h3>계약 구간 안내</h3>
-      <ul class="tick">
-        <li>계약은 아래 <strong>분기 단위 구간</strong>에 맞춰 진행됩니다 — <strong>1~3월 / 4~6월 / 7~9월 / 10~12월</strong></li>
-        <li>분기 중간에 합류하신 경우, 최초 계약 기간은 다음 정규 구간에 맞추기 위해 <strong>1개월 또는 2개월</strong>로 짧아질 수 있습니다</li>
-        <li>계약서 발송 일정과 세부 계약 기간은 대상자별로 <strong>별도 안내</strong>됩니다</li>
-      </ul>
+  <div class="card" id="apply-travel">
+    <h3>업무 경비(교통·숙박)</h3>
+    <p class="why">경비는 <strong>개인이 아니라 교육 건에 부여</strong>됩니다. 동일 교육에 투입되면 역할·레벨과 무관하게 동일한 기준이 적용되며, <strong>개인별 별도 협의는 진행하지 않습니다.</strong> 지역별 지원 금액과 세부 판정 기준은 이 페이지에 기재하지 않으며, <strong>Slack 공지 채널에 안내된 경비 문서</strong>에서 확인해 주세요.</p>
 
-      <figure class="shot">
-        <img src="image/Branch_description_image.png" alt="분기별 계약 구간 안내 — 1년을 1~3월·4~6월·7~9월·10~12월 네 분기로 나눈 계약 구간과 2월·9월 합류자 예시, 최초 계약 기간이 1~2개월로 짧아질 수 있고 15회 미충족 시 다음 구간으로 이월되지 않는다는 설명" loading="lazy" data-fallback="image/Branch_description_image.jpg|image/Branch_description_image.jpeg|image/Branch_description_image.webp|image/Branch_description_image.PNG">
-        <figcaption>분기별 계약 구간과 합류 시점별 예시(2월·9월)</figcaption>
-      </figure>
+    <ul class="tick">
+      <li>교통비는 <strong>① 지역별 정액</strong> 또는 <strong>② 실비 산정(대중교통 접근이 어려운 지역)</strong> 중 <strong>하나만</strong> 지급됩니다. 두 가지를 합쳐 받으실 수 없습니다</li>
+      <li><strong>정액으로 받으실 경우 별도 사전 신청이 필요 없습니다.</strong> 실비로 받으시려면 반드시 <strong>사전 신청 후 사후 증빙까지</strong> 제출하셔야 합니다</li>
+      <li>사전 신청을 하지 않으시면 <strong>자동으로 지역별 정액이 적용</strong>됩니다</li>
+      <li>교통비는 교육 1건당 <strong>왕복 1회</strong> 기준이며, 동일 지역 연속 교육도 왕복 1회만 지급됩니다</li>
+      <li>당일 왕복이 가능한 일정은 숙박비가 지급되지 않으며, 숙박 기간 중 중간 왕복 교통비도 지급되지 않습니다</li>
+      <li><strong>턴키 공고 교육</strong>은 공고에 명시된 금액이 최종 지급액이며(교통비·숙박비 포함), <strong>지원 후 추가 경비 협의는 진행하지 않습니다</strong></li>
+    </ul>
 
-      <details style="margin-top:16px">
-        <summary>합류 시점별 최초 계약 기간 표로 보기</summary>
-        <div class="body">
-      <div class="scroll">
-        <table>
-          <colgroup><col style="width:34%"><col style="width:33%"><col style="width:33%"></colgroup>
-          <tr><th>합류 시점</th><th>최초 계약 기간</th><th>이후 정규 계약 구간</th></tr>
-          <tr><td>1월</td><td>1~3월</td><td>4~6월</td></tr>
-          <tr><td>2월</td><td>2~3월</td><td>4~6월</td></tr>
-          <tr><td>3월</td><td>3월</td><td>4~6월</td></tr>
-          <tr><td>4월</td><td>4~6월</td><td>7~9월</td></tr>
-          <tr><td>5월</td><td>5~6월</td><td>7~9월</td></tr>
-          <tr><td>6월</td><td>6월</td><td>7~9월</td></tr>
-          <tr><td>7월</td><td>7~9월</td><td>10~12월</td></tr>
-          <tr><td>8월</td><td>8~9월</td><td>10~12월</td></tr>
-          <tr><td><strong>9월</strong></td><td><strong>9월</strong></td><td><strong>10~12월</strong></td></tr>
-          <tr><td>10월</td><td>10~12월</td><td>다음 해 1~3월</td></tr>
-          <tr><td>11월</td><td>11~12월</td><td>다음 해 1~3월</td></tr>
-          <tr><td>12월</td><td>12월</td><td>다음 해 1~3월</td></tr>
-        </table>
-      </div>
-        </div>
-      </details>
-      <div class="quote">튜터 계약은 개인별 합류일 기준으로 3개월씩 이어지는 방식이 아니라, 정해진 분기 구간에 맞춰 정리됩니다.</div>
+    <div class="scroll" style="margin-top:18px">
+      <table>
+        <colgroup><col style="width:26%"><col style="width:74%"></colgroup>
+        <tr><th>단계</th><th>내용</th></tr>
+        <tr><td>1 · 사전 신청</td><td>교육 확정 후 <strong>교육일 전까지</strong> Slack 워크플로로 제출<br>— 네이버 지도 기준 <strong>출발지(역) → 도착지</strong> 대중교통 경로·비용 캡처 첨부</td></tr>
+        <tr><td>2 · 사후 증빙</td><td><strong>본인이 투입한 마지막 교육일 기준 7일 이내</strong> Slack 워크플로로 제출<br>— <strong>도착역 → 교육 장소</strong> 택시 실비 영수증<br><span class="mono">※ 교육 전체 종료일이 아니라 본인의 투입 종료일 기준</span></td></tr>
+        <tr><td>3 · 승인 및 지급</td><td>AX교육팀 확인 후 산정 금액 안내 및 지급</td></tr>
+      </table>
     </div>
 
-    <div class="card" id="level-tutor">
-      <h3>신규 기술튜터 — 최초 카운팅 기준</h3>
-      <ul class="tick">
-        <li>신규 기술튜터는 최초 계약 기간 동안 <strong>Lv.1</strong>로 시작합니다</li>
-        <li>최초 계약 기간 내 <strong>산정 대상 교육 15회</strong> 참여 여부로 다음 계약 구간의 적용 기준을 검토합니다</li>
-        <li>최초 계약이 <strong>1개월·2개월·3개월</strong> 중 무엇이든 <strong>15회 기준은 동일</strong>하게 적용됩니다</li>
-        <li>최초 계약 기간 내 15회를 채우지 못하면 그 카운트는 다음 구간으로 <strong>이월되지 않고 리셋</strong>됩니다. 다음 구간에서는 새 계약 기간을 기준으로 다시 카운팅이 시작됩니다</li>
-      </ul>
-      <div class="quote"><strong>산정 대상 교육</strong>은 기본 활용 교육(<a href="#slot-courses">Literacy L1</a>)과 심화 활용 교육(Literacy L2)입니다. 바이브코딩·데이터 분석·업무 자동화도 L2에 해당하면 카운트됩니다. <strong>PBL·해커톤은 포함되지 않습니다</strong>(배정은 가능하나 카운트와 별개). PBL·장기 과정·온라인 멘토링 등의 세부 카운팅 기준은 교육별로 별도 안내됩니다.</div>
-      <ul class="tick" style="margin-top:16px">
-        <li>레벨 유지·승급·강등 등 세부 기준은 <strong>별도 안내</strong>됩니다</li>
-        <li>레벨별 시급은 담당 매니저가 <strong>내부 운영 가이드 문서로 개별 전달</strong>합니다. 본인의 현재 레벨은 <a href="#s-profile">교무실 내 자격</a>에서 확인하실 수 있습니다</li>
-      </ul>
-
-      <details style="margin-top:8px">
-        <summary>카운팅 리셋 예시</summary>
-        <div class="body">
-          <p><strong>예시 1 · 2월 합류자</strong><br>최초 계약이 2~3월로 진행될 수 있습니다. 이 기간 동안 산정 대상 교육 15회 참여 여부를 확인합니다. 2~3월에 15회를 못 채우면 그 카운트는 4~6월로 이월되지 않고, 4월부터 4~6월 구간 기준으로 새로 카운팅이 시작됩니다. 즉 2~3월 참여 횟수에 4월 이후 횟수를 더해 15회를 채우는 방식이 아닙니다.</p>
-          <p style="margin-top:12px"><strong>예시 2 · 9월 합류자</strong><br>최초 계약이 9월 한 달 기준으로 진행될 수 있습니다. 9월 동안 15회를 못 채우면 그 카운트는 10~12월로 이월되지 않고, 10월부터 10~12월 구간 기준으로 새로 카운팅이 시작됩니다.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="card" id="level-inst">
-      <h3>강사 투입 기준</h3>
-      <ul class="tick">
-        <li>강사는 기술튜터 참여 <strong>횟수 조건을 반드시 충족하지 않아도</strong> 됩니다</li>
-        <li>다만 강사 투입 전 <strong>최소 3회 이상 기술튜터로 교육에 참여</strong>하셔야 합니다. 교육 운영 방식·현장 흐름·학습자 대응 방식·운영 기준을 먼저 경험한 뒤 투입이 검토됩니다</li>
-        <li>최소 3회를 채우셔도 강사 투입이 자동으로 보장되지는 않습니다. 교육별 <strong>필요 역량·강의 경험·현장 커뮤니케이션·교육 적합도</strong>를 종합적으로 고려해 최종 투입 여부가 결정됩니다</li>
-      </ul>
-    </div>
-
-    <div class="card" id="contract">
-      <h3>계약서와 발주서</h3>
-      <ul class="tick">
-        <li><strong>계약서</strong> — 일정 기간 동안의 활동 조건과 기준을 정하는 문서입니다. 기술튜터는 <strong>3개월에 한 번씩 활동 기간을 확정하는 계약서</strong>를 받으며, <strong>계약서를 작성(서명)하지 않으면 더 이상 활동하지 않는 것으로 간주</strong>됩니다. 9월에 합류하신 분의 예외는 아래 <a href="#sep-exception">9월 합류자 예외 안내</a>를 확인해 주세요</li>
-        <li><strong>발주서</strong> — 실제 참여하는 <strong>교육 건별</strong>로 발송되며, 교육 일정·역할·차수·지급 기준을 확인하는 문서입니다. <strong>건마다 교무실에서 본인이 직접 승인</strong>하셔야 합니다</li>
-        <li>교육 중 차수가 추가되거나 별도 일정이 새로 생기면, 기존 교육과 연결된 건이라도 <strong>추가 발주서</strong>가 발송될 수 있습니다</li>
-        <li>사전·사후 준비(세팅, 교육 운영 준비 등)에 대한 <strong>별도 비용은 지급되지 않습니다.</strong> 용역 계약 특성상 턴키 방식으로 계약서에 명시됩니다</li>
-      </ul>
-
-      <h3 id="sep-exception" style="margin-top:26px">9월 합류자 예외 안내</h3>
-      <p class="why">9월은 계약 프로세스 전환에 따른 예외 운영 기간입니다. 9월에 합류하신 분은 <strong>9월 한 달 기준으로 최초 계약</strong>이 진행되고, 이후 <strong>10~12월 정규 계약 구간</strong>으로 이어집니다.</p>
-      <div class="scroll">
-        <table>
-          <colgroup><col style="width:20%"><col style="width:80%"></colgroup>
-          <tr><th>시점</th><th>진행 내용</th></tr>
-          <tr><td><strong>9월</strong></td><td>첫 배정과 적응을 위한 예외 운영 기간입니다. 임원 교육·PBL·심화 과정 비중이 높아 신규자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있으며, 본격적인 교육 참여는 10월부터 시작될 수 있습니다</td></tr>
-          <tr><td><strong>9월</strong></td><td>참여 교육은 9월 기준으로 카운트됩니다. 단 <strong>9월 안에 15회를 채우지 못하면 10~12월로 이월되지 않고 리셋</strong>됩니다</td></tr>
-          <tr><td><strong>9월</strong></td><td>계약서 수령 전이라도 교육 참여가 가능하며, 9월 교육은 <strong>건별 발주서</strong>로 처리됩니다</td></tr>
-          <tr><td><strong>10월 초</strong></td><td>계약서 <strong>2건</strong>이 함께 발송됩니다 — <strong>9/1자 1개월 계약서</strong> + <strong>10/1자 3개월 계약서</strong></td></tr>
-          <tr><td><strong>10~12월</strong></td><td>10~12월 정규 계약 구간으로 운영됩니다. 교무실에 <strong>10·11·12월 가능 일정</strong>을 미리 등록해 주세요</td></tr>
-        </table>
-      </div>
-      <div class="quote">이번 안내는 기존 안내를 보완하기 위한 내용이며, <strong>이미 배정되었거나 참여하신 교육 건의 정산에는 영향이 없습니다.</strong> 계약서 발송 일정과 세부 계약 기간은 대상자별로 별도 안내드립니다. 확인이 필요하신 부분은 담당 매니저에게 문의해 주세요.</div>
-    </div>
-  </section>
-
-  <!-- ============ Step 5 현장 유의사항 ============ -->
-  <section id="field">
-    <p class="sec-k">Step 5</p>
-    <h2>현장에서 실제로 나온 피드백</h2>
-    <p class="intro">아래는 실제 교육 이후 고객사와 운영진에게서 나온 피드백을 정리한 것입니다. 대부분 역량 문제가 아니라 <strong>미리 알았다면 피할 수 있었던 것</strong>들입니다.</p>
-
-    <div class="fnote">
-      <div class="said">
-        <p class="k">강의 전달 — 이런 피드백이 있었습니다</p>
-        <p>“말씀이 다소 빠르고 목소리가 작아 내용을 따라가기 어려웠다”</p>
-        <p>“실습 시간에 전체 교육생을 살피기보다 가까이 있는 분들 중심으로 대응하는 모습이 아쉬웠다”</p>
-      </div>
-      <div class="do">
-        <p class="k">그래서 이렇게 해주세요</p>
-        <ul>
-          <li>시작 전 뒷자리까지 들리는지 한 번 확인하고, 속도는 “따라오고 계신가요?”로 중간 점검</li>
-          <li>실습이 시작되면 반드시 교육장 전체를 순회 — 한 바퀴를 기준으로 삼기</li>
-          <li>실습 중 개입 시점을 미리 정해두기 (예: 시작 3분 후 1차 순회, 절반 시점 2차 순회)</li>
+    <details style="margin-top:16px">
+      <summary>경로 캡처 인정 조건</summary>
+      <div class="body">
+        <ul class="tick">
+          <li>출발지는 <strong>출발역/출발 정거장</strong>, 도착 시각은 <strong>교육 시작 시각</strong> 기준</li>
+          <li>네이버 지도 <strong>최소시간 경로(최상단 추천 경로)</strong>만 인정됩니다</li>
+          <li>심야·새벽 시간대, 휴일 시간표, 임의 경유지를 포함한 경로 캡처는 인정되지 않습니다</li>
+          <li>캡처에는 <strong>조회 일시가 표시된 전체 화면</strong>이 포함되어야 하며, 일부만 잘라낸 이미지는 인정되지 않습니다</li>
         </ul>
       </div>
-    </div>
+    </details>
 
-    <div class="fnote">
-      <div class="said">
-        <p class="k">교안 전달 시점 — 이런 피드백이 있었습니다</p>
-        <p>“교안 전달이 늦어져, 튜터가 충분히 숙지할 시간을 확보하지 못한 채 교육이 진행되었다”</p>
+    <div class="callout" style="margin-top:16px">
+      <span class="k">순서 엄수</span>
+      <div>
+        <p><strong>① 사전 신청 → ② AX교육팀 확인 → ③ 교육 진행 → ④ 사후 증빙 제출</strong> 순서를 반드시 지켜 주세요.</p>
+        <p>사전 신청 없이 사후에만 제출하시거나, 사전 신청만 하고 사후 증빙을 제출하지 않으시면 <strong>실비 지급이 어렵습니다.</strong> 사전 신청 시 제출한 경로가 조회 조건·판정 기준을 충족하지 않는 경우에도 사후 정산이 불가할 수 있습니다.</p>
+        <p>조회 조건을 임의로 변경한 캡처, 실제와 다른 출발지·경로 제출, 미탑승 구간 청구가 확인되면 <strong>해당 건 경비는 지급되지 않고 기지급액은 회수</strong>되며, 반복 시 활동 제한 기준에 따라 처리됩니다.</p>
       </div>
-      <div class="do">
-        <p class="k">그래서 이렇게 해주세요</p>
-        <ul>
-          <li>교안 제출 기한은 <a href="#role">Step 2 강사 탭 · 교안 제작</a>에 정리되어 있습니다. 늦어질 것 같으면 미리 알려주세요</li>
-          <li>기술튜터는 운영 채널에 교안이 올라오면 바로 확인하고, 궁금한 점은 스레드에 질문해 주세요</li>
+    </div>
+  </div>
+
+  <div class="card" id="apply-contact">
+    <h3>문의는 어디로</h3>
+    <ul class="tick">
+      <li><strong>강사 관리 플랫폼 → 문의 메뉴</strong> — 일정/배정 · 계약/정산 · 계정/권한 · 기타</li>
+      <li><strong>현장 이슈</strong> — 1차는 강사·보조강사가 현장에서 협의해 처리하고, 해결되지 않으면 담당 매니저에게 바로 연락해 주세요. 담당 매니저는 운영 채널에 해당 교육 공고글을 올린 사람입니다. 긴급 건은 전화도 괜찮습니다</li>
+      <li>고객사 담당자 연락처는 필요한 경우 <strong>회사가 먼저 오픈</strong>해 드립니다</li>
+    </ul>
+    <div class="quote"><strong>문의 전에 Slack 공지 채널의 안내와 이 온보딩 문서를 먼저 확인해 주세요.</strong> 이미 안내된 내용에 대한 문의가 반복되면 답변이 늦어집니다. 교육의 약 90%는 운영진 동행 없이 진행되니, 작아 보이는 문제라도 수업 진행에 영향을 줄 수 있다면 혼자 판단하지 마시고 빠르게 공유해 주세요.</div>
+  </div>
+</section>
+
+<!-- ============ 참고 ============ -->
+<section id="tools">
+  <p class="sec-k">참고</p>
+  <h2>대표 교육과 주로 쓰는 툴</h2>
+
+  <div class="card">
+    <h3>공통 툴</h3>
+    <ul class="tick">
+      <li><strong>Notion</strong> — 교안 제작·배포. 교육생 중에는 Notion이 익숙하지 않은 분이 많으니 교육 초반에 사용법을 안내해 주세요</li>
+      <li><strong>패들렛</strong> — 실습 결과물 업로드. 익명 업로드가 가능하다는 점을 함께 안내하면 참여율이 올라갑니다</li>
+      <li><strong>생성형 AI</strong> — 사내망 환경에서는 사전 승인이 필요합니다. 사용할 툴 리스트를 미리 공유해 주세요</li>
+    </ul>
+    <div class="quote">교안은 제공되지만 <strong>툴 숙련은 각자 준비</strong>해 주셔야 합니다. 부족한 스킬이 있다면 교안을 받으신 뒤 강의 전까지 익혀 오셔야 현장에서 실습 지원이 가능합니다.</div>
+  </div>
+
+  <div class="card" id="slot-courses">
+    <h3>교육 유형 4가지</h3>
+    <p class="why">배정받게 될 교육은 크게 아래 네 가지로 나뉩니다. 유형마다 대상과 난이도, 준비해야 할 것이 다릅니다.</p>
+
+    <details>
+      <summary>1. 기본 활용 교육 <span class="lv">Literacy L1</span></summary>
+      <div class="body">
+        <ul class="tick">
+          <li>AI를 처음 접하는 임직원이 <strong>ChatGPT·Gemini·Claude</strong> 등 범용 생성형 AI를 문서 작성·자료 조사·보고 등 일상 업무에 바로 적용할 수 있도록 하는 입문 과정입니다</li>
+          <li>직무를 가리지 않는 공통 대상 교육으로, <strong>1~2일 단기 집합</strong> 형태로 운영합니다</li>
         </ul>
       </div>
-    </div>
+    </details>
 
-    <div class="fnote">
-      <div class="said">
-        <p class="k">튜터 운영 — 이런 피드백이 있었습니다</p>
-        <p>“실습 시간 중 개인 노트북으로 자료를 확인하며 앉아 있는 시간이 일부 있었다. 실습 시간에는 교육생의 진행 상황을 더 적극적으로 살피고 지원하는 역할에 집중해 주었으면 한다”</p>
-      </div>
-      <div class="do">
-        <p class="k">그래서 이렇게 해주세요</p>
-        <ul>
-          <li>실습 시간은 대기 시간이 아니라 <strong>튜터의 본 업무 시간</strong>입니다</li>
-          <li>개인 작업은 실습 전에 끝내두고, 실습이 시작되면 자리에서 일어나 순회해 주세요</li>
-          <li>손을 들지 않는 교육생을 먼저 확인 — 가장 많이 막혀 있는 경우가 많습니다</li>
+    <details>
+      <summary>2. 심화 활용 교육 <span class="lv">Literacy L2</span></summary>
+      <div class="body">
+        <ul class="tick">
+          <li>실무자가 자기 직무의 실제 업무 흐름에 AI를 붙이는 과정으로, <strong>데이터 분석 · 업무 자동화(RPA) · 이미지/영상 제작 · 바이브코딩</strong> 등 주제별로 나뉩니다</li>
+          <li><strong>Python · GPT API · n8n · Claude Code · Copilot Studio</strong>처럼 도구 난이도가 한 단계 높아집니다</li>
         </ul>
       </div>
-    </div>
+    </details>
 
-    <div class="fnote">
-      <div class="said">
-        <p class="k">비대면(Zoom) 교육 — 이런 피드백이 있었습니다</p>
-        <p>“여러 회사 교육생이 각자 노트북으로 참여하다 보니, 마이크·스피커 문제 등 강사가 통제하기 어려운 변수가 많았다. 사전 환경 체크가 하나의 준비 과정으로 있었다면 좋았을 것”</p>
-      </div>
-      <div class="do">
-        <p class="k">그래서 이렇게 해주세요</p>
-        <ul>
-          <li>비대면 교육은 <strong>시작 10분 전 환경 체크</strong>를 준비 과정에 포함 — 오디오, 화면 공유, 실습 링크 접속</li>
-          <li>튜터는 채팅과 오디오 이슈를 전담해 강사가 진행에 집중할 수 있도록 분담해 주세요</li>
+    <details>
+      <summary>3. 프로젝트형 교육 <span class="lv">PBL</span></summary>
+      <div class="body">
+        <ul class="tick">
+          <li>정해진 기간 동안 팀이 자사의 실제 과제를 붙잡고 결과물까지 만들어내는 과정으로, <strong>PBL Lite · PBL Pro · 장기 아카데미</strong>가 있습니다</li>
+          <li>멘토링과 코칭 비중이 높고 최종 발표로 마무리됩니다</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </details>
 
-  <!-- ============ Step 6 협업 기준 ============ -->
-  <section id="standard">
-    <p class="sec-k">Step 6</p>
-    <h2>협업 기준</h2>
-    <p class="intro">교육 품질만큼 중요한 것이 함께 일하는 방식입니다. 아래는 처벌을 위한 기준이 아니라, 매 현장을 안정적으로 만들기 위한 공통 약속입니다.</p>
-
-    <div class="card">
-      <h3>기본 활동 기준</h3>
-      <ul class="tick">
-        <li>확정된 일정과 <strong>시작 시간을 준수</strong>합니다. 교육 준비와 고객사 응대에 필요한 사전 도착 시간도 포함됩니다</li>
-        <li>참여가 어렵거나 일정 변경이 필요하면 <strong>인지한 즉시</strong> 담당 매니저에게 공유합니다</li>
-        <li>교육생·고객사·동료를 존중하는 방식으로 소통합니다</li>
-        <li>교육생 개인정보와 교육 운영 정보는 외부에 공유하지 않습니다. 현장 사진·영상을 외부에 게시하려면 사전 확인이 필요합니다</li>
-        <li>교육 품질에 영향을 줄 수 있는 이슈는 혼자 판단하지 않고 공유합니다</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>준비 과정에서의 협업</h3>
-      <p>사전 미팅, 자료 준비, 운영안 확인은 형식적인 절차가 아니라 현장에서 사고를 막는 장치입니다. 실제로 준비 단계의 협조가 이루어지지 않아 운영 리소스가 과도하게 투입된 사례가 반복적으로 확인되고 있습니다.</p>
-      <ul class="tick">
-        <li>담당 매니저가 전달하는 필수 운영 안내는 확인하고 회신해 주세요</li>
-        <li>진행 방식에 이견이 있으실 때는 <strong>스레드에서 구체적으로</strong> — 무엇이 왜 어려운지, 대안은 무엇인지</li>
-        <li>메시지 톤도 협업의 일부입니다. 급할수록 사실과 요청을 분리해 적어주시면 훨씬 빠르게 처리됩니다</li>
-      </ul>
-    </div>
-
-    <div class="card" id="slot-outboarding">
-      <h3>활동 검토(아웃보딩) 기준</h3>
-      <p class="why">아웃보딩은 계약을 끝내기 위한 절차가 아니라, 확인된 이슈를 짚고 개선을 합의하는 면담 절차입니다. 개선이 확인되면 정상 배정으로 돌아갑니다. 특정 시기나 신규 여부를 이유로 완화하거나 강화하지 않고 모두에게 동일한 기준이 적용됩니다.</p>
-
-      <div class="scroll">
-        <table>
-          <colgroup><col style="width:16%"><col style="width:84%"></colgroup>
-          <tr><th>등급</th><th>어떤 경우인가</th></tr>
-          <tr><td><strong>경미</strong></td><td>교육 준비·진행에 실질적 영향을 주었거나 반복된 사안 (고객사 직접 피드백 포함)</td></tr>
-          <tr><td><strong>중대</strong></td><td>안전·신뢰·법적 리스크가 있어 즉시 조치가 필요한 사안</td></tr>
-        </table>
+    <details>
+      <summary>4. 해커톤 <span class="lv">행사형</span></summary>
+      <div class="body">
+        <ul class="tick">
+          <li>전사 단위 인원이 몰입해 AI 결과물을 만들고 <strong>심사·시상</strong>까지 이어지는 행사형 프로그램입니다</li>
+          <li>작품 제출·공유 플랫폼, 발표 자료 보안 점검 등 별도 운영 준비가 필요합니다</li>
+        </ul>
       </div>
+    </details>
 
-      <p class="why" style="margin-top:16px">누적에 따른 조치는 아래와 같습니다.</p>
-      <div class="scroll">
-        <table>
-          <colgroup><col style="width:24%"><col style="width:16%"><col style="width:60%"></colgroup>
-          <tr><th>구분</th><th>누적</th><th>조치</th></tr>
-          <tr><td><strong>경미 이슈</strong></td><td class="mono">3회</td><td>재교육 또는 피드백</td></tr>
-          <tr><td><strong>경미 이슈</strong></td><td class="mono">6회</td><td>아웃보딩 또는 다음 분기 계약 검토</td></tr>
-          <tr><td><strong>중대 이슈</strong></td><td class="mono">1회</td><td>재교육 또는 아웃보딩 면담</td></tr>
-          <tr><td><strong>중대 이슈</strong></td><td class="mono">2회</td><td>아웃보딩 또는 계약 해지 검토</td></tr>
-        </table>
-      </div>
-      <div class="quote">누적은 <strong>롤링으로 집계</strong>됩니다. 경미 이슈는 <strong>매년 1월 1일 리셋</strong>되는 방향으로, 중대 이슈는 <strong>리셋 없이 누적</strong>되는 방향으로 운영됩니다. 세부 기준은 확정되는 대로 별도 안내드립니다.</div>
+    <div class="quote"><strong>온라인 멘토링 · 해커톤 · PBL 과정</strong>과 일부 장기 과정은 레벨 산정 대상에서 제외됩니다. 배정은 가능하지만 산정에는 포함되지 않으며, 세부 기준은 역할별 안내 문서를 확인해 주세요.</div>
+  </div>
+</section>
 
-      <div style="margin-top:20px">
-        <details>
-          <summary>어떻게 판단하나요</summary>
-          <div class="body">
-            <ul class="tick">
-              <li>하나의 사건이 여러 유형에 해당해도 <strong>1회만</strong> 카운트합니다</li>
-              <li>누적은 롤링으로 집계합니다 — <strong>경미 이슈는 매년 1월 1일 리셋</strong>되는 방향, <strong>중대 이슈는 리셋 없이 누적</strong>되는 방향으로 운영됩니다(세부 기준 확정 시 별도 안내)</li>
-              <li>질병·사고·가족 긴급상황·천재지변 등 불가피한 사유는 증빙이 확인되면 카운트에서 제외됩니다</li>
-              <li>배정 오류나 자료 미제공 등 <strong>회사 귀책</strong>도 카운트에서 제외됩니다</li>
-            </ul>
-            <p style="margin-top:12px">자세한 기준은 <a href="https://teamsparta.notion.site/3af2dc3ef514808f88a6d83db8b2f991" target="_blank" rel="noopener">강사·기술튜터 활동 제한 및 계약 해지 기준</a>에서 확인하실 수 있습니다.</p>
-          </div>
-        </details>
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <p class="sec-k">FAQ</p>
+  <h2>합류 초기에 가장 많이 나오는 질문</h2>
+  <p class="intro">온보딩 이후 실제로 반복해서 들어온 질문들입니다.</p>
 
-        <details>
-          <summary>어떤 항목을 보나요</summary>
-          <div class="body">
-            <div class="scroll">
-              <table>
-                <colgroup><col style="width:16%"><col style="width:42%"><col style="width:42%"></colgroup>
-                <tr><th>유형</th><th>시정 요청 (경미)</th><th>계약 검토·발주 중단 검토 (중대)</th></tr>
-                <tr><td><strong>교육 품질</strong></td><td>교육 목표 미달, 협의 없는 커리큘럼 변경, 실습 지원 미이행</td><td>중대한 오류로 재실시 필요, 무관한 내용 지속 전달, 개선 요청 후 동일 문제 반복</td></tr>
-                <tr><td><strong>교안·자료</strong></td><td>납기 초과로 검수 불가, 검수 결과 미반영, 자료 오류</td><td>저작권 침해 자료 사용, 커리큘럼 불일치 교안</td></tr>
-                <tr><td><strong>진행 방식</strong></td><td>요구된 진행 방식 미준수, 현장 관리 미흡, 자료·장비·사전 과제 미준비, 요구사항·일정 조율 반복 미응답</td><td>폭언·차별·성희롱, 부적절한 신체 접촉, 교육생·담당자·타 강사 대상 모욕적 언행</td></tr>
-                <tr><td><strong>일정 이행</strong></td><td>개시시각 미준수, 통지 의무 불이행, 5영업일 이내 일방적 변경·취소 (각 누적 3회 이상 시 우측 전환)</td><td>통지 없는 불이행, 확정 교육의 일방적 취소, 교육 시작 지연·컴플레인 발생</td></tr>
-                <tr><td><strong>고객사 컴플레인</strong></td><td>내용·진행·소통 관련 컴플레인 접수, 동일 유형 반복</td><td>고객사 신뢰의 중대한 훼손, 재계약·수주에 실질적 영향</td></tr>
-                <tr><td><strong>보수·계약 정보</strong></td><td>교육 현장에서 보수·계약 조건 언급으로 혼선 초래</td><td>타인 보수·계약 조건 무단 공개, 비공개 자료 무단 열람·전달, 정산 자료의 고객사·교육생 공유, 허위 정보로 갈등 유발</td></tr>
-                <tr><td><strong>보안·개인정보</strong></td><td>승인 없는 자료 취급 등 유출 없는 사안</td><td>개인정보 유출, 자료 무단 외부 공유·SNS 게시, 삭제 요청 불응, 허위 증빙 제출, 명예 훼손, 미협의 개인 영업·금전 거래</td></tr>
-              </table>
-            </div>
-          </div>
-        </details>
+  <div style="margin-top:24px">
 
-        <details>
-          <summary>어떤 절차로 진행되나요</summary>
-          <div class="body">
-            <div class="scroll">
-              <table>
-                <colgroup><col style="width:10%"><col style="width:90%"></colgroup>
-                <tr><th>순서</th><th>내용</th></tr>
-                <tr><td class="mono">1</td><td>담당 매니저가 확인된 사실을 기록으로 등록합니다</td></tr>
-                <tr><td class="mono">2</td><td>정기 검토에서 유형과 등급을 확정한 뒤 카운트에 반영합니다</td></tr>
-                <tr><td class="mono">3</td><td>임계 도달 전이라도 보완이 필요하면 <strong>1~2회 피드백과 개선 요청</strong>을 드립니다</td></tr>
-                <tr><td class="mono">4</td><td>임계 도달 시 면담을 진행합니다 — 사실 확인과 의견 청취, 개선 방향 합의</td></tr>
-                <tr><td class="mono">5</td><td>개선이 확인되면 정상 배정으로 돌아가고, 확인되지 않으면 배정 제한 또는 계약을 검토합니다</td></tr>
-              </table>
-            </div>
-            <p style="margin-top:12px">고객사 의견이 접수된 경우 담당 매니저가 먼저 사실관계를 확인하고, 면담은 AX교육팀에서 별도로 진행합니다.</p>
-            <div class="quote">현장에서 좋은 피드백이 쌓인 분도 함께 기록되어 인센티브 검토 대상이 됩니다.</div>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
+    <details><summary>강사로 합격했는데 왜 보조강사로 시작하나요?</summary><div class="body">
+      <p>팀스파르타 기업교육은 강사와 보조강사가 한 팀으로 움직이고, 현장마다 고객사 성격·교육생 수준·실습 환경이 모두 다릅니다. 처음부터 단독 강사로 배정되면 그 변수를 혼자 감당하셔야 하고, 특히 장기 교육은 중도 교체가 어려워 고객사와 교육생 모두에게 부담이 큽니다.</p>
+      <p>그래서 신규 합류자는 첫 교육 1회를 기존 인력과 페어로 들어가 운영 흐름·교안 활용·역할 분담을 먼저 보시게 됩니다. 자세한 내용은 <a href="#pilot">Step 3</a>을 확인해 주세요.</p>
+    </div></details>
 
-  <!-- ============ Step 7 지원·정산·문의 ============ -->
-  <section id="apply">
-    <p class="sec-k">Step 7</p>
-    <h2>지원 · 정산 · 문의</h2>
+    <details><summary>Slack 공지 채널 알림을 꼭 켜야 하나요?</summary><div class="body">
+      <p>네, 필수입니다. 계약서 발송 안내, 발주서 승인 요청, 정산·경비 신청 마감, 운영 기준 변경 등 활동에 직접 영향을 주는 정보가 역할별 공지 채널로만 발송됩니다.</p>
+      <p><strong>공지 채널에 안내된 내용과 온보딩 문서를 읽지 않아 발생한 문제(정산 지연·누락, 신청 기한 경과, 배정 제외 등)에 대해서는 회사가 책임지지 않습니다.</strong></p>
+    </div></details>
 
-    <div class="card" id="apply-post">
-      <h3>교육 공고에 지원하는 방법</h3>
-      <div class="scroll">
-        <table>
-          <colgroup><col style="width:36%"><col style="width:64%"></colgroup>
-          <tr><th>공고 형태</th><th>지원 방법</th></tr>
-          <tr><td>‘지원하기’ 버튼이 있는 공고</td><td>버튼을 누르면 교무실에서 자동으로 지원 처리됩니다</td></tr>
-          <tr><td>매니저가 직접 올린 공고 (버튼 없음)</td><td>스레드에 <strong>“지원합니다” 댓글을 반드시</strong> 작성해 주세요. 댓글이 있어야 배정이 가능합니다</td></tr>
-        </table>
-      </div>
-      <p style="margin-top:12px">지원 공고가 아니더라도, 교무실 월별 캘린더에 <strong>가능 일정</strong>을 체크해 두시면 그 일정에 맞는 교육을 먼저 제안드리기도 합니다.</p>
-    </div>
+    <details><summary>플랫폼에서 동의 체크를 했는데 계약이 된 건가요?</summary><div class="body">
+      <p>아닙니다. 플랫폼의 동의 체크는 이용과 정보 활용에 대한 확인일 뿐, 계약으로서의 효력은 없습니다.</p>
+      <p>실제 계약은 <strong>계약서</strong>와 교육 <strong>건별 발주서</strong>로 진행됩니다. 계약서는 별도로 발송되고, 발주서는 플랫폼에서 건마다 직접 승인하시게 됩니다. 자세한 내용은 <a href="#contract">Step 4</a>를 확인해 주세요.</p>
+    </div></details>
 
-    <div class="card" id="apply-settle">
-      <h3>정산 — 사업자 유형에 따라 절차가 다릅니다</h3>
-      <p class="why">교무실에 등록하신 사업자 유형에 따라 제출 서류와 접수 경로가 달라집니다. 본인 유형을 펼쳐서 확인해 주세요. 전체 절차는 <a href="https://teamsparta.notion.site/3d12dc3ef51480d692a3e0f2d274bd16" target="_blank" rel="noopener">강사·기술튜터 정산 절차(프리랜서 / 사업자)</a> 문서에 정리되어 있습니다.</p>
+    <details><summary>계약 기간은 어떻게 되나요?</summary><div class="body">
+      <p><strong>강사는 6개월 단위(매년 1월 1일·7월 1일 기준일)</strong>, <strong>보조강사(기술튜터)는 3개월 단위(분기별 1일자)</strong>로 계약이 진행됩니다.</p>
+      <p>다만 강사의 경우 갱신 주기를 1월·7월로 정렬하기 위해 <strong>2026년 10월 1일자 계약만 3개월(10/1~12/31)</strong>로 체결되고, 2027년 1월 1일부터 6개월 단위로 전환됩니다.</p>
+      <p>계약서 발송 일정과 세부 기간은 대상자별로 별도 안내됩니다.</p>
+    </div></details>
 
-      <details>
-        <summary>프리랜서 <span class="lv">3.3% 원천징수</span></summary>
-        <div class="body">
-          <ul class="tick">
-            <li><strong>따로 제출하실 서류가 없습니다.</strong> 교무실에 프리랜서로 등록만 되어 있으면 진행하신 강의 내역이 자동으로 명세서에 반영됩니다</li>
-            <li>명세서는 교무실 <strong>내 계약 → 명세서 다운로드</strong>에서 확인하실 수 있습니다</li>
-          </ul>
-        </div>
-      </details>
+    <details><summary>시급이나 레벨은 어디서 확인하나요?</summary><div class="body">
+      <p>레벨 체계와 레벨별 시급, 승급·유지 기준은 개별 계약 조건에 해당해 이 공개 페이지에는 기재하지 않습니다.</p>
+      <p><strong>Slack 역할별 공지 채널에 안내된 레벨·시급 기준 문서</strong>에서 확인해 주세요. 본인의 현재 레벨은 강사 관리 플랫폼 <strong>내 자격</strong> 메뉴에서 확인하실 수 있습니다.</p>
+      <p>참고로 레벨 변경에 따른 시급은 <strong>다음 계약 갱신 시점</strong>부터 반영되며, <strong>교육 건별 시급 협상은 진행하지 않습니다.</strong></p>
+    </div></details>
 
-      <details>
-        <summary>개인사업자 · 법인 <span class="lv">세금계산서</span></summary>
-        <div class="body">
-          <p>절차는 두 단계입니다.</p>
-          <ol class="steps">
-            <li><strong>사업자 정보 등록</strong> <span class="mono">최초 1회</span> — 교무실 사업자 정보 등록 화면에서 사업자등록증과 통장 사본을 업로드합니다</li>
-            <li><strong>강의료 증빙 제출</strong> <span class="mono">정산할 때마다</span> — Slack <strong>주강사풀 · 기술튜터풀</strong> 채널 하단의 「사업자 강의료 증빙 제출」 워크플로 버튼으로 제출합니다</li>
-          </ol>
+    <details><summary>계약 기간 중에 승급하면 시급이 바로 오르나요?</summary><div class="body">
+      <p>아닙니다. 시급은 <strong>교육 계약을 맺은 시점의 레벨</strong>을 기준으로 정해집니다. 한번 계약을 맺으면 그 교육을 실제로 진행하는 날짜가 나중이더라도 계약 당시 조건 그대로 적용됩니다.</p>
+      <p>즉 기준은 “교육하는 날”이나 “정산받는 날”이 아니라 <strong>“계약을 맺은 날”</strong>입니다. 세부 기준은 역할별 안내 문서를 확인해 주세요.</p>
+    </div></details>
 
-          <div class="scroll" style="margin-top:16px">
-            <table>
-              <colgroup><col style="width:36%"><col style="width:32%"><col style="width:32%"></colgroup>
-              <tr><th>서류</th><th>형식</th><th>제출 주기</th></tr>
-              <tr><td>사업자등록증</td><td>PDF</td><td>최초 1회</td></tr>
-              <tr><td>통장 사본</td><td>PDF 또는 이미지</td><td>최초 1회</td></tr>
-              <tr><td><a href="https://b2bsparta.com/invoice" target="_blank" rel="noopener">거래명세서</a></td><td>날인 후 PDF</td><td>매번</td></tr>
-              <tr><td>세금계산서</td><td>—</td><td>매번</td></tr>
-            </table>
-          </div>
+    <details><summary>온보딩을 들으면 바로 교육에 배정되나요?</summary><div class="body">
+      <p>아닙니다. 온보딩 참석과 필수 세팅(Slack·플랫폼·정산 정보·가능 일정)을 마치면 배정 대상자로 검토됩니다.</p>
+      <p>배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행되므로, 참석 직후 즉시 배정이 보장되지는 않습니다.</p>
+    </div></details>
 
-          <ul class="tick" style="margin-top:16px">
-            <li><strong>제출 단위는 계약서 기준</strong>입니다. 동일 고객사·교육명이면 1회, 계약서가 다르면 각각 제출해 주세요</li>
-            <li>3개월 이상 장기 교육은 <strong>매달</strong>, 3개월 미만은 <strong>종료 후 한 번에</strong> 제출합니다</li>
-            <li><strong>매주 화요일 낮 12시까지</strong> 제출된 건은 <strong>수요일 저녁</strong>에 지급됩니다</li>
-            <li>거래명세서에 <strong>날인이 누락되거나 서류가 미비하면</strong> 입금이 지연되고, 이 경우 별도로 처리해 드리기 어렵습니다. 제출 전에 한 번 더 확인해 주세요</li>
-          </ul>
+    <details><summary>1차와 2차 온보딩은 무엇이 다른가요?</summary><div class="body">
+      <p><strong>1차(2주차 금요일)</strong>는 빠른 배정을 원하시는 분께 권합니다. 계약 기준일이 <strong>당월 1일자로 소급</strong> 적용되고 계약서는 익월에 발송되어, 실제 배정 시작일과 다를 수 있습니다.</p>
+      <p><strong>2차(4주차 금요일)</strong>는 계약 기준일과 실제 활동 시작 시점을 맞추고 싶은 분께 권합니다. <strong>익월 1일자 계약</strong> 대상자로 분류되고, 배정도 익월 1일 이후 순차 검토됩니다.</p>
+      <p>두 회차 모두 오후 3시, 온라인 ZOOM으로 진행됩니다.</p>
+    </div></details>
 
-          <div class="quote">사업자 정산의 <strong>정식 접수 경로는 Slack 워크플로 한 곳뿐</strong>입니다. 개인 DM으로는 접수되지 않습니다. 제출하신 뒤에는 제출 내역을 캡처해 보관해 두시길 권하고, 사업자등록증이나 계좌 정보가 바뀌면 교무실 정보도 함께 갱신해 주세요. 제출 방법은 <a href="https://b2bsparta.com/axslackworkflow" target="_blank" rel="noopener">슬랙 워크플로 제출 가이드</a>에 화면과 함께 정리되어 있습니다.</div>
-        </div>
-      </details>
+    <details><summary>계약서가 오지 않았습니다.</summary><div class="body">
+      <p>계약서는 일괄이 아닌 <strong>순차 발송</strong>됩니다. 발송 기간 중에는 개별 문의를 주시지 않아도 되며, <strong>최종 발송이 완료되면 공지 채널에 완료 공지</strong>가 올라옵니다.</p>
+      <p>완료 공지 이후에도 수신되지 않았다면, 직전 분기 교육 참여 일자가 기준에 미달해 갱신이 진행되지 않은 경우일 수 있습니다. 계속 활동을 희망하시면 <strong>해당 월 말일까지</strong> AX교육팀에 의사를 전달해 주세요. 자세한 내용은 <a href="#contract-none">Step 4</a>를 확인해 주세요.</p>
+    </div></details>
 
-      <h3 style="margin-top:28px">사업자 유형과 관계없이 공통</h3>
-      <p class="why">아래 세 가지는 개인 메시지가 아니라 폼과 <strong>Slack 워크플로</strong>로 접수해 주세요. DM으로 오면 누락되거나 접수 순서가 남지 않습니다.</p>
-      <ul class="tick">
-        <li><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSeog74PTlWNmjw-jh7TiZEBi6zHNJOdUgaXuKbpFlBilO-ZUg/viewform" target="_blank" rel="noopener">계약서 및 인건비 지급을 위한 개인 정보 수집</a></strong> — <strong>최초 계약 시 1회</strong> 제출. 폼 안의 <strong>담당자명 항목에는 「이다은」</strong>으로 기재해 주세요. 입력 항목은 <a href="#s-settle">Step 1 · 02 계약과 정산에 필요한 정보</a>에도 정리되어 있습니다</li>
-        <li><strong>경력증명서 발급 신청</strong> — Slack 워크플로로 신청하시면 <strong>매주 월요일</strong>에 발급됩니다</li>
-        <li><strong>계약서 발송 요청</strong> — 강의가 확정된 후 <strong>영업일 5일 이내</strong>에 신청해 주세요. 미수신·서명 기한 경과·재발송도 같은 경로입니다. 발송 시점은 <a href="#contract">Step 4</a>를 확인해 주세요</li>
-      </ul>
+    <details><summary>다른 기관에서도 강의하고 있는데 문제가 되나요?</summary><div class="body">
+      <p>제약 없습니다. 용역 계약이고 정규 고용이 아니기 때문에 타 기관·타 기업 강의 활동은 자유롭습니다.</p>
+      <p>다만 교육 배정은 일정 확보가 전제이므로, 확정된 교육과 일정이 겹치는 상황만 피하면 됩니다. 플랫폼 일정을 최신 상태로 유지해 주시는 것이 가장 확실한 방법입니다.</p>
+    </div></details>
 
-      <div class="quote"><strong>명세서는 매월 말 발행됩니다.</strong> 누락이나 오기재가 있으면 <strong>매월 2일 자정까지</strong> 교무실 문의 게시판으로 접수해 주세요. 교육명·강의 일자·수정이 필요한 항목·실제 진행 내역·증빙을 함께 적어주시면 빠르게 확인됩니다.</div>
-    </div>
+    <details><summary>교안은 처음부터 만들어야 하나요?</summary><div class="body">
+      <p>백지에서 시작하지 않습니다. 교육별 커리큘럼이 제공되고, 그 위에 실습과 예시를 붙여 완성하시게 됩니다.</p>
+      <p>작성 도구는 Notion입니다. 제출 기한과 준비 순서는 <a href="#role">Step 2 강사 탭 · 교안 제작</a>에 정리되어 있습니다.</p>
+    </div></details>
 
-    <div class="card" id="apply-travel">
-      <h3>출장 경비</h3>
-      <p>따로 요청하지 않으셔도 됩니다. 지방 출강의 경우 회사가 승인 단계·계약서 송부·강의 안내 시점에 교통비 목적의 업무여비를 <strong>먼저 안내하고 정액으로 지급</strong>합니다. 교통편과 숙박은 자율적으로 예약하시면 되고, 영수증 제출은 필요하지 않습니다.</p>
-      <p>다만 숙박이 제공되는 교육의 경우 교통비가 별도로 지급되지 않을 수 있습니다. 실제 장소와 이동 여건에 따라 달라지므로 배정 시 담당 매니저와 한 번 확인해 주세요.</p>
-    </div>
+    <details><summary>지방 출강 교통비·숙박비는 어떻게 받나요?</summary><div class="body">
+      <p>지역별 정액으로 받으실 경우 <strong>별도 신청이 필요 없습니다.</strong> 대중교통 접근이 어려운 지역으로 실비 산정을 원하시면 <strong>교육일 전까지 Slack 워크플로로 사전 신청</strong>하시고, <strong>본인 투입 마지막 교육일 기준 7일 이내</strong>에 사후 증빙까지 제출하셔야 합니다.</p>
+      <p>정액과 실비는 <strong>중복 지급되지 않습니다.</strong> 지역별 지원 금액과 판정 기준은 Slack 공지 채널에 안내된 경비 문서에서 확인해 주세요. 절차는 <a href="#apply-travel">Step 7 · 업무 경비</a>에 정리되어 있습니다.</p>
+    </div></details>
 
-    <div class="card" id="apply-contact">
-      <h3>문의는 어디로</h3>
-      <ul class="tick">
-        <li><strong><a href="https://tutor-scheduler-wheat.vercel.app/instructor/schedule" target="_blank" rel="noopener">교무실</a> → 문의 메뉴</strong> — 일정/배정 · 계약/정산 · 계정/권한 · 기타</li>
-        <li><strong>현장 이슈</strong> — 1차는 강사·튜터가 현장에서 협의해 처리하고, 해결되지 않으면 담당 매니저에게 바로 연락해 주세요. 담당 매니저는 운영 채널에 해당 교육 공고글을 올린 사람입니다. 긴급 건은 전화도 괜찮습니다</li>
-        <li>고객사 담당자 연락처는 필요한 경우 <strong>회사가 먼저 오픈</strong>해 드립니다. 별도로 확보하지 않으셔도 됩니다</li>
-      </ul>
-      <div class="quote">교육의 약 90%는 운영진 동행 없이 진행됩니다. 작아 보이는 문제라도 수업 진행에 영향을 줄 수 있다면 혼자 판단하지 마시고 빠르게 공유해 주세요.</div>
-    </div>
-  </section>
+    <details><summary>정산·계약서·경력증명서는 어디로 요청하나요?</summary><div class="body">
+      <p>개인 DM이 아니라 <strong>Slack 워크플로</strong>로 접수해 주세요. 사업자 강의료 증빙 제출, 경력증명서 발급 신청, 계약서 발송 요청, 업무 경비 사전 신청이 대상입니다.</p>
+      <p>개인(프리랜서)은 별도 제출 서류 없이 플랫폼 등록만으로 명세서에 자동 반영됩니다.</p>
+    </div></details>
 
-  <!-- ============ 참고 · 교육·툴 ============ -->
-  <section id="tools">
-    <p class="sec-k">참고</p>
-    <h2>대표 교육과 주로 쓰는 툴</h2>
+    <details><summary>명세서 금액이 실제와 다릅니다.</summary><div class="body">
+      <p>개인 강사·보조강사는 강사 포털 명세서 기준으로 <strong>매월 10일</strong> 정산됩니다. 명세 내용을 확인 후 이의가 있으면 <strong>익월 2일 자정까지</strong> 포털 문의 게시판으로 접수해 주세요.</p>
+      <p>이 기한을 넘기면 해당 회차 정산이 마감되어 다음 회차로 넘어갑니다. 교육명·강의 일자·수정이 필요한 항목·실제 진행 내역·증빙을 함께 적어주시면 빠르게 확인됩니다.</p>
+    </div></details>
 
-    <div class="card">
-      <h3>공통 툴</h3>
-      <ul class="tick">
-        <li><strong>Notion</strong> — 교안 제작·배포. 교육생 중에는 Notion이 익숙하지 않은 분이 많으니 교육 초반에 페이지 이동·버튼 위치 등 사용법을 안내해 주세요</li>
-        <li><strong>패들렛</strong> — 실습 결과물 업로드. 익명 업로드가 가능하다는 점을 함께 안내하면 참여율이 올라갑니다</li>
-        <li><strong>생성형 AI</strong> — 사내망 환경에서는 사전 승인이 필요합니다. 사용할 툴 리스트를 미리 공유해 주세요</li>
-      </ul>
-      <div class="quote">교안은 제공되지만 <strong>툴 숙련은 각자 준비</strong>해 주셔야 합니다. 부족한 스킬이 있다면 교안을 받으신 뒤 강의 전까지 익혀 오셔야 현장에서 실습 지원이 가능합니다.</div>
-    </div>
+    <details><summary>현장에서 문제가 생기면 누구에게 연락하나요?</summary><div class="body">
+      <p>1차는 현장에서 강사와 보조강사가 협의해 처리합니다. 계정 이슈나 업로드 오류 같은 기술 문제는 대부분 여기서 해결됩니다.</p>
+      <p>해결되지 않으면 담당 매니저에게 바로 연락하시면 됩니다. 연락 경로는 <a href="#apply-contact">Step 7 · 문의는 어디로</a>에서 확인해 주세요.</p>
+    </div></details>
 
-    <div class="card" id="slot-courses">
-      <h3>교육 유형 4가지</h3>
-      <p class="why">배정받게 될 교육은 크게 아래 네 가지로 나뉩니다. 유형마다 대상과 난이도, 준비해야 할 것이 다르니 배정 전에 한 번 확인해 주세요.</p>
+    <details><summary>온보딩에 참석하지 못했습니다.</summary><div class="body">
+      <p>다음 온보딩에 반드시 참석해 주셔야 계약 체결과 교육 배정이 시작됩니다.</p>
+      <p>플랫폼 등록과 자격 확인, 계약·정산 절차, 현장 운영 기준이 온보딩에서 함께 정리되기 때문에, 건너뛰면 첫 현장에서 혼선이 생기고 배정도 진행되지 않습니다. 다음 회차 일정은 Slack 공지 채널로 안내드립니다.</p>
+    </div></details>
 
-      <details>
-        <summary>1. 기본 활용 교육 <span class="lv">Literacy L1</span></summary>
-        <div class="body">
-          <ul class="tick">
-            <li>AI를 처음 접하는 임직원이 <strong>ChatGPT·Gemini·Claude</strong> 등 범용 생성형 AI 도구를 문서 작성·자료 조사·보고 등 일상 업무에 바로 적용할 수 있도록 하는 입문 과정입니다.</li>
-            <li>직무를 가리지 않는 공통 대상 교육으로, <strong>1~2일 단기 집합</strong> 형태로 운영하며 “AI를 쓸 줄 아는 조직”의 저변을 만드는 것을 목표로 합니다.</li>
-          </ul>
-        </div>
-      </details>
+    <details><summary>한동안 활동을 못 할 것 같습니다.</summary><div class="body">
+      <p>최근 교육 참여일 또는 협업 의사를 확인한 날로부터 3개월간 활동이 없으면 장기 미활동으로 분류될 수 있습니다. 이 경우 신규 교육 제안 대상에서 제외되고, 플랫폼 활동 상태가 비활성으로 바뀌며 Slack 채널에서도 퇴장 처리될 수 있습니다.</p>
+      <p>다만 회사가 교육을 제안하지 않아 활동이 없었던 경우는 해당하지 않으며, 처리 전에 협업 의사를 먼저 확인드립니다.</p>
+      <p>휴직·질병·출산육아·장기 출장·학업 등 불가피한 사유를 미리 공유해 주시면 해당 기간은 산정에서 제외됩니다. 이후 다시 활동을 원하실 때는 AX교육팀(axedu@teamsparta.co)으로 재등록을 요청하실 수 있습니다.</p>
+    </div></details>
 
-      <details>
-        <summary>2. 심화 활용 교육 <span class="lv">Literacy L2</span></summary>
-        <div class="body">
-          <ul class="tick">
-            <li>실무자가 자기 직무의 실제 업무 흐름에 AI를 붙이는 과정으로, <strong>데이터 분석 · 업무 자동화(RPA) · 이미지/영상 제작 · 바이브코딩</strong> 등 주제별로 나뉩니다.</li>
-            <li><strong>Python · GPT API · n8n · Claude Code · Copilot Studio</strong>처럼 도구 난이도가 한 단계 높아지며, 직무·산업 맥락에 맞춘 실습 과제로 업무 적용도를 끌어올립니다.</li>
-          </ul>
-        </div>
-      </details>
+  </div>
+</section>
 
-      <details>
-        <summary>3. 프로젝트형 교육 <span class="lv">PBL</span></summary>
-        <div class="body">
-          <ul class="tick">
-            <li>정해진 기간 동안 팀이 자사의 실제 과제를 붙잡고 결과물까지 만들어내는 과정으로, <strong>PBL Lite · PBL Pro · 장기 아카데미</strong>가 있습니다.</li>
-            <li>멘토링과 코칭 비중이 높고 최종 발표로 마무리되기 때문에, 교육 성과가 사내에서 활용 가능한 결과물을 만들어냅니다.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>4. 해커톤 <span class="lv">행사형</span></summary>
-        <div class="body">
-          <ul class="tick">
-            <li>전사 단위 인원이 몰입해 AI 결과물을 만들고 <strong>심사·시상</strong>까지 이어지는 행사형 프로그램으로, 조직 확산에 무게가 있습니다.</li>
-            <li>작품 제출·공유 플랫폼, 발표 자료 보안 점검 등 일반 집합교육과 다른 운영 준비가 필요해 별도 구분으로 관리합니다.</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section id="faq">
-    <p class="sec-k">FAQ</p>
-    <h2>합류 초기에 가장 많이 나오는 질문</h2>
-    <p class="intro">온보딩 이후 실제로 반복해서 들어온 질문들입니다. 답변만 보고 넘어가기보다, 왜 그렇게 운영하는지까지 함께 확인해 주시면 현장에서 판단하기가 훨씬 수월합니다.</p>
-    <div style="margin-top:24px">
-
-      <details><summary>강사로 합격했는데 왜 기술튜터로 시작하나요?</summary><div class="body">
-        <p>팀스파르타 기업교육은 강사와 기술튜터가 한 팀으로 움직이고, 현장마다 고객사 성격·교육생 수준·실습 환경이 모두 다릅니다. 처음부터 단독 강사로 배정되면 그 변수를 혼자 감당하셔야 하고, 특히 장기 교육은 중도 교체가 어려워 고객사와 교육생 모두에게 부담이 큽니다.</p>
-        <p>그래서 신규 합류자는 강사·기술튜터 구분 없이 <strong>Lv.1 기술튜터</strong>로 시작하고, 첫 교육 1회는 기존 인력과 페어로 들어가 운영 흐름·교안 활용·역할 분담을 먼저 보시게 됩니다.</p>
-        <p>고객사도 회사도 안정적인 진행을 중요하게 보기 때문에, 보통 기술튜터로 3회 정도 참여하신 뒤 강사로 투입되는 경우가 많습니다. 자세한 내용은 <a href="#pilot">Step 3</a>과 <a href="#level-inst">Step 4 · 강사 투입 기준</a>을 확인해 주세요.</p>
-      </div></details>
-
-      <details><summary>교무실에서 동의 체크를 했는데 계약이 된 건가요?</summary><div class="body">
-        <p>아닙니다. 교무실의 동의 체크는 교무실 이용과 정보 활용에 대한 확인일 뿐, 계약으로서의 효력은 없습니다.</p>
-        <p>실제 계약은 <strong>계약서</strong>와 교육 <strong>건별 발주서</strong>로 진행됩니다. 계약서는 별도로 발송되고, 발주서는 교무실에서 건마다 직접 승인하시게 됩니다.</p>
-        <p>발송 시점과 9월 합류자 안내는 <a href="#contract">Step 4 · 계약은 이렇게 진행됩니다</a>에 정리해 두었습니다.</p>
-      </div></details>
-
-      <details><summary>최초 계약 기간 안에 15회를 못 채우면 어떻게 되나요?</summary><div class="body">
-        <p>계약은 개인별 합류일 기준 3개월이 아니라 <strong>분기 구간(1~3월 / 4~6월 / 7~9월 / 10~12월)</strong>에 맞춰 진행됩니다. 신규 기술튜터는 <strong>최초 계약 기간 안에 산정 대상 교육 15회</strong> 참여 여부를 확인합니다.</p>
-        <p>최초 계약이 1개월·2개월·3개월 중 무엇이든 15회 기준은 동일합니다. 15회를 채우지 못하면 그 카운트는 다음 계약 구간으로 <strong>이월되지 않고 리셋</strong>되고, 다음 구간에서 새 계약 기간 기준으로 다시 카운팅이 시작됩니다.</p>
-        <p>산정 대상은 기본 활용(L1)·심화 활용(L2) 교육입니다. 자세한 내용은 <a href="#level">Step 4 레벨과 계약</a>에서 확인하실 수 있고, 참여가 어려운 사정이 생기면 미리 공유해 주시면 함께 방법을 찾아보겠습니다.</p>
-      </div></details>
-
-      <details><summary>온보딩을 들으면 바로 교육에 배정되나요?</summary><div class="body">
-        <p>아닙니다. 온보딩 참석과 필수 세팅(Slack·교무실·정산 정보·가능 일정)을 마치면 배정 대상자로 검토됩니다.</p>
-        <p>배정은 교육 수요·일정·지역·필요 역량·기존 경험·교육 유형·운영 상황 등을 종합적으로 고려해 진행되므로, 참석 직후 즉시 배정이 보장되지는 않습니다. 특히 일부 월에는 임원 교육·PBL·심화 과정 비중이 높아 신규 합류자에게 바로 배정 가능한 일반 교육이 많지 않을 수 있습니다.</p>
-        <p>배정 가능성을 높이려면 교무실에 <a href="#s-portal">실제 참여 가능한 일정</a>을 충분히 등록해 주세요.</p>
-      </div></details>
-
-      <details><summary>2주차와 4주차 온보딩은 무엇이 다른가요?</summary><div class="body">
-        <p><strong>2주차 온보딩</strong>은 빠른 교육 배정을 원하시는 분께 권합니다. 세팅 완료 이후 배정이 순차 검토됩니다. 다만 이 경우 <strong>계약 기준일이 참석하신 달의 1일자로 적용될 수 있어</strong> 실제 배정 시작일과 다를 수 있으니, 이 점을 이해하신 뒤 참석 회차를 정해 주세요.</p>
-        <p><strong>4주차 온보딩</strong>은 계약 기준일과 실제 활동 시작 시점을 차월 기준으로 맞추고 싶은 분께 권합니다. 원칙적으로 다음 달 1일자 계약 대상자로 분류되고, 배정도 차월 1일 이후 순차 검토됩니다.</p>
-        <p>두 회차 모두 매월 금요일 오후 3시, 온라인 ZOOM으로 진행됩니다.</p>
-      </div></details>
-
-      <details><summary>분기 마지막 달(3·6·9·12월)에 합류하면 계약과 카운팅은 어떻게 되나요?</summary><div class="body">
-        <p>3·6·9·12월처럼 <strong>분기 마지막 달에 합류</strong>하시면, 최초 계약이 그 <strong>한 달 기준</strong>으로 짧게 진행되고 이후 다음 분기 정규 3개월 구간으로 이어집니다. 예를 들어 3월 합류는 3월 → 4~6월, 6월 합류는 6월 → 7~9월, 9월 합류는 9월 → 10~12월, 12월 합류는 12월 → 다음 해 1~3월입니다.</p>
-        <p>그 한 달 안에 산정 대상 교육 15회를 못 채우면 다음 구간으로 <strong>이월되지 않고 리셋</strong>되며, 다음 구간에서 새 계약 기간 기준으로 다시 카운팅이 시작됩니다. (분기 중간에 합류하시면 최초 계약이 2개월이 될 수도 있으며, 이 경우에도 15회 기준은 동일합니다.)</p>
-        <p><strong>9월은 계약 프로세스 전환에 따른 예외 기간</strong>이라, 10월 초에 <strong>9/1자 1개월 계약서와 10/1자 3개월 계약서 총 2건</strong>이 함께 발송됩니다. 이미 배정·참여하신 교육 건의 정산에는 영향이 없습니다.</p>
-        <p>합류 시점별 최초 계약 기간은 <a href="#level">Step 4 · 계약 구간 안내</a> 표에서, 9월 예외는 <a href="#contract">Step 4 · 9월 합류자 예외 안내</a>에서 확인하실 수 있습니다.</p>
-      </div></details>
-
-      <details><summary>시급을 조정해 달라고 요청할 수 있나요?</summary><div class="body">
-        <p>담당 매니저에게 문의해 주세요. 조정 가능 여부와 절차를 개별로 안내드립니다.</p>
-        <p>본인의 현재 레벨은 교무실 <strong>내 자격</strong> 메뉴에서 확인하실 수 있고, 레벨별 시급은 내부 운영 가이드 문서에서 안내드립니다.</p>
-        <p>레벨과 참여 횟수 기준은 <a href="#level">Step 4 레벨과 계약</a>에 정리되어 있습니다.</p>
-      </div></details>
-
-      <details><summary>다른 기관에서도 강의하고 있는데 문제가 되나요?</summary><div class="body">
-        <p>제약 없습니다. 프리랜서 용역 계약이고 정규 고용이 아니기 때문에 타 기관·타 기업 강의 활동은 자유롭습니다.</p>
-        <p>다만 교육 배정은 일정 확보가 전제이기 때문에, 합류 시 대략적인 월 가용 시간을 확인합니다.</p>
-        <p>확정된 교육과 일정이 겹치는 상황만 피하면 됩니다. 교무실 일정을 최신 상태로 유지해 주시는 것이 가장 확실한 방법입니다.</p>
-      </div></details>
-
-      <details><summary>교안은 처음부터 만들어야 하나요?</summary><div class="body">
-        <p>백지에서 시작하지 않습니다. 교육별 커리큘럼이 제공되고, 그 위에 실습과 예시를 붙여 완성하시게 됩니다.</p>
-        <p>작성 도구는 Notion입니다. 줄글로 이어 쓰면 교육생이 따라오기 어려우니 섹션 구분·강조·리스트로 구조화해 주세요.</p>
-        <p>제출 기한과 준비 순서는 <a href="#role">Step 2 강사 탭 · 교안 제작</a>에 정리되어 있습니다.</p>
-      </div></details>
-
-      <details><summary>지방 출강 교통비·숙박비는 어떻게 청구하나요?</summary><div class="body">
-        <p>따로 청구하지 않으셔도 됩니다. 회사가 먼저 안내드리고 정액으로 지급하며, 영수증 제출은 필요하지 않습니다.</p>
-        <p>지급 시점과 예외 사항은 <a href="#apply-travel">Step 7 · 출장 경비</a>에서 확인해 주세요.</p>
-      </div></details>
-
-      <details><summary>정산·계약서·경력증명서는 어디로 요청하나요?</summary><div class="body">
-        <p>개인 DM이 아니라 <strong>Slack 워크플로</strong>로 접수해 주세요. 사업자 강의료 증빙 제출, 경력증명서 발급 신청, 계약서 발송 요청 세 가지입니다. 프리랜서는 별도 제출 서류 없이 교무실 등록만으로 명세서에 자동 반영됩니다.</p>
-        <p>DM으로 오면 담당자가 바뀌거나 대화가 묻힐 때 누락될 수 있고, 접수 순서도 남지 않습니다.</p>
-        <p>각 항목의 처리 일정은 <a href="#apply-settle">Step 7 · 정산</a>에 정리되어 있습니다.</p>
-      </div></details>
-
-      <details><summary>명세서 금액이 실제와 다릅니다.</summary><div class="body">
-        <p>명세서는 매월 말 발행되며, 발행 후 반드시 강의 내역과 정산 금액을 확인해 주세요.</p>
-        <p>누락이나 오기재가 있으면 <strong>매월 2일 자정까지</strong> 교무실 문의 게시판으로 이의제기를 접수해 주세요. 이 기한을 넘기면 해당 회차 정산이 마감되어 다음 회차로 넘어가고, 확인이 그만큼 늦어집니다.</p>
-        <p>접수 시 기재할 항목은 <a href="#apply-settle">Step 7</a>에 정리되어 있습니다.</p>
-      </div></details>
-
-      <details><summary>현장에서 문제가 생기면 누구에게 연락하나요?</summary><div class="body">
-        <p>1차는 현장에서 강사와 튜터가 협의해 처리합니다. 계정 이슈나 업로드 오류 같은 기술 문제는 대부분 여기서 해결됩니다.</p>
-        <p>현장에서 해결되지 않으면 담당 매니저에게 바로 연락하시면 됩니다.</p>
-        <p>연락 경로와 고객사 담당자 안내는 <a href="#apply-contact">Step 7 · 문의는 어디로</a>에서 확인해 주세요.</p>
-      </div></details>
-
-      <details><summary>온보딩에 참석하지 못했습니다.</summary><div class="body">
-        <p>다음 온보딩에 반드시 참석해 주셔야 교육 배정이 시작됩니다.</p>
-        <p>교무실 등록과 자격 확인, 계약·정산 절차, 현장 운영 기준이 온보딩에서 함께 정리되기 때문에, 건너뛰면 첫 현장에서 혼선이 생기고 배정도 진행되지 않습니다.</p>
-        <p>다음 회차 일정은 Slack 공지 채널로 안내드립니다. 참석이 어려운 사정이 있으시면 미리 알려주세요.</p>
-      </div></details>
-
-      <details><summary>한동안 활동을 못 할 것 같습니다.</summary><div class="body">
-        <p>최근 교육 참여일 또는 협업 의사를 확인한 날로부터 3개월간 활동이 없으면 장기 미활동으로 분류될 수 있습니다. 이 경우 신규 교육 제안 대상에서 제외되고, 교무실 활동 상태가 비활성으로 바뀌며 Slack 채널에서도 퇴장 처리될 수 있습니다.</p>
-        <p>다만 회사가 교육을 제안하지 않아 활동이 없었던 경우는 해당하지 않습니다. 또한 처리 전에 등록된 연락처나 운영 채널로 협업 의사를 먼저 확인드립니다.</p>
-        <p>휴직·질병·출산육아·장기 출장·학업 등 불가피한 사유를 미리 공유해 주시면 해당 기간은 산정에서 제외됩니다. 이후 다시 활동을 원하실 때는 AX교육팀(axedu@teamsparta.co)으로 재등록을 요청하실 수 있습니다.</p>
-      </div></details>
-
-    </div>
-  </section>
-
-  <footer>
-    팀스파르타 AX교육팀 · 이 페이지는 온보딩 이후에도 계속 열어두고 확인하실 수 있습니다.<br>
-    내용에 대한 문의는 교무실 문의 메뉴 또는 Slack 공지 채널로 남겨주세요.
-  </footer>
 </div>
 
+<footer>
+  <div class="wrap">
+    팀스파르타 AX교육팀 · 이 페이지는 온보딩 이후에도 계속 열어두고 확인하실 수 있습니다.<br>
+    레벨·시급, 경비 금액 등 개별 조건은 이 페이지에 기재하지 않으며, Slack 역할별 공지 채널에 안내된 문서에서 확인해 주세요.<br>
+    내용에 대한 문의는 강사 관리 플랫폼 문의 메뉴 또는 Slack 공지 채널로 남겨주세요.
+  </div>
+</footer>
+
 <script>
-/* ---- 탭(역할 탭 · 링크 탭 등, .roles 단위로 각각 독립 동작) ---- */
+/* 탭 */
 (function(){
   document.querySelectorAll('.roles').forEach(function(group){
     var tabs = group.querySelectorAll('button');
@@ -1252,8 +1193,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     });
   });
 })();
-
-/* ---- 스크롤 스파이 ---- */
+/* 스크롤 스파이 */
 (function(){
   var links = document.querySelectorAll('nav.jump a[href^="#"]');
   var map = {};
@@ -1272,8 +1212,7 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
   }, {rootMargin:'-20% 0px -70% 0px'});
   document.querySelectorAll('section[id]').forEach(function(s){io.observe(s);});
 })();
-
-/* ---- 예시 이미지 확장자 폴백 ---- */
+/* 이미지 확장자 폴백 */
 (function(){
   document.querySelectorAll('img[data-fallback]').forEach(function(img){
     var list = img.getAttribute('data-fallback').split('|');
@@ -1284,20 +1223,15 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
     });
   });
 })();
-
-/* ---- 앵커로 이동할 때 닫혀 있는 토글 자동 펼침 ---- */
+/* 앵커 이동 시 토글 자동 펼침 */
 (function(){
   function openTarget(hash){
     if(!hash || hash === '#') return;
-    var el;
-    try{ el = document.querySelector(hash); }catch(e){ return; }
+    var el; try{ el = document.querySelector(hash); }catch(e){ return; }
     if(!el) return;
     if(el.tagName === 'DETAILS') el.open = true;
     var p = el.parentElement;
-    while(p){
-      if(p.tagName === 'DETAILS') p.open = true;
-      p = p.parentElement;
-    }
+    while(p){ if(p.tagName === 'DETAILS') p.open = true; p = p.parentElement; }
   }
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(){ openTarget(a.getAttribute('href')); });
@@ -1305,11 +1239,10 @@ footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
   window.addEventListener('hashchange', function(){ openTarget(location.hash); });
   if(location.hash) openTarget(location.hash);
 })();
-
-/* ---- 다른 섹션 링크로 이동할 때 해당 역할 탭 자동 전환 ---- */
+/* 다른 섹션 링크 이동 시 탭 전환 */
 (function(){
   function openTabIfNeeded(hash){
-    var panel = document.querySelector(hash);
+    var panel; try{ panel = document.querySelector(hash); }catch(e){ return; }
     if(!panel) return;
     var wrap = panel.closest ? panel.closest('.rolepanel') : null;
     if(!wrap) return;
